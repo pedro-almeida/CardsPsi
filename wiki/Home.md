@@ -1,23 +1,20 @@
-# Bem vindo à Wiki Oficial do Projeto CardsPsi 🧩
+# Wiki Oficial do Projeto CardsPsi 🧩
 
-O **CardsPsi (Quebra Cabeça das Escolhas)** é uma ferramenta híbrida (software interativo e jogo físico de tabuleiro modular) desenvolvida para a disciplina **Processos Psicológicos Básicos: Motivação, Pensamento e Linguagem (ARA1060)** do curso de Psicologia da **Estácio IDOMED**, ministrada pelo **Prof. Me. Jair Nunes Rocha**.
-
----
-
-## 🧭 Navegação da Documentação
-
-1. **[Regras Oficiais do Jogo e Passo a Passo](Regras-Oficiais-do-Jogo)**
-   * Componentes do kit físico e digital, preparação do tabuleiro 2x3, mecânica da 1ª rodada (Situação), revelação da 2ª rodada (Carta de Virada) e condições de consolidação.
-2. **[Fundamentação Teórica e Cognitiva](Fundamentacao-Teorica-e-Cognitiva)**
-   * Articulação científica entre Resolução de Problemas, Heurísticas de Julgamento (Kahneman & Tversky), Racionalidade Limitada (Herbert Simon), Tríade Executiva Pré Frontal e Julgamento Moral (Piaget, Kohlberg e Immanuel Kant).
-3. **[Protocolo de Aplicação e Psicometria](Protocolo-de-Aplicacao-e-Psicometria)**
-   * Guia prático de aplicação com voluntários, interpretação do Índice de Flexibilidade Cognitiva e análise da latência temporal de resposta.
+O **CardsPsi (Quebra Cabeça das Escolhas)** é uma ferramenta híbrida (software web responsivo e tabuleiro físico modular) desenvolvida para a disciplina **Processos Psicológicos Básicos: Motivação, Pensamento e Linguagem (ARA1060)** do curso de Psicologia da **Faculdade Estácio de Juazeiro do Norte**, ministrada pelo **Prof. Me. Jair Nunes Rocha**.
 
 ---
 
-## 🎯 Ficha Técnica do Instrumento
+## 🧭 Seções da Wiki
 
-* **Processos Psicológicos Estimulados:** Pensamento, Tomada de Decisão, Resolução de Problemas, Linguagem Argumentativa e Funções Executivas (Memória de Trabalho, Controle Inibitório e Flexibilidade Cognitiva).
-* **Público Alvo:** Jovens e adultos (estudantes universitários, grupos escolares e contextos de avaliação/estimulação cognitiva).
-* **Tempo Médio de Aplicação:** 8 a 15 minutos (modalidade individual) ou 15 a 25 minutos (modalidade de deliberação em grupo).
+1. **[Regras Oficiais do Jogo](Regras-Oficiais-do-Jogo):** Passo a passo do tabuleiro 2x3, peças A/B/C e Cartas de Virada.
+2. **[Fundamentação Teórica e Cognitiva](Fundamentacao-Teorica-e-Cognitiva):** Racionalidade limitada, heurísticas, funções executivas e moralidade.
+3. **[Protocolo de Aplicação e Psicometria](Protocolo-de-Aplicacao-e-Psicometria):** Coleta empírica de teste piloto e cálculo do $IFC$.
+
+---
+
+## 🎯 Ficha do Instrumento
+
+* **Processos Envolvidos:** Pensamento, Tomada de Decisão, Linguagem e Funções Executivas.
+* **Público Alvo:** Jovens e adultos.
+* **Tempo de Sessão:** 8 a 15 minutos (individual).
 * **Autores:** Pedro Luís Tenório Rocha de Almeida, Maria Vitória Santos Braz, Maria Natalya Silva Leitão, Rayanne dos Santos Santana e Veridiana Mota Veras.

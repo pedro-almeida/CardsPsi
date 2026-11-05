@@ -2,8 +2,8 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CardsPsi | Quebra Cabeça das Escolhas (ARA1060)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>CardsPsi | Quebra Cabeça das Escolhas (ARA1060 • Estácio)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,6 +13,9 @@
           fontFamily: {
             sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
             serif: ['Georgia', 'Cambria', 'serif']
+          },
+          screens: {
+            'xs': '420px'
           }
         }
       }
@@ -23,20 +26,15 @@
 
     * {
       box-sizing: border-box;
-    }
-
-    .gpu-accel {
-      transform: translate3d(0, 0, 0);
-      will-change: transform, opacity;
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .puzzle-slot {
       position: relative;
-      min-height: 195px;
+      min-height: 170px;
       border: 2px dashed #94a3b8;
       border-radius: 0.85rem;
-      transition: all 0.25s ease;
+      transition: all 0.22s ease-in-out;
     }
 
     .dark .puzzle-slot {
@@ -46,7 +44,7 @@
     .puzzle-slot.active-slot {
       border-style: solid;
       border-color: #0284c7;
-      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.18);
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.22);
     }
 
     .puzzle-slot.filled-slot {
@@ -57,7 +55,7 @@
     @keyframes popIn {
       0% {
         opacity: 0;
-        transform: scale(0.92) translateY(8px);
+        transform: scale(0.94) translateY(6px);
       }
       100% {
         opacity: 1;
@@ -66,7 +64,15 @@
     }
 
     .animate-piece {
-      animation: popIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: popIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     @media print {
@@ -85,278 +91,281 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-sky-600 selection:text-white">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-sky-600 selection:text-white pb-12 sm:pb-6">
 
-  <!-- TOP NAVIGATION BAR -->
-  <header class="no-print sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-slate-900 dark:bg-sky-600 text-white flex items-center justify-center font-extrabold text-lg shadow-sm">
-          Ψ
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <h1 class="font-extrabold text-base sm:text-lg tracking-tight">CardsPsi • Quebra Cabeça das Escolhas</h1>
-            <span class="hidden md:inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-sky-100 text-sky-800 dark:bg-sky-900/50 dark:text-sky-300">
-              ARA1060 • Estácio IDOMED
-            </span>
+  <!-- TOP APP BAR -->
+  <header class="no-print sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-slate-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 h-auto sm:h-16 py-2.5 sm:py-0 flex flex-col sm:flex-row items-center justify-between gap-2.5">
+      
+      <!-- LOGO & BRANDING -->
+      <div class="w-full sm:w-auto flex items-center justify-between sm:justify-start gap-2.5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-slate-900 dark:bg-sky-600 text-white flex items-center justify-center font-extrabold text-base shadow-sm shrink-0">
+            Ψ
           </div>
-          <p class="text-xs text-slate-500 dark:text-slate-400">
-            Instrumento Computacional de Avaliação da Tomada de Decisão, Heurísticas e Flexibilidade Cognitiva
-          </p>
+          <div>
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <h1 class="font-extrabold text-sm sm:text-base tracking-tight leading-tight">CardsPsi</h1>
+              <span class="text-xs text-slate-400 font-semibold">•</span>
+              <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">Quebra Cabeça das Escolhas</span>
+              <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300">
+                ARA1060 • Estácio
+              </span>
+            </div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden xs:block truncate max-w-xs sm:max-w-md">
+              Avaliação de Tomada de Decisão, Heurísticas e Flexibilidade Cognitiva
+            </p>
+          </div>
+        </div>
+
+        <!-- FAST CONTROLS (MOBILE) -->
+        <div class="flex sm:hidden items-center gap-1.5 shrink-0">
+          <button onclick="toggleTheoryLens()" id="btn-theory-lens-mobile" class="px-2 py-1 rounded-md text-[10px] font-bold border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300">
+            Teoria: ON
+          </button>
+          <button onclick="toggleTheme()" class="p-1.5 rounded-md border border-slate-200 dark:border-slate-700 text-xs">
+            🌓
+          </button>
         </div>
       </div>
 
-      <!-- NAVIGATION TABS -->
-      <nav class="flex items-center gap-1 sm:gap-2">
-        <button onclick="switchTab('board')" id="tab-btn-board" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-slate-900 text-white dark:bg-sky-600 transition">
-          1. Tabuleiro (6 Casos)
-        </button>
-        <button onclick="switchTab('report')" id="tab-btn-report" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition">
-          2. Laudo Psicométrico
-        </button>
-        <button onclick="switchTab('manual')" id="tab-btn-manual" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition">
-          3. Manual e Regras
-        </button>
-        <button onclick="switchTab('schedule')" id="tab-btn-schedule" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition">
-          4. Equipe e Cronograma
-        </button>
-      </nav>
+      <!-- NAVIGATION TABS (TOUCH OPTIMIZED SCROLL) -->
+      <div class="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-2">
+        <nav class="flex items-center gap-1 overflow-x-auto no-scrollbar w-full sm:w-auto pb-0.5">
+          <button onclick="switchTab('board')" id="tab-btn-board" class="whitespace-nowrap px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white dark:bg-sky-600 transition">
+            1. Tabuleiro
+          </button>
+          <button onclick="switchTab('report')" id="tab-btn-report" class="whitespace-nowrap px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition">
+            2. Laudo
+          </button>
+          <button onclick="switchTab('manual')" id="tab-btn-manual" class="whitespace-nowrap px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition">
+            3. Manual
+          </button>
+          <button onclick="switchTab('schedule')" id="tab-btn-schedule" class="whitespace-nowrap px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition">
+            4. Grupo
+          </button>
+        </nav>
 
-      <!-- UTILITY CONTROLS -->
-      <div class="flex items-center gap-2">
-        <button onclick="toggleTheoryLens()" id="btn-theory-lens" title="Ativar Lente Teórica para Apresentação ao Prof. Jair" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 hover:bg-amber-500/20 transition">
-          Lente Teórica: ON
-        </button>
-        <button onclick="toggleTheme()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="Alternar Contraste de Projetor">
-          🌓
-        </button>
+        <!-- UTILITY CONTROLS (DESKTOP) -->
+        <div class="hidden sm:flex items-center gap-1.5 shrink-0">
+          <button onclick="toggleTheoryLens()" id="btn-theory-lens-desktop" title="Ativar Lente Teórica para Apresentação ao Prof. Jair" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 hover:bg-amber-500/20 transition">
+            Lente Teórica: ON
+          </button>
+          <button onclick="toggleTheme()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            🌓
+          </button>
+        </div>
       </div>
+
     </div>
   </header>
 
-  <!-- MAIN CONTAINER -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <!-- MAIN VIEWPORT -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6">
 
-    <!-- SESSION BAR -->
-    <section class="no-print mb-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-sm flex flex-wrap items-center justify-between gap-4">
-      <div class="flex flex-wrap items-center gap-3">
+    <!-- METRICS & CONTROLS RIBBON -->
+    <section class="no-print mb-4 sm:mb-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full md:w-auto">
         <div>
-          <label for="participant-name" class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
-            Participante / Voluntário
+          <label for="participant-name" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            Voluntário / Participante
           </label>
-          <input id="participant-name" type="text" placeholder="Ex.: Voluntário Piloto 01" value="Participante Demonstração"
-            class="mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500" />
+          <input id="participant-name" type="text" value="Participante Piloto 01"
+            class="w-full mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500" />
         </div>
         <div>
-          <label for="application-mode" class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">
-            Modalidade de Aplicação
+          <label for="application-mode" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            Modalidade de Uso
           </label>
-          <select id="application-mode" class="mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-sm font-semibold">
-            <option value="Individual">Individual (Avaliação Cognitiva)</option>
-            <option value="Dupla/Grupo">Deliberação Coletiva em Sala</option>
-            <option value="Piloto">Coleta de Teste Piloto (Métricas)</option>
+          <select id="application-mode" class="w-full mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold">
+            <option value="Piloto Individual">Piloto Individual (Cronometrado)</option>
+            <option value="Grupo / Seminário">Demonstração em Sala de Aula</option>
+            <option value="Clínico Educativo">Uso Educativo / Autoaplicação</option>
           </select>
         </div>
       </div>
 
-      <!-- PROGRESS SUMMARY -->
-      <div class="flex items-center gap-6">
-        <div class="text-right">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Peças Encaixadas</span>
-          <span id="progress-counter" class="text-lg font-extrabold text-sky-600 dark:text-sky-400">0 / 6 Casos</span>
+      <!-- COUNTERS & RESET -->
+      <div class="flex items-center justify-between sm:justify-end gap-3 sm:gap-6 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100 dark:border-slate-800">
+        <div>
+          <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Progresso</span>
+          <span id="progress-counter" class="text-sm sm:text-base font-extrabold text-sky-600 dark:text-sky-400">0 / 6 Casos</span>
         </div>
-        <div class="text-right">
-          <span class="block text-[11px] font-bold uppercase tracking-wider text-slate-400">Cronômetro do Caso</span>
-          <span id="live-timer" class="text-lg font-mono font-bold text-slate-700 dark:text-slate-200">0.0s</span>
+        <div>
+          <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Tempo do Caso</span>
+          <span id="live-timer" class="text-sm sm:text-base font-mono font-bold text-slate-700 dark:text-slate-200">0.0s</span>
         </div>
-        <button onclick="resetCurrentSession()" class="px-3 py-2 rounded-xl text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 dark:bg-rose-950/50 dark:text-rose-300 dark:border-rose-800 transition">
-          Reiniciar Tabuleiro
+        <button onclick="resetCurrentSession()" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-900 transition">
+          Reiniciar
         </button>
       </div>
     </section>
 
-    <!-- TAB 1: INTERACTIVE BOARD & DELIBERATION -->
-    <div id="tab-board" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    <!-- TAB 1: BOARD & DELIBERATION (RESPONSIVE STACK) -->
+    <div id="tab-board" class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
 
-      <!-- LEFT COLUMN: 2x3 PUZZLE BOARD (7 COLUMNS) -->
-      <div class="lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm">
-        <div class="flex items-center justify-between mb-4">
+      <!-- LEFT: 2x3 BOARD GRID (7 COLS LG) -->
+      <div class="order-2 lg:order-1 lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">01 / TABULEIRO</span>
-            <h2 class="text-lg font-extrabold">Monte seu Mapa de Escolhas (Grade 2x3)</h2>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">01 / TABULEIRO MODULAR</span>
+            <h2 class="text-base sm:text-lg font-extrabold">Monte seu Mapa de Escolhas</h2>
           </div>
-          <span class="text-xs text-slate-500 dark:text-slate-400">
-            Clique em qualquer espaço (1 a 6) para deliberar
+          <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:inline">
+            Toque em um caso para deliberar
           </span>
         </div>
 
-        <!-- 2x3 PUZZLE GRID -->
-        <div id="board-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 my-2">
-          <!-- Rendered dynamically via JS -->
+        <!-- 2x3 GRID: 1 COL MOBILE, 2 COLS SM, 3 COLS MD+ -->
+        <div id="board-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 my-2">
+          <!-- Gerado via JS -->
         </div>
 
-        <!-- STEP BY STEP FOOTER FROM PDF -->
-        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-          <div class="flex items-center gap-2.5 bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl">
-            <span class="w-6 h-6 rounded-full bg-slate-900 text-white dark:bg-sky-600 flex items-center justify-center font-bold shrink-0">1</span>
-            <span>Escolha uma alternativa (A, B ou C) no cartão do caso.</span>
+        <!-- REGRAS EM 3 PASSOS (RODAPÉ) -->
+        <div class="mt-4 pt-3.5 border-t border-slate-100 dark:border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] text-slate-600 dark:text-slate-400">
+          <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-slate-900 dark:bg-sky-600 text-white font-bold flex items-center justify-center shrink-0 text-[10px]">1</span>
+            <span>Escolha A, B ou C no cartão da situação inicial.</span>
           </div>
-          <div class="flex items-center gap-2.5 bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl">
-            <span class="w-6 h-6 rounded-full bg-slate-900 text-white dark:bg-sky-600 flex items-center justify-center font-bold shrink-0">2</span>
-            <span>Encaixe a peça A, B ou C correspondente no tabuleiro.</span>
+          <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-slate-900 dark:bg-sky-600 text-white font-bold flex items-center justify-center shrink-0 text-[10px]">2</span>
+            <span>Encaixe a peça correspondente no tabuleiro.</span>
           </div>
-          <div class="flex items-center gap-2.5 bg-slate-50 dark:bg-slate-800/60 p-2.5 rounded-xl">
-            <span class="w-6 h-6 rounded-full bg-slate-900 text-white dark:bg-sky-600 flex items-center justify-center font-bold shrink-0">3</span>
-            <span>Leia a Virada surpresa e mantenha ou substitua a peça.</span>
+          <div class="p-2 rounded-lg bg-slate-50 dark:bg-slate-800/60 flex items-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-slate-900 dark:bg-sky-600 text-white font-bold flex items-center justify-center shrink-0 text-[10px]">3</span>
+            <span>Leia a Virada e decida: mantém ou substitui?</span>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: ACTIVE CASE & TWIST STATION (5 COLUMNS) -->
-      <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm sticky top-20">
+      <!-- RIGHT: DELIBERATION PANEL (5 COLS LG, COM ROLAGEM SUAVE NO MOBILE) -->
+      <div id="deliberation-panel-anchor" class="order-1 lg:order-2 lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm lg:sticky lg:top-20">
         <div id="deliberation-station">
-          <!-- Rendered dynamically via JS -->
+          <!-- Gerado dinamicamente via JS -->
         </div>
       </div>
 
     </div>
 
-    <!-- TAB 2: PSYCHOMETRIC & COGNITIVE REPORT -->
-    <div id="tab-report" class="hidden space-y-6">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm print-card">
-        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+    <!-- TAB 2: PSYCHOMETRIC REPORT -->
+    <div id="tab-report" class="hidden space-y-5">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm print-card">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600">RELATÓRIO DE AVALIAÇÃO COGNITIVA</span>
-            <h2 class="text-2xl font-extrabold mt-0.5">Perfil de Tomada de Decisão e Flexibilidade Executiva</h2>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Disciplina: Processos Psicológicos Básicos: Motivação, Pensamento e Linguagem (ARA1060) • Prof. Me. Jair Nunes Rocha
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">LAUDO DE AVALIAÇÃO PSICOMÉTRICA</span>
+            <h2 class="text-xl sm:text-2xl font-extrabold mt-0.5">Perfil de Tomada de Decisão e Flexibilidade</h2>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+              Processos Psicológicos Básicos (ARA1060) • Prof. Jair Nunes Rocha • Faculdade Estácio de Juazeiro do Norte
             </p>
           </div>
           <div class="no-print flex flex-wrap items-center gap-2">
-            <button onclick="saveSessionToCohort()" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition">
-              + Salvar Voluntário no Banco do Piloto
+            <button onclick="saveSessionToCohort()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition">
+              + Salvar no Banco do Piloto
             </button>
-            <button onclick="exportSessionJSON()" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-slate-800 text-white hover:bg-slate-700 transition">
+            <button onclick="exportSessionJSON()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 text-white hover:bg-slate-700 transition">
               Exportar JSON
             </button>
-            <button onclick="window.print()" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-sky-600 text-white hover:bg-sky-700 transition">
-              Imprimir / Salvar PDF
+            <button onclick="window.print()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-sky-600 text-white hover:bg-sky-700 transition">
+              Imprimir / PDF
             </button>
           </div>
         </div>
 
-        <!-- KEY METRICS CARDS -->
-        <div id="report-metrics-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <!-- Populated by JS -->
+        <!-- METRICS TILES -->
+        <div id="report-metrics-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-5">
+          <!-- JS -->
         </div>
 
-        <!-- DETAILED CASE AUDIT TABLE -->
-        <div class="overflow-x-auto">
-          <h3 class="text-sm font-extrabold uppercase tracking-wider text-slate-500 mb-3">
-            Rastreamento Analítico das 6 Deliberações (1ª Rodada vs. 2ª Rodada / Virada)
-          </h3>
-          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+        <!-- AUDIT TABLE -->
+        <div class="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+          <table class="w-full text-left border-collapse text-xs">
             <thead>
-              <tr class="border-b-2 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400">
-                <th class="py-2.5 px-3">Caso / Dilema</th>
-                <th class="py-2.5 px-3">1ª Escolha (Incerteza)</th>
-                <th class="py-2.5 px-3">Decisão pós Virada</th>
-                <th class="py-2.5 px-3">Status Executivo</th>
-                <th class="py-2.5 px-3">Latência (R1 / R2)</th>
-                <th class="py-2.5 px-3">Justificativa Semântica Registrada</th>
+              <tr class="border-b-2 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px]">
+                <th class="py-2.5 px-2">Caso</th>
+                <th class="py-2.5 px-2">1ª Escolha</th>
+                <th class="py-2.5 px-2">Escolha Final</th>
+                <th class="py-2.5 px-2">Status</th>
+                <th class="py-2.5 px-2">Latência (R1/R2)</th>
+                <th class="py-2.5 px-2">Justificativa Registrada</th>
               </tr>
             </thead>
-            <tbody id="report-audit-tbody" class="divide-y divide-slate-200 dark:divide-slate-800">
-              <!-- Populated by JS -->
+            <tbody id="report-audit-tbody" class="divide-y divide-slate-100 dark:divide-slate-800">
+              <!-- JS -->
             </tbody>
           </table>
         </div>
 
-        <!-- THEORETICAL INTERPRETATION BOX -->
-        <div id="report-theoretical-synthesis" class="mt-6 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm leading-relaxed">
-          <!-- Populated by JS -->
+        <!-- SYNTHESIS BOX -->
+        <div id="report-theoretical-synthesis" class="mt-5 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-xs sm:text-sm leading-relaxed">
+          <!-- JS -->
         </div>
       </div>
 
-      <!-- PILOT COHORT DATABASE SECTION -->
-      <div class="no-print bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+      <!-- COHORT DATABASE -->
+      <div class="no-print bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
-            <h3 class="text-lg font-extrabold">Banco Consolidado do Teste Piloto (Amostra Empírica do Grupo)</h3>
+            <h3 class="text-base font-extrabold">Banco Consolidado da Amostra Piloto (Estácio)</h3>
             <p class="text-xs text-slate-500 dark:text-slate-400">
-              Armazena localmente todas as rodadas aplicadas pelas integrantes para compor os resultados da apresentação de 06/11/2026.
+              Registros locais coletados pelas integrantes do grupo para apresentação em sala de aula no dia 06/11/2026.
             </p>
           </div>
           <div class="flex items-center gap-2">
             <button onclick="exportCohortCSV()" class="px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Baixar Planilha CSV
+              Baixar CSV
             </button>
             <button onclick="clearCohortDatabase()" class="px-3 py-1.5 rounded-lg text-xs font-bold text-rose-600 border border-rose-200 hover:bg-rose-50 dark:border-rose-900 transition">
-              Limpar Banco Local
+              Limpar Banco
             </button>
           </div>
         </div>
         <div id="cohort-table-container" class="overflow-x-auto text-xs">
-          <!-- Populated by JS -->
+          <!-- JS -->
         </div>
       </div>
     </div>
 
-    <!-- TAB 3: EMBEDDED MANUAL & RULES -->
-    <div id="tab-manual" class="hidden space-y-6">
-      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4 mb-6">
+    <!-- TAB 3: EMBEDDED MANUAL -->
+    <div id="tab-manual" class="hidden space-y-5">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
           <div>
-            <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600">DOCUMENTAÇÃO OFICIAL (PARTE ESCRITA • 1,0 PONTO)</span>
-            <h2 class="text-2xl font-extrabold mt-0.5">Manual Teórico e Regulamento Passo a Passo</h2>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">ENTREGÁVEL ESCRITO (1,0 PONTO AV)</span>
+            <h2 class="text-xl sm:text-2xl font-extrabold mt-0.5">Manual Teórico e Passo a Passo de Uso</h2>
           </div>
-          <div class="flex items-center gap-2">
-            <a href="MANUAL_ACADEMICO_2_PAGINAS.html" target="_blank" class="px-4 py-2 rounded-xl text-xs font-bold bg-sky-600 text-white hover:bg-sky-700 transition">
-              Abrir Versão A4 de Impressão (2 Páginas Exatas) ↗
+          <div>
+            <a href="MANUAL_ACADEMICO_2_PAGINAS.html" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-sky-600 text-white hover:bg-sky-700 transition">
+              <span>Abrir Versão Impressa (2 Páginas A4)</span> ↗
             </a>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm leading-relaxed">
-          <div class="space-y-4">
-            <h3 class="text-base font-extrabold text-sky-700 dark:text-sky-400 uppercase tracking-wide">
-              1. Fundamentação dos Processos Psicológicos Estimulados
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm leading-relaxed">
+          <div class="space-y-3">
+            <h3 class="font-extrabold text-sky-700 dark:text-sky-400 uppercase text-xs tracking-wider">
+              1. Fundamentos Psicológicos Estimulados
             </h3>
             <p>
-              O instrumento <strong>CardsPsi (Quebra Cabeça das Escolhas)</strong> foi desenvolvido para estimular e avaliar empiricamente os processos psicológicos básicos de <strong>pensamento, tomada de decisão, resolução de problemas, linguagem argumentativa e funções executivas</strong>.
+              O <strong>CardsPsi</strong> foi concebido para investigar a intersecção entre o <strong>pensamento dedutivo/indutivo</strong>, a <strong>tomada de decisão sob incerteza</strong>, as <strong>heurísticas de julgamento</strong> e as <strong>funções executivas</strong> mediadas pelo lobo pré frontal.
             </p>
             <p>
-              <strong>Heurísticas vs. Racionalidade Limitada (Simon; Kahneman & Tversky):</strong> Na primeira rodada de cada caso, o sujeito decide sob incerteza informacional e pressão temporal. Avalia se a cognição recorre a atalhos intuitivos rápidos (heurísticas de disponibilidade, evitação de conflito ou ganho imediato, frequentemente representados nas escolhas de tipo A), a algoritmos normativos conservadores (escolhas de tipo B) ou à busca deliberada de redução de incerteza e cooperação (escolhas de tipo C).
+              Ao decidir sob limitação de tempo e dados incompletos (Fase 1), o sujeito mobiliza a <em>racionalidade limitada</em> (Herbert Simon) e atalhos cognitivos (Kahneman e Tversky). Ao receber a <em>Carta de Virada</em> (Fase 2), o córtex pré frontal é recrutado para modular o <em>controle inibitório</em> e a <em>flexibilidade cognitiva</em>, decidindo conscientemente se sustenta a ancoragem inicial ou se altera a rota comportamental.
             </p>
             <p>
-              <strong>Córtex Pré Frontal e Tríade Executiva:</strong> A segunda rodada introduz as <em>Cartas de Virada</em> (informação surpresa). Esse mecanismo exige <strong>memória de trabalho</strong> para integrar o novo dado ao cenário anterior, <strong>controle inibitório</strong> para frear o viés de confirmação/ancoragem e <strong>flexibilidade cognitiva</strong> para manter ou substituir a peça com base em justificativa racional consciente.
-            </p>
-            <p>
-              <strong>Desenvolvimento Moral e Deontologia (Piaget, Kohlberg e Kant):</strong> Os seis dilemas tensionam o trânsito entre a heteronomia/interesse imediato (imperativos hipotéticos) e a autonomia moral cooperativa pautada na dignidade humana e na justiça distributiva (imperativo categórico e juízo pós convencional).
+              A linguagem é estimulada como função reguladora e simbólica superior (Vygotsky): toda decisão deve ser acompanhada de justificação verbal ou textual coerente.
             </p>
           </div>
 
-          <div class="space-y-4">
-            <h3 class="text-base font-extrabold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide">
-              2. Passo a Passo de Uso e Regras Oficiais (GitHub Wiki)
+          <div class="space-y-3">
+            <h3 class="font-extrabold text-emerald-700 dark:text-emerald-400 uppercase text-xs tracking-wider">
+              2. Regras Oficiais e Sequência de Uso
             </h3>
-            <ol class="list-decimal list-inside space-y-2.5">
-              <li>
-                <strong>Preparação do Tabuleiro:</strong> O participante inicia com o tabuleiro de 6 espaços vazios (Casos 01 a 06). Cada caso possui três peças de mesmo encaixe geométrico: <strong>A</strong>, <strong>B</strong> e <strong>C</strong>.
-              </li>
-              <li>
-                <strong>Rodada 1 (Escolha sob Incerteza):</strong> Lê se apenas o cartão de Situação do Caso. As Cartas de Virada permanecem ocultas. O participante seleciona a alternativa escolhida (A, B ou C), encaixa a peça correspondente no espaço do caso e verbaliza brevemente o motivo.
-              </li>
-              <li>
-                <strong>Rodada 2 (Revelação da Carta de Virada):</strong> Após o encaixe e justificativa da primeira escolha, revela se a Carta de Informação Surpresa (Virada) daquele caso.
-              </li>
-              <li>
-                <strong>Deliberação Executiva (Mantém ou Muda? Por quê?):</strong> Diante do fato novo, o participante decide se <strong>mantém</strong> a peça original no tabuleiro ou se a <strong>substitui</strong> por outra peça (A, B ou C), fundamentando por meio da linguagem o raciocínio adotado.
-              </li>
-              <li>
-                <strong>Fechamento Psicométrico:</strong> Concluídos os 6 espaços, analisa se o mapa final de escolhas, a latência de resposta em segundos e o Índice de Flexibilidade Cognitiva.
-              </li>
+            <ol class="list-decimal list-inside space-y-2">
+              <li><strong>Tabuleiro 2x3:</strong> Composto por 6 espaços (Casos 01 a 06). Cada caso possui 3 opções geométricas (A, B e C), mas apenas uma peça ocupará cada espaço.</li>
+              <li><strong>Fase 1 (Situação):</strong> Lê se o caso inicial. O participante seleciona uma alternativa e encaixa a peça no tabuleiro.</li>
+              <li><strong>Fase 2 (A Virada):</strong> Revela se a informação surpresa oculta. O participante responde: <em>"Mantém ou muda? Por quê?"</em>.</li>
+              <li><strong>Consolidação:</strong> O sistema ou aplicador valida se a decisão foi mantida ou alterada e registra a justificativa semântica.</li>
+              <li><strong>Finalização:</strong> Ao preencher os 6 casos, gera se o laudo psicométrico com o Índice de Flexibilidade Cognitiva ($IFC$).</li>
             </ol>
           </div>
         </div>
@@ -364,66 +373,59 @@
     </div>
 
     <!-- TAB 4: SCHEDULE & TEAM -->
-    <div id="tab-schedule" class="hidden space-y-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-sky-600">ORGANIZAÇÃO DO GRUPO</span>
-          <h2 class="text-xl font-extrabold mt-1 mb-4">Divisão de Responsabilidades (5 Integrantes)</h2>
-          <ul class="space-y-3 text-sm">
-            <li class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="block text-sky-700 dark:text-sky-400">1. Pedro Luís Tenório Rocha de Almeida</strong>
-              <span>Desenvolvimento do Software (CardsPsi), Função 1 (Fundamentação Teórica do Manual de 2 páginas), Função 3 (Manual de Regras na Wiki) e Função 5 (Roteiro e Condução da Apresentação Oral).</span>
+    <div id="tab-schedule" class="hidden space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
+          <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">DIVISÃO DE PAPÉIS</span>
+          <h2 class="text-lg sm:text-xl font-extrabold mt-0.5 mb-3">Integrantes do Grupo (5 Membros)</h2>
+          <ul class="space-y-2.5 text-xs sm:text-sm">
+            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-sky-700 dark:text-sky-400 block font-bold">1. Pedro Luís Tenório Rocha de Almeida</strong>
+              <span>Arquiteto do Software CardsPsi, Função 1 (Fundamentação Teórica de 2 páginas), Função 3 (Regras e Mecânica Oficial) e Função 5 (Roteiro e Apresentação Oral em Sala).</span>
             </li>
-            <li class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="block text-emerald-700 dark:text-emerald-400">2. Maria Vitória Santos Braz</strong>
-              <span>Função 2 (Design e confecção física das peças e tabuleiro impresso em gramatura 120 a 180 g/m²) e coautoria na validação prática.</span>
+            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-emerald-700 dark:text-emerald-400 block font-bold">2. Maria Vitória Santos Braz</strong>
+              <span>Função 2 (Design e confecção física do tabuleiro e cartões em papel couché/cartolina 120-180 g/m²).</span>
             </li>
-            <li class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="block text-emerald-700 dark:text-emerald-400">3. Rayanne dos Santos Santana</strong>
-              <span>Função 2 (Organização material dos cartões de dilemas e cartas de virada) e suporte na condução em sala.</span>
+            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-emerald-700 dark:text-emerald-400 block font-bold">3. Rayanne dos Santos Santana</strong>
+              <span>Função 2 (Montagem material das 18 peças de encaixe e organização dos cartões de dilemas).</span>
             </li>
-            <li class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="block text-amber-700 dark:text-amber-400">4. Maria Natalya Silva Leitão</strong>
-              <span>Função 4 (Aplicação prática do teste piloto com voluntários e registro das reações e tempos de decisão).</span>
+            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-amber-700 dark:text-amber-400 block font-bold">4. Maria Natalya Silva Leitão</strong>
+              <span>Função 4 (Condução do teste piloto prático com voluntários e cronometragem das reações).</span>
             </li>
-            <li class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="block text-amber-700 dark:text-amber-400">5. Veridiana Mota Veras</strong>
-              <span>Função 4 (Sistematização dos dados do piloto e apoio visual na apresentação do seminário).</span>
+            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <strong class="text-amber-700 dark:text-amber-400 block font-bold">5. Veridiana Mota Veras</strong>
+              <span>Função 4 (Compilação dos dados do piloto e suporte na diagramação dos slides do seminário).</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-          <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600">VALIDAÇÃO DE CALENDÁRIO 2026.2</span>
-          <h2 class="text-xl font-extrabold mt-1 mb-4">Cronograma Oficial da Disciplina (ARA1060)</h2>
-          <div class="space-y-3 text-sm">
-            <div class="flex items-start justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-sky-600">
-              <div>
-                <strong class="block">28/10/2026 a 02/11/2026</strong>
-                <span class="text-xs text-slate-500 dark:text-slate-400">Deploy do Software no GitHub, impressão do kit físico e coleta do Teste Piloto</span>
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
+          <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-600">CRONOGRAMA ACADÊMICO</span>
+          <h2 class="text-lg sm:text-xl font-extrabold mt-0.5 mb-3">Calendário da Disciplina (ARA1060 • 2026.2)</h2>
+          <div class="space-y-2.5 text-xs sm:text-sm">
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-sky-600">
+              <div class="flex items-center justify-between">
+                <strong>28/10 a 04/11/2026</strong>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">Em curso</span>
               </div>
-              <span class="px-2 py-0.5 rounded text-xs font-bold bg-sky-100 text-sky-800">Em Execução</span>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Finalização do software, impressão do kit físico e aplicação do teste piloto.</p>
             </div>
-            <div class="flex items-start justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-emerald-600">
-              <div>
-                <strong class="block">06/11/2026 e 13/11/2026 (Sexta feira, 08h20)</strong>
-                <span class="text-xs text-slate-500 dark:text-slate-400">Apresentação Oficial das Ferramentas Práticas em Sala (Bloco G, Sala 11 • Vale 3,0 pts)</span>
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-emerald-600">
+              <div class="flex items-center justify-between">
+                <strong>06/11 e 13/11/2026 (08h20)</strong>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">3,0 Pontos AV</span>
               </div>
-              <span class="px-2 py-0.5 rounded text-xs font-bold bg-emerald-100 text-emerald-800">Meta Principal</span>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Apresentação dos instrumentos práticos e entrega do manual escrito ao Prof. Jair.</p>
             </div>
-            <div class="flex items-start justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-amber-600">
-              <div>
-                <strong class="block">20/11/2026</strong>
-                <span class="text-xs text-slate-500 dark:text-slate-400">Realização do Simulado II da Disciplina ARA1060</span>
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-purple-600">
+              <div class="flex items-center justify-between">
+                <strong>27/11/2026</strong>
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-100 text-purple-800">Prova AV</span>
               </div>
-              <span class="px-2 py-0.5 rounded text-xs font-bold bg-amber-100 text-amber-800">Revisão</span>
-            </div>
-            <div class="flex items-start justify-between p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-purple-600">
-              <div>
-                <strong class="block">27/11/2026</strong>
-                <span class="text-xs text-slate-500 dark:text-slate-400">Avaliação Oficial AV (Prova Individual PNI 7,0 pts + Trabalho Prático 3,0 pts)</span>
-              </div>
-              <span class="px-2 py-0.5 rounded text-xs font-bold bg-purple-100 text-purple-800">Prova AV</span>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Avaliação individual oficial (7,0 pontos PNI + 3,0 pontos do projeto = 10,0).</p>
             </div>
           </div>
         </div>
@@ -433,240 +435,112 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="no-print border-t border-slate-200 dark:border-slate-800 py-4 mt-8 text-center text-xs text-slate-500 dark:text-slate-400">
-    <div class="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between gap-2">
-      <span><strong>CardsPsi</strong> • Quebra Cabeça das Escolhas • Estácio IDOMED (2026.2)</span>
-      <span>Licença Atual: Uso Acadêmico Restrito (Transição Programada para Apache 2.0)</span>
+  <footer class="no-print border-t border-slate-200 dark:border-slate-800 py-3 mt-auto text-center text-xs text-slate-500 dark:text-slate-400 px-3">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5">
+      <span><strong>CardsPsi</strong> • Quebra Cabeça das Escolhas • Faculdade Estácio de Juazeiro do Norte (2026.2)</span>
+      <span>Uso Acadêmico Restrito • Futura Licença Apache 2.0</span>
     </div>
   </footer>
 
-  <!-- COMPLETE APPLICATION LOGIC -->
+  <!-- SCRIPT LOGIC -->
   <script>
-    // =========================================================================
-    // 1. BANCO DE DADOS INTEGRAL DOS 6 CASOS E 6 VIRADAS (FIEL AO PDF ORIGINAL)
-    // =========================================================================
     const CASES_DATA = [
       {
         id: 1,
         code: "CASO 01",
         title: "Um nome no projeto",
         colorHex: "#0f766e",
-        colorClass: "bg-teal-700",
-        borderClass: "border-teal-700",
         situation: "Um colega participou pouco do trabalho, mas pede para ter seu nome na entrega. O grupo está dividido e o prazo termina hoje.",
         options: {
-          A: {
-            letter: "A",
-            shortLabel: "Incluir sem conversar",
-            fullText: "Incluir o nome para evitar conflito.",
-            cognitiveStyle: "Heurística de Evitação de Conflito",
-            moralStage: "Acomodação Interpessoal Imediata"
-          },
-          B: {
-            letter: "B",
-            shortLabel: "Excluir sem conversar",
-            fullText: "Não incluir o nome, seguindo a contribuição observada.",
-            cognitiveStyle: "Algoritmo de Regra Estrita",
-            moralStage: "Justiça Retributiva Unilateral"
-          },
-          C: {
-            letter: "C",
-            shortLabel: "Negociar uma saída",
-            fullText: "Conversar e negociar uma tarefa final possível.",
-            cognitiveStyle: "Resolução Dialógica de Problemas",
-            moralStage: "Autonomia Cooperativa (Piaget/Kohlberg)"
-          }
+          A: { letter: "A", shortLabel: "Incluir sem conversar", fullText: "Incluir o nome para evitar conflito.", style: "Heurística de Evitação de Conflito" },
+          B: { letter: "B", shortLabel: "Excluir sem conversar", fullText: "Não incluir o nome, seguindo a contribuição observada.", style: "Algoritmo de Regra Rígida" },
+          C: { letter: "C", shortLabel: "Negociar uma saída", fullText: "Conversar e negociar uma tarefa final possível.", style: "Resolução Dialógica Cooperativa" }
         },
         twistCode: "VIRADA 01",
         twistText: "O colega passou vários dias sem acesso à internet porque precisou cuidar de um familiar. Ninguém sabia disso, e ainda restam 40 minutos até a entrega.",
-        theoryNote: "Avalia o erro fundamental de atribuição (julgar o comportamento alheio sem conhecer variáveis contextuais) e a capacidade executiva de reavaliar um juízo punitivo ou passivo diante de uma contingência humanitária real."
+        theoryNote: "Avalia o erro fundamental de atribuição e a capacidade do córtex pré-frontal de inibir um juízo punitivo inicial perante contingência humanitária."
       },
       {
         id: 2,
         code: "CASO 02",
         title: "O print que circulou",
         colorHex: "#1e40af",
-        colorClass: "bg-blue-800",
-        borderClass: "border-blue-800",
         situation: "Uma mensagem no grupo afirma que um funcionário da escola agiu de forma injusta. Há um print, mas ninguém sabe a origem completa.",
         options: {
-          A: {
-            letter: "A",
-            shortLabel: "Repassar com ressalva",
-            fullText: "Repassar o print com um aviso de cautela.",
-            cognitiveStyle: "Heurística de Disponibilidade / Impulso",
-            moralStage: "Difusão de Responsabilidade"
-          },
-          B: {
-            letter: "B",
-            shortLabel: "Checar as fontes",
-            fullText: "Procurar fontes e contexto antes de compartilhar.",
-            cognitiveStyle: "Processamento Analítico Verificador",
-            moralStage: "Prudência Epistêmica e Dever de Verdade"
-          },
-          C: {
-            letter: "C",
-            shortLabel: "Não postar; conversar",
-            fullText: "Não compartilhar e conversar diretamente com alguém envolvido.",
-            cognitiveStyle: "Controle Inibitório e Comunicação Direta",
-            moralStage: "Preservação da Dignidade (Kant)"
-          }
+          A: { letter: "A", shortLabel: "Repassar com ressalva", fullText: "Repassar o print com um aviso de cautela.", style: "Heurística de Disponibilidade / Difusão" },
+          B: { letter: "B", shortLabel: "Checar as fontes", fullText: "Procurar fontes e contexto antes de compartilhar.", style: "Verificação Analítica Prudente" },
+          C: { letter: "C", shortLabel: "Não postar; conversar", fullText: "Não compartilhar e conversar diretamente com alguém envolvido.", style: "Controle Inibitório e Preservação Moral" }
         },
         twistCode: "VIRADA 02",
         twistText: "Surge um vídeo que parece contradizer parte do print. Porém, ele também está cortado e não mostra o início do episódio.",
-        theoryNote: "Testa a resistência ao viés de confirmação e o controle inibitório frontal perante fragmentos informacionais ambíguos em redes digitais."
+        theoryNote: "Testa a resistência ao viés de confirmação e a tolerância à ambiguidade perante fragmentos digitais truncados."
       },
       {
         id: 3,
         code: "CASO 03",
         title: "Qual caminho escolher?",
         colorHex: "#b45309",
-        colorClass: "bg-amber-700",
-        borderClass: "border-amber-700",
         situation: "Você precisa chegar a um encontro em 20 minutos. O trajeto habitual leva 18 min; um atalho costuma levar 12 min, mas há relatos de obras.",
         options: {
-          A: {
-            letter: "A",
-            shortLabel: "Usar o atalho",
-            fullText: "Usar o atalho por ser geralmente mais rápido.",
-            cognitiveStyle: "Heurística de Ganho Rápido (Propensão a Risco)",
-            moralStage: "Pragmatismo de Eficiência"
-          },
-          B: {
-            letter: "B",
-            shortLabel: "Seguir rota habitual",
-            fullText: "Seguir o trajeto habitual, com menor incerteza.",
-            cognitiveStyle: "Algoritmo Conservador (Aversão à Ambiguidade)",
-            moralStage: "Previsibilidade Operacional"
-          },
-          C: {
-            letter: "C",
-            shortLabel: "Buscar mais dados",
-            fullText: "Buscar uma informação atual e então decidir.",
-            cognitiveStyle: "Coleta Executiva de Dados",
-            moralStage: "Deliberação Informada"
-          }
+          A: { letter: "A", shortLabel: "Usar o atalho", fullText: "Usar o atalho por ser geralmente mais rápido.", style: "Heurística de Risco / Ganho Rápido" },
+          B: { letter: "B", shortLabel: "Seguir rota habitual", fullText: "Seguir o trajeto habitual, com menor incerteza.", style: "Aversão à Perda / Previsibilidade" },
+          C: { letter: "C", shortLabel: "Buscar mais dados", fullText: "Buscar uma informação atual e então decidir.", style: "Deliberação Racional Coletora" }
         },
         twistCode: "VIRADA 03",
         twistText: "O aviso de obras é de ontem. O aplicativo está desatualizado e você só tem dois minutos para decidir antes de sair.",
-        theoryNote: "Demonstra o conceito de Racionalidade Limitada (Herbert Simon): quando o tempo se esgota (2 minutos) e a informação é imperfeita, o sujeito precisa escolher um critério satisfatório sob pressão."
+        theoryNote: "Demonstra o princípio da Racionalidade Limitada (Simon): quando o tempo se esgota e os dados são imperfeitos, a mente adota critérios satisfatórios."
       },
       {
         id: 4,
         code: "CASO 04",
         title: "A última vaga",
         colorHex: "#15803d",
-        colorClass: "bg-green-700",
-        borderClass: "border-green-700",
         situation: "Uma oficina gratuita tem apenas uma vaga. Três pessoas precisam dela: uma chegou primeiro, outra tem maior necessidade e outra tem mais experiência.",
         options: {
-          A: {
-            letter: "A",
-            shortLabel: "Priorizar quem chegou",
-            fullText: "Dar a vaga a quem chegou primeiro.",
-            cognitiveStyle: "Heurística Procedimental de Fila",
-            moralStage: "Igualdade Formal Cronológica"
-          },
-          B: {
-            letter: "B",
-            shortLabel: "Priorizar necessidade",
-            fullText: "Priorizar quem demonstra maior necessidade.",
-            cognitiveStyle: "Julgamento Alocativo Compensatório",
-            moralStage: "Equidade Substantiva"
-          },
-          C: {
-            letter: "C",
-            shortLabel: "Definir critérios juntos",
-            fullText: "Discutir critérios públicos e decidir em conjunto.",
-            cognitiveStyle: "Deliberação Coletiva Transparente",
-            moralStage: "Contrato Social Pós Convencional"
-          }
+          A: { letter: "A", shortLabel: "Priorizar quem chegou", fullText: "Dar a vaga a quem chegou primeiro.", style: "Igualitarismo Cronológico Simples" },
+          B: { letter: "B", shortLabel: "Priorizar necessidade", fullText: "Priorizar quem demonstra maior necessidade.", style: "Equidade Substantiva Compensatória" },
+          C: { letter: "C", shortLabel: "Definir critérios juntos", fullText: "Discutir critérios públicos e decidir em conjunto.", style: "Pacto Social Pós Convencional" }
         },
         twistCode: "VIRADA 04",
         twistText: "A pessoa que chegou primeiro já perdeu outras chances; a que tem maior necessidade não consegue pagar outra oficina.",
-        theoryNote: "Confronta três matrizes de justiça distributiva (ordem cronológica, vulnerabilidade socioeconômica e deliberação pública) sob escassez de recursos."
+        theoryNote: "Tensiona concepções concorrentes de justiça distributiva diante da escassez material de vagas."
       },
       {
         id: 5,
         code: "CASO 05",
         title: "Uma regra e uma exceção",
         colorHex: "#6d28d9",
-        colorClass: "bg-purple-700",
-        borderClass: "border-purple-700",
         situation: "A biblioteca proíbe retirar um material raro. Uma estudante pede levá lo para casa porque não pode permanecer no local no horário disponível.",
         options: {
-          A: {
-            letter: "A",
-            shortLabel: "Cumprir a regra",
-            fullText: "Aplicar a regra sem exceção.",
-            cognitiveStyle: "Processamento Normativo Estrito",
-            moralStage: "Moral Convencional de Preservação da Ordem"
-          },
-          B: {
-            letter: "B",
-            shortLabel: "Fazer exceção",
-            fullText: "Permitir discretamente a retirada.",
-            cognitiveStyle: "Atalho Particularista Informal",
-            moralStage: "Benevolência Assimétrica (Risco Coletivo)"
-          },
-          C: {
-            letter: "C",
-            shortLabel: "Buscar um acordo",
-            fullText: "Buscar uma solução autorizada que respeite a necessidade.",
-            cognitiveStyle: "Inteligência Prática e Criativa (Sternberg)",
-            moralStage: "Síntese Ética Institucional"
-          }
+          A: { letter: "A", shortLabel: "Cumprir a regra", fullText: "Aplicar a regra sem exceção.", style: "Preservação Normativa Deontológica" },
+          B: { letter: "B", shortLabel: "Fazer exceção", fullText: "Permitir discretamente a retirada.", style: "Atalho Particularista / Risco Sistêmico" },
+          C: { letter: "C", shortLabel: "Buscar um acordo", fullText: "Buscar uma solução autorizada que respeite a necessidade.", style: "Inteligência Criativa Institucional" }
         },
         twistCode: "VIRADA 05",
         twistText: "A equipe informa que outras pessoas também dependem desse material. Existe uma opção de consulta digital que ainda não foi oferecida.",
-        theoryNote: "Ilustra o teste de universalização kantiano: abrir uma exceção secreta (B) prejudica os demais usuários que dependem do acervo, enquanto a solução criativa autorizada (C) preserva a regra pública e atende à necessidade."
+        theoryNote: "Ilustra o teste kantiano da universalização: exceções sigilosas fragmentam a regra coletiva, enquanto a mediação dialógica constrói equidade pública."
       },
       {
         id: 6,
         code: "CASO 06",
         title: "Prêmio do grupo",
         colorHex: "#be123c",
-        colorClass: "bg-rose-700",
-        borderClass: "border-rose-700",
         situation: "Uma equipe ganhou um pequeno prêmio. A liderança trabalhou mais horas, mas outras pessoas deram ideias decisivas. Não há divisão combinada.",
         options: {
-          A: {
-            letter: "A",
-            shortLabel: "Receber pela liderança",
-            fullText: "Entregar a maior parte a quem liderou.",
-            cognitiveStyle: "Heurística de Esforço Quantitativo",
-            moralStage: "Meritocracia Individualista"
-          },
-          B: {
-            letter: "B",
-            shortLabel: "Dividir igualmente",
-            fullText: "Dividir igualmente entre todos.",
-            cognitiveStyle: "Heurística de Paridade Direta",
-            moralStage: "Igualitarismo Simétrico"
-          },
-          C: {
-            letter: "C",
-            shortLabel: "Discutir a divisão",
-            fullText: "Combinar uma divisão com critérios de contribuição e necessidade.",
-            cognitiveStyle: "Ponderação Multicritério",
-            moralStage: "Justiça Cooperativa Deliberada"
-          }
+          A: { letter: "A", shortLabel: "Receber pela liderança", fullText: "Entregar a maior parte a quem liderou.", style: "Meritocracia Quantitativa de Horas" },
+          B: { letter: "B", shortLabel: "Dividir igualmente", fullText: "Dividir igualmente entre todos.", style: "Isonomia Paritária Simples" },
+          C: { letter: "C", shortLabel: "Discutir a divisão", fullText: "Combinar uma divisão com critérios de contribuição e necessidade.", style: "Justiça Cooperativa e Deliberada" }
         },
         twistCode: "VIRADA 06",
         twistText: "Uma integrante que participou menos realizou justamente a ação que evitou a falha do projeto no último dia.",
-        theoryNote: "Avalia a revisão de vieses de visibilidade (horas brutas vs. impacto qualitativo decisivo) na atribuição de mérito em grupos de trabalho."
+        theoryNote: "Avalia a revisão do viés da visibilidade imediata diante da percepção do impacto qualitativo real em tarefas coletivas."
       }
     ];
 
-    // =========================================================================
-    // 2. ESTADO DA SESSÃO E TELEMETRIA
-    // =========================================================================
     let activeCaseId = 1;
     let showTheoryLens = true;
     let caseTimerStart = performance.now();
     let timerInterval = null;
-
-    // Estrutura de resposta para cada caso (1 a 6)
     let sessionState = {};
 
     function initEmptySessionState() {
@@ -674,10 +548,10 @@
       CASES_DATA.forEach(c => {
         sessionState[c.id] = {
           caseId: c.id,
-          stage: "INITIAL", // INITIAL -> TWIST -> COMPLETED
-          initialChoice: null, // 'A' | 'B' | 'C'
-          finalChoice: null,   // 'A' | 'B' | 'C'
-          actionTaken: null,   // 'MANTEVE' | 'MUDOU'
+          stage: "INITIAL",
+          initialChoice: null,
+          finalChoice: null,
+          actionTaken: null,
           timeR1Seconds: 0,
           timeR2Seconds: 0,
           justification: ""
@@ -685,47 +559,6 @@
       });
     }
 
-    // =========================================================================
-    // 3. SINTETIZADOR DE ÁUDIO FEEDBACK (WEB AUDIO API)
-    // =========================================================================
-    function playPieceSound(type = 'snap') {
-      try {
-        const ctx = new (window.AudioContext || window.webkitAudioContext)();
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-
-        if (type === 'snap') {
-          osc.frequency.setValueAtTime(340, ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(580, ctx.currentTime + 0.08);
-          gain.gain.setValueAtTime(0.08, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
-          osc.start();
-          osc.stop(ctx.currentTime + 0.09);
-        } else if (type === 'twist') {
-          osc.frequency.setValueAtTime(440, ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(310, ctx.currentTime + 0.14);
-          gain.gain.setValueAtTime(0.09, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
-          osc.start();
-          osc.stop(ctx.currentTime + 0.15);
-        } else if (type === 'lock') {
-          osc.frequency.setValueAtTime(520, ctx.currentTime);
-          osc.frequency.exponentialRampToValueAtTime(780, ctx.currentTime + 0.12);
-          gain.gain.setValueAtTime(0.09, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.13);
-          osc.start();
-          osc.stop(ctx.currentTime + 0.13);
-        }
-      } catch (e) {
-        // Silencioso caso bloqueado pelo navegador
-      }
-    }
-
-    // =========================================================================
-    // 4. RENDERIZAÇÃO DO TABULEIRO 2x3 (COM CONTORNOS DE ENCAIXE SVG)
-    // =========================================================================
     function renderBoardGrid() {
       const grid = document.getElementById('board-grid');
       let completedCount = 0;
@@ -738,56 +571,50 @@
 
         if (st.stage === "COMPLETED") completedCount++;
 
-        let statusBadge = `<span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Vazio</span>`;
+        let badge = `<span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Vazio</span>`;
         if (st.stage === "TWIST") {
-          statusBadge = `<span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200 animate-pulse">Virada Aberta</span>`;
+          badge = `<span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-200 animate-pulse">Virada</span>`;
         } else if (st.stage === "COMPLETED") {
-          const badgeColor = st.actionTaken === "MUDOU"
-            ? "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-200"
-            : "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200";
-          statusBadge = `<span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded ${badgeColor}">${st.actionTaken} (${st.initialChoice}→${st.finalChoice})</span>`;
+          const color = st.actionTaken === "MUDOU" ? "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-200" : "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200";
+          badge = `<span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded ${color}">${st.actionTaken} (${st.initialChoice}→${st.finalChoice})</span>`;
         }
 
         if (!chosenObj) {
           return `
-            <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot cursor-pointer p-4 flex flex-col justify-between items-center text-center bg-slate-50/70 dark:bg-slate-800/30 hover:bg-slate-100 dark:hover:bg-slate-800/60 ${isCurrent ? 'active-slot' : ''}">
+            <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot cursor-pointer p-3 flex flex-col justify-between items-center text-center bg-slate-50/70 dark:bg-slate-800/30 hover:bg-slate-100 dark:hover:bg-slate-800/60 ${isCurrent ? 'active-slot' : ''}">
               <div class="w-full flex items-center justify-between">
-                <span class="text-[11px] font-extrabold text-slate-400">${c.code}</span>
-                ${statusBadge}
+                <span class="text-[10px] font-extrabold text-slate-400">${c.code}</span>
+                ${badge}
               </div>
-              <div class="my-auto py-3">
-                <div class="w-12 h-12 rounded-full bg-slate-200/80 dark:bg-slate-700/70 text-slate-600 dark:text-slate-300 font-extrabold text-lg flex items-center justify-center mx-auto mb-2">
+              <div class="my-auto py-2">
+                <div class="w-10 h-10 rounded-full bg-slate-200/80 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-extrabold text-base flex items-center justify-center mx-auto mb-1.5">
                   ${c.id}
                 </div>
-                <p class="text-xs font-bold text-slate-700 dark:text-slate-300">${c.title}</p>
-                <p class="text-[11px] text-slate-400 uppercase tracking-wider mt-1">ESCOLHA A / B / C</p>
+                <p class="text-xs font-bold text-slate-800 dark:text-slate-200">${c.title}</p>
+                <p class="text-[10px] text-slate-400 uppercase mt-0.5">ESCOLHA A / B / C</p>
               </div>
-              <div class="text-[10px] text-sky-600 dark:text-sky-400 font-semibold">
-                Clique para abrir o cartão
-              </div>
+              <span class="text-[10px] text-sky-600 dark:text-sky-400 font-semibold">Tocar para abrir</span>
             </div>
           `;
         }
 
         return `
-          <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot filled-slot animate-piece cursor-pointer p-3.5 flex flex-col justify-between bg-white dark:bg-slate-800 shadow-sm ${isCurrent ? 'active-slot' : ''}">
+          <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot filled-slot animate-piece cursor-pointer p-3 flex flex-col justify-between bg-white dark:bg-slate-800 shadow-sm ${isCurrent ? 'active-slot' : ''}">
             <div>
-              <div class="h-2.5 w-full rounded-full mb-2.5" style="background-color: ${c.colorHex}"></div>
+              <div class="h-2 w-full rounded-full mb-2" style="background-color: ${c.colorHex}"></div>
               <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold text-slate-500 dark:text-slate-400">${c.code}</span>
-                <span class="text-xl font-extrabold" style="color: ${c.colorHex}">${chosenObj.letter}</span>
+                <span class="text-[10px] font-bold text-slate-400">${c.code}</span>
+                <span class="text-lg font-extrabold" style="color: ${c.colorHex}">Peça ${chosenObj.letter}</span>
               </div>
             </div>
-
-            <div class="my-3 text-center px-1">
-              <p class="text-sm font-extrabold text-slate-900 dark:text-white leading-snug">
+            <div class="my-2 text-center">
+              <p class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white leading-tight">
                 ${chosenObj.shortLabel}
               </p>
-              <p class="text-[11px] italic text-slate-400 mt-1">minha escolha</p>
+              <p class="text-[10px] italic text-slate-400 mt-0.5">minha escolha</p>
             </div>
-
-            <div class="pt-2 border-t border-slate-100 dark:border-slate-700/70 flex items-center justify-between">
-              ${statusBadge}
+            <div class="pt-1.5 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
+              ${badge}
               <span class="text-[10px] font-mono text-slate-400">${(st.timeR1Seconds + st.timeR2Seconds).toFixed(1)}s</span>
             </div>
           </div>
@@ -797,17 +624,13 @@
       document.getElementById('progress-counter').textContent = `${completedCount} / 6 Casos`;
     }
 
-    // =========================================================================
-    // 5. RENDERIZAÇÃO DA ESTAÇÃO DE DELIBERAÇÃO (DIREITA)
-    // =========================================================================
     function renderDeliberationStation() {
       const container = document.getElementById('deliberation-station');
       const c = CASES_DATA.find(item => item.id === activeCaseId);
       const st = sessionState[activeCaseId];
 
-      // Bloco da Lente Teórica (Modo Apresentação)
-      const theoryBanner = showTheoryLens ? `
-        <div class="mt-4 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/70 text-xs leading-relaxed">
+      const theoryBox = showTheoryLens ? `
+        <div class="mt-3.5 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/70 text-xs leading-relaxed">
           <strong class="block text-amber-800 dark:text-amber-300 uppercase tracking-wider text-[10px] mb-0.5">
             🔬 Lente Teórica (ARA1060 • Prof. Jair Nunes Rocha)
           </strong>
@@ -815,113 +638,107 @@
         </div>
       ` : '';
 
-      // ESTÁGIO 1: ESCOLHA INICIAL
       if (st.stage === "INITIAL") {
         container.innerHTML = `
           <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold text-white" style="background-color: ${c.colorHex}">
-                ${c.code} / SITUAÇÃO (1ª RODADA)
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-extrabold text-white" style="background-color: ${c.colorHex}">
+                ${c.code} • 1ª RODADA
               </span>
               <span class="text-xs font-semibold text-slate-400">Passo 1 de 2</span>
             </div>
-            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">${c.title}</h3>
-            <p class="mt-2 text-sm text-slate-700 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-800/80 p-3.5 rounded-xl border border-slate-200 dark:border-slate-700">
+            <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">${c.title}</h3>
+            <p class="mt-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-800/80 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
               "${c.situation}"
             </p>
 
-            <div class="mt-4">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">
-                Selecione uma peça para encaixar no espaço ${c.id}:
+            <div class="mt-3.5">
+              <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
+                Selecione a peça para o espaço ${c.id}:
               </p>
-              <div class="space-y-2.5">
+              <div class="space-y-2">
                 ${['A', 'B', 'C'].map(letter => {
                   const opt = c.options[letter];
                   return `
                     <button onclick="makeInitialChoice(${c.id}, '${letter}')"
-                      class="w-full text-left p-3.5 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-sky-500 dark:hover:border-sky-500 bg-white dark:bg-slate-800/90 transition flex items-start gap-3 group">
-                      <span class="w-8 h-8 rounded-lg font-extrabold text-white flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition" style="background-color: ${c.colorHex}">
+                      class="w-full text-left p-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-sky-500 dark:hover:border-sky-500 bg-white dark:bg-slate-800 transition flex items-start gap-2.5">
+                      <span class="w-7 h-7 rounded-lg font-extrabold text-white flex items-center justify-center shrink-0 text-xs shadow-sm" style="background-color: ${c.colorHex}">
                         ${letter}
                       </span>
-                      <div class="flex-1">
+                      <div class="flex-1 min-w-0">
                         <div class="flex items-center justify-between">
-                          <strong class="text-sm font-extrabold text-slate-900 dark:text-white">${opt.shortLabel}</strong>
-                          <span class="text-[10px] font-semibold text-slate-400">Encaixar Peça ${letter} →</span>
+                          <strong class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white truncate">${opt.shortLabel}</strong>
+                          <span class="text-[10px] text-slate-400 shrink-0 ml-1">Encaixar →</span>
                         </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5">${opt.fullText}</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-snug">${opt.fullText}</p>
                       </div>
                     </button>
                   `;
                 }).join('')}
               </div>
             </div>
-            ${theoryBanner}
+            ${theoryBox}
           </div>
         `;
         return;
       }
 
-      // ESTÁGIO 2: A VIRADA (INFORMAÇÃO SURPRESA)
       if (st.stage === "TWIST") {
         const currentOpt = c.options[st.initialChoice];
         container.innerHTML = `
           <div class="animate-piece">
-            <div class="flex items-center justify-between mb-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-amber-600 text-white">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-600 text-white">
                 04 / SEGUNDA RODADA • ${c.twistCode}
               </span>
-              <span class="text-xs font-semibold text-amber-600 dark:text-amber-400">Informação Surpresa Revelada!</span>
+              <span class="text-xs font-bold text-amber-600 dark:text-amber-400">Fato Novo!</span>
             </div>
 
-            <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs mb-3 flex items-center justify-between">
+            <div class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs mb-2.5 flex items-center justify-between">
               <div>
-                <span class="text-slate-500 dark:text-slate-400 block">Sua 1ª Escolha encaixada:</span>
-                <strong class="text-sm text-slate-900 dark:text-white">Peça ${st.initialChoice}: ${currentOpt.shortLabel}</strong>
+                <span class="text-slate-400 text-[10px] block">Peça da 1ª escolha:</span>
+                <strong class="text-xs sm:text-sm">Peça ${st.initialChoice}: ${currentOpt.shortLabel}</strong>
               </div>
               <span class="font-mono text-xs text-slate-500">${st.timeR1Seconds.toFixed(1)}s</span>
             </div>
 
-            <div class="p-4 rounded-xl bg-amber-50 dark:bg-amber-950/60 border-2 border-amber-500/70">
-              <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-800 dark:text-amber-300 block mb-1">
-                ⚡ FATO NOVO (${c.twistCode}):
+            <div class="p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/60 border-2 border-amber-500/70">
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-800 dark:text-amber-300 block mb-1">
+                ⚡ INFORMAÇÃO SURPRESA (${c.twistCode}):
               </span>
-              <p class="text-sm font-semibold text-slate-900 dark:text-slate-100 leading-relaxed">
+              <p class="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 leading-relaxed">
                 "${c.twistText}"
               </p>
-              <p class="mt-2.5 text-xs font-extrabold uppercase tracking-wider text-amber-900 dark:text-amber-300">
+              <p class="mt-2 text-xs font-extrabold uppercase tracking-wider text-amber-900 dark:text-amber-300">
                 MANTÉM OU MUDA? POR QUÊ?
               </p>
             </div>
 
-            <div class="mt-3">
-              <label for="twist-justification" class="block text-xs font-bold text-slate-600 dark:text-slate-300 mb-1">
-                Justificativa Cognitiva / Argumento do Participante (Opcional):
+            <div class="mt-2.5">
+              <label for="twist-justification" class="block text-[11px] font-bold text-slate-600 dark:text-slate-300 mb-1">
+                Justificativa Cognitiva (Opcional):
               </label>
               <input id="twist-justification" type="text" value="${st.justification}"
-                placeholder="Ex.: Mudei para negociar pois houve motivo de força maior familiar..."
-                class="w-full px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-sky-500" />
+                placeholder="Ex.: Troquei para negociar devido à emergência familiar..."
+                class="w-full px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-sky-500" />
             </div>
 
-            <div class="mt-4 space-y-2">
+            <div class="mt-3.5 space-y-2">
               <button onclick="finalizeTwistDecision(${c.id}, '${st.initialChoice}')"
-                class="w-full py-2.5 px-4 rounded-xl font-extrabold text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition flex items-center justify-center gap-2">
-                <span>✓ MANTER PEÇA ${st.initialChoice} (${currentOpt.shortLabel})</span>
+                class="w-full py-2.5 px-3 rounded-xl font-extrabold text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition">
+                ✓ MANTER PEÇA ${st.initialChoice} (${currentOpt.shortLabel})
               </button>
 
-              <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 text-center pt-1">
-                Ou substituir por outra peça no tabuleiro:
-              </p>
-
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-2 pt-1">
                 ${['A', 'B', 'C'].filter(l => l !== st.initialChoice).map(letter => {
                   const opt = c.options[letter];
                   return `
                     <button onclick="finalizeTwistDecision(${c.id}, '${letter}')"
-                      class="p-2.5 rounded-xl border-2 border-purple-300 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/50 text-left transition">
-                      <span class="text-xs font-extrabold text-purple-700 dark:text-purple-300 block">
-                        ↻ Trocar para Peça ${letter}
+                      class="p-2 rounded-xl border-2 border-purple-300 dark:border-purple-800 hover:bg-purple-50 dark:hover:bg-purple-950/50 text-left transition">
+                      <span class="text-[11px] font-extrabold text-purple-700 dark:text-purple-300 block truncate">
+                        ↻ Trocar para ${letter}
                       </span>
-                      <span class="text-[11px] font-semibold text-slate-700 dark:text-slate-300 block mt-0.5">
+                      <span class="text-[10px] font-semibold text-slate-700 dark:text-slate-300 block truncate">
                         ${opt.shortLabel}
                       </span>
                     </button>
@@ -929,69 +746,63 @@
                 }).join('')}
               </div>
             </div>
-            ${theoryBanner}
+            ${theoryBox}
           </div>
         `;
         return;
       }
 
-      // ESTÁGIO 3: CASO CONSOLIDADO
       const initOpt = c.options[st.initialChoice];
       const finalOpt = c.options[st.finalChoice];
       const nextUnfinished = CASES_DATA.find(item => sessionState[item.id].stage !== "COMPLETED");
 
       container.innerHTML = `
-        <div class="animate-piece space-y-4">
+        <div class="animate-piece space-y-3">
           <div class="flex items-center justify-between">
-            <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-emerald-600 text-white">
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-600 text-white">
               ✓ ${c.code} CONSOLIDADO
             </span>
             <button onclick="reopenCase(${c.id})" class="text-xs font-semibold text-sky-600 hover:underline">
-              Refazer este caso
+              Refazer
             </button>
           </div>
 
-          <h3 class="text-lg font-extrabold">${c.title}</h3>
+          <h3 class="text-base sm:text-lg font-extrabold">${c.title}</h3>
 
-          <div class="grid grid-cols-2 gap-3 text-xs">
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-              <span class="text-slate-400 font-bold uppercase block text-[10px]">1ª Escolha (Incerteza)</span>
-              <strong class="text-sm block mt-0.5">Peça ${st.initialChoice}: ${initOpt.shortLabel}</strong>
-              <span class="text-[11px] text-slate-500">Tempo: ${st.timeR1Seconds.toFixed(1)}s</span>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span class="text-slate-400 font-bold uppercase text-[9px] block">1ª Escolha</span>
+              <strong class="text-xs sm:text-sm block truncate">${st.initialChoice}: ${initOpt.shortLabel}</strong>
+              <span class="text-[10px] text-slate-400 font-mono">${st.timeR1Seconds.toFixed(1)}s</span>
             </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-              <span class="text-slate-400 font-bold uppercase block text-[10px]">Pós Virada (${st.actionTaken})</span>
-              <strong class="text-sm block mt-0.5">Peça ${st.finalChoice}: ${finalOpt.shortLabel}</strong>
-              <span class="text-[11px] text-slate-500">Tempo: ${st.timeR2Seconds.toFixed(1)}s</span>
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <span class="text-slate-400 font-bold uppercase text-[9px] block">Final (${st.actionTaken})</span>
+              <strong class="text-xs sm:text-sm block truncate">${st.finalChoice}: ${finalOpt.shortLabel}</strong>
+              <span class="text-[10px] text-slate-400 font-mono">${st.timeR2Seconds.toFixed(1)}s</span>
             </div>
           </div>
 
-          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-xs">
-            <strong class="block text-slate-500 uppercase text-[10px] mb-1">Classificação Cognitiva da Escolha Final:</strong>
-            <p class="font-semibold text-slate-800 dark:text-slate-200">${finalOpt.cognitiveStyle} • ${finalOpt.moralStage}</p>
-            ${st.justification ? `<p class="mt-1.5 italic text-slate-600 dark:text-slate-400">"${st.justification}"</p>` : ''}
+          <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 text-xs">
+            <strong class="block text-slate-400 uppercase text-[9px] mb-0.5">Estilo Psicológico:</strong>
+            <p class="font-semibold text-slate-800 dark:text-slate-200">${finalOpt.style}</p>
           </div>
 
           ${nextUnfinished ? `
             <button onclick="selectCaseSlot(${nextUnfinished.id})"
-              class="w-full py-3 px-4 rounded-xl font-extrabold text-sm bg-sky-600 hover:bg-sky-700 text-white shadow transition">
-              Avançar para o ${nextUnfinished.code}: ${nextUnfinished.title} →
+              class="w-full py-2.5 px-3 rounded-xl font-extrabold text-xs sm:text-sm bg-sky-600 hover:bg-sky-700 text-white shadow transition">
+              Próximo: ${nextUnfinished.code} →
             </button>
           ` : `
             <button onclick="switchTab('report')"
-              class="w-full py-3 px-4 rounded-xl font-extrabold text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow transition">
-              🎉 Tabuleiro Completo! Ver Laudo Psicométrico →
+              class="w-full py-2.5 px-3 rounded-xl font-extrabold text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-700 text-white shadow transition">
+              🎉 Tabuleiro Completo! Ver Laudo →
             </button>
           `}
-
-          ${theoryBanner}
+          ${theoryBox}
         </div>
       `;
     }
 
-    // =========================================================================
-    // 6. TRANSIÇÕES DE DECISÃO E CRONÔMETRO DE ALTA PRECISÃO
-    // =========================================================================
     function startCaseTimer() {
       caseTimerStart = performance.now();
       if (timerInterval) clearInterval(timerInterval);
@@ -1011,6 +822,14 @@
       startCaseTimer();
       renderBoardGrid();
       renderDeliberationStation();
+
+      // Scroll suave para o painel de deliberação em telas móveis
+      if (window.innerWidth < 1024) {
+        const target = document.getElementById('deliberation-panel-anchor');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
     }
 
     function makeInitialChoice(caseId, letter) {
@@ -1019,10 +838,6 @@
       st.initialChoice = letter;
       st.timeR1Seconds = elapsed;
       st.stage = "TWIST";
-
-      playPieceSound('snap');
-      setTimeout(() => playPieceSound('twist'), 180);
-
       caseTimerStart = performance.now();
       renderBoardGrid();
       renderDeliberationStation();
@@ -1038,12 +853,9 @@
       st.actionTaken = (st.initialChoice === finalLetter) ? "MANTEVE" : "MUDOU";
       st.justification = justInput && justInput.value.trim()
         ? justInput.value.trim()
-        : (st.actionTaken === "MUDOU"
-            ? "Reavaliação cognitiva após nova evidência factual da Virada."
-            : "Manutenção da regra/escolha inicial mesmo após a Virada.");
+        : (st.actionTaken === "MUDOU" ? "Reavaliação após o fato novo da Virada." : "Manutenção da rota inicial.");
       st.stage = "COMPLETED";
 
-      playPieceSound('lock');
       renderBoardGrid();
       renderDeliberationStation();
       renderPsychometricReport();
@@ -1069,9 +881,6 @@
       renderPsychometricReport();
     }
 
-    // =========================================================================
-    // 7. MOTOR DE CÁLCULO DO LAUDO PSICOMÉTRICO E COGNITIVO
-    // =========================================================================
     function computeSessionMetrics() {
       const values = Object.values(sessionState);
       const completed = values.filter(v => v.stage === "COMPLETED");
@@ -1109,35 +918,32 @@
 
     function renderPsychometricReport() {
       const m = computeSessionMetrics();
-      const metricsGrid = document.getElementById('report-metrics-grid');
+      const grid = document.getElementById('report-metrics-grid');
       const tbody = document.getElementById('report-audit-tbody');
-      const synthesisBox = document.getElementById('report-theoretical-synthesis');
+      const synthesis = document.getElementById('report-theoretical-synthesis');
 
-      metricsGrid.innerHTML = `
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Índice de Flexibilidade Cognitiva</span>
-          <div class="text-3xl font-extrabold text-sky-600 dark:text-sky-400 mt-1">${m.flexibilityIndex}%</div>
-          <p class="text-xs text-slate-500 mt-1">${m.changedCount} trocas e ${m.maintainedCount} manutenções pós Virada</p>
+      grid.innerHTML = `
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Flexibilidade Cognitiva</span>
+          <div class="text-2xl sm:text-3xl font-extrabold text-sky-600 dark:text-sky-400 mt-1">${m.flexibilityIndex}%</div>
+          <p class="text-[11px] text-slate-500 mt-0.5">${m.changedCount} mudanças / ${m.maintainedCount} manutenções</p>
         </div>
-
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Distribuição Final (A / B / C)</span>
-          <div class="text-xl font-extrabold text-slate-900 dark:text-white mt-1.5">
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Distribuição Final</span>
+          <div class="text-lg sm:text-xl font-extrabold text-slate-800 dark:text-slate-100 mt-1">
             A: ${m.countFinal.A} • B: ${m.countFinal.B} • C: ${m.countFinal.C}
           </div>
-          <p class="text-xs text-slate-500 mt-1">1ª Rodada foi A:${m.countInit.A} | B:${m.countInit.B} | C:${m.countInit.C}</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">1ª Rodada foi A:${m.countInit.A} | B:${m.countInit.B} | C:${m.countInit.C}</p>
         </div>
-
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Latência Média 1ª Escolha</span>
-          <div class="text-2xl font-mono font-extrabold text-amber-600 mt-1">${m.avgR1.toFixed(1)}s</div>
-          <p class="text-xs text-slate-500 mt-1">Julgamento sob incerteza inicial</p>
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Latência 1ª Escolha</span>
+          <div class="text-xl sm:text-2xl font-mono font-extrabold text-amber-600 mt-1">${m.avgR1.toFixed(1)}s</div>
+          <p class="text-[11px] text-slate-500 mt-0.5">Incerteza informacional</p>
         </div>
-
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Latência Média na Virada</span>
-          <div class="text-2xl font-mono font-extrabold text-purple-600 mt-1">${m.avgR2.toFixed(1)}s</div>
-          <p class="text-xs text-slate-500 mt-1">Reavaliação executiva do fato novo</p>
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Latência na Virada</span>
+          <div class="text-xl sm:text-2xl font-mono font-extrabold text-purple-600 mt-1">${m.avgR2.toFixed(1)}s</div>
+          <p class="text-[11px] text-slate-500 mt-0.5">Reavaliação do fato novo</p>
         </div>
       `;
 
@@ -1146,58 +952,39 @@
         if (st.stage !== "COMPLETED") {
           return `
             <tr>
-              <td class="py-3 px-3 font-bold">${c.code}: ${c.title}</td>
-              <td colspan="5" class="py-3 px-3 text-slate-400 italic">Caso ainda não finalizado no tabuleiro.</td>
+              <td class="py-2.5 px-2 font-bold">${c.code}</td>
+              <td colspan="5" class="py-2.5 px-2 text-slate-400 italic">Pendente no tabuleiro.</td>
             </tr>
           `;
         }
-        const initOpt = c.options[st.initialChoice];
-        const finalOpt = c.options[st.finalChoice];
-        const badgeClass = st.actionTaken === "MUDOU"
-          ? "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-200"
-          : "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200";
-
+        const badgeClass = st.actionTaken === "MUDOU" ? "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-200" : "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200";
         return `
           <tr>
-            <td class="py-3 px-3 font-bold">${c.code}: ${c.title}</td>
-            <td class="py-3 px-3"><strong>${st.initialChoice}</strong> (${initOpt.shortLabel})</td>
-            <td class="py-3 px-3"><strong>${st.finalChoice}</strong> (${finalOpt.shortLabel})</td>
-            <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-xs font-bold ${badgeClass}">${st.actionTaken}</span></td>
-            <td class="py-3 px-3 font-mono text-xs">${st.timeR1Seconds.toFixed(1)}s / ${st.timeR2Seconds.toFixed(1)}s</td>
-            <td class="py-3 px-3 text-xs">${st.justification}</td>
+            <td class="py-2.5 px-2 font-bold">${c.code}</td>
+            <td class="py-2.5 px-2 font-semibold">Peça ${st.initialChoice}</td>
+            <td class="py-2.5 px-2 font-semibold">Peça ${st.finalChoice}</td>
+            <td class="py-2.5 px-2"><span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${badgeClass}">${st.actionTaken}</span></td>
+            <td class="py-2.5 px-2 font-mono text-slate-500">${st.timeR1Seconds.toFixed(1)}s / ${st.timeR2Seconds.toFixed(1)}s</td>
+            <td class="py-2.5 px-2 text-slate-600 dark:text-slate-300 max-w-xs truncate">${st.justification}</td>
           </tr>
         `;
       }).join('');
 
-      // Síntese interpretativa automática
       const pName = document.getElementById('participant-name').value || "Participante";
-      let profileText = "";
-      if (m.countFinal.C >= 4) {
-        profileText = "Predomínio de <strong>Deliberação Cooperativa e Dialógica (Alternativa C)</strong>: indica forte recrutamento do controle executivo pré frontal para buscar soluções consensuais, verificando dados adicionais e conciliando regras coletivas com necessidades singulares (nível pós convencional em Kohlberg e autonomia moral em Piaget).";
-      } else if (m.countFinal.B >= 3) {
-        profileText = "Predomínio de <strong>Processamento Normativo e Regra Estrita (Alternativa B)</strong>: indica preferência por segurança procedimental, verificação formal e redução de incerteza mediante aplicação rigorosa de critérios preestabelecidos.";
-      } else {
-        profileText = "Predomínio de <strong>Respostas Rápidas / Heurísticas Pragmáticas (Alternativa A)</strong>: indica priorização de resolução imediata, economia de tempo e evitação de atrito interpessoal sob racionalidade limitada.";
-      }
-
-      synthesisBox.innerHTML = `
-        <strong class="block text-slate-900 dark:text-white uppercase tracking-wider text-xs mb-1">
+      synthesis.innerHTML = `
+        <strong class="block uppercase tracking-wider text-xs mb-1 text-slate-900 dark:text-white">
           Parecer Cognitivo Automatizado (${pName}):
         </strong>
-        <p>${profileText}</p>
-        <p class="mt-2">
-          <strong>Análise da Segunda Rodada (Viradas):</strong> O participante apresentou índice de revisão de <strong>${m.flexibilityIndex}%</strong> (${m.changedCount} mudanças em ${m.totalCompleted} casos concluídos), com tempo médio de deliberação inicial de <strong>${m.avgR1.toFixed(1)}s</strong> e tempo médio de reavaliação pós virada de <strong>${m.avgR2.toFixed(1)}s</strong>.
+        <p>
+          O voluntário concluiu <strong>${m.totalCompleted} de 6 casos</strong>. Apresentou um Índice de Flexibilidade Cognitiva de <strong>${m.flexibilityIndex}%</strong> (${m.changedCount} alterações após novas evidências da Virada). 
+          O tempo médio para a decisão inicial sob incerteza foi de <strong>${m.avgR1.toFixed(1)}s</strong>, enquanto a reavaliação diante do fato novo demandou <strong>${m.avgR2.toFixed(1)}s</strong>.
         </p>
       `;
 
       renderCohortTable();
     }
 
-    // =========================================================================
-    // 8. PERSISTÊNCIA LOCAL DO TESTE PILOTO (COHORT DATABASE)
-    // =========================================================================
     const COHORT_STORAGE_KEY = "CARDSPSI_PILOT_COHORT_2026";
-
     function getCohortList() {
       try {
         const raw = localStorage.getItem(COHORT_STORAGE_KEY);
@@ -1210,7 +997,7 @@
     function saveSessionToCohort() {
       const m = computeSessionMetrics();
       if (m.totalCompleted === 0) {
-        alert("Conclua pelo menos 1 caso no tabuleiro antes de salvar no banco do piloto.");
+        alert("Conclua ao menos 1 caso antes de salvar.");
         return;
       }
       const pName = document.getElementById('participant-name').value || "Voluntário";
@@ -1233,38 +1020,37 @@
 
       localStorage.setItem(COHORT_STORAGE_KEY, JSON.stringify(list));
       renderCohortTable();
-      alert(`Sessão de "${pName}" registrada com sucesso no Banco do Teste Piloto!`);
+      alert(`Sessão de "${pName}" registrada com sucesso!`);
     }
 
     function renderCohortTable() {
       const container = document.getElementById('cohort-table-container');
       const list = getCohortList();
       if (list.length === 0) {
-        container.innerHTML = `<p class="text-slate-400 italic">Nenhuma sessão salva ainda. Aplique o tabuleiro e clique em "+ Salvar Voluntário no Banco do Piloto".</p>`;
+        container.innerHTML = `<p class="text-slate-400 italic">Nenhum voluntário salvo no banco local.</p>`;
         return;
       }
-
       container.innerHTML = `
         <table class="w-full text-left border-collapse">
           <thead>
             <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-400">
-              <th class="py-2 px-2">Data/Hora</th>
-              <th class="py-2 px-2">Participante</th>
+              <th class="py-2 px-2">Data</th>
+              <th class="py-2 px-2">Nome</th>
               <th class="py-2 px-2">Modalidade</th>
-              <th class="py-2 px-2">Flexibilidade (%)</th>
-              <th class="py-2 px-2">Escolhas Finais (A/B/C)</th>
-              <th class="py-2 px-2">Tempo Médio (R1 / R2)</th>
+              <th class="py-2 px-2">Flexibilidade</th>
+              <th class="py-2 px-2">A/B/C</th>
+              <th class="py-2 px-2">Tempo R1/R2</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-            ${list.map(row => `
+          <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+            ${list.map(r => `
               <tr>
-                <td class="py-2 px-2 font-mono">${row.timestamp}</td>
-                <td class="py-2 px-2 font-bold">${row.participant}</td>
-                <td class="py-2 px-2">${row.mode}</td>
-                <td class="py-2 px-2 font-bold text-sky-600">${row.flexibilityIndex}%</td>
-                <td class="py-2 px-2">A:${row.finalA} | B:${row.finalB} | C:${row.finalC}</td>
-                <td class="py-2 px-2 font-mono">${row.avgR1}s / ${row.avgR2}s</td>
+                <td class="py-1.5 px-2 font-mono text-[11px]">${r.timestamp}</td>
+                <td class="py-1.5 px-2 font-bold">${r.participant}</td>
+                <td class="py-1.5 px-2">${r.mode}</td>
+                <td class="py-1.5 px-2 font-bold text-sky-600">${r.flexibilityIndex}%</td>
+                <td class="py-1.5 px-2 font-mono text-[11px]">${r.finalA}/${r.finalB}/${r.finalC}</td>
+                <td class="py-1.5 px-2 font-mono text-[11px]">${r.avgR1}s / ${r.avgR2}s</td>
               </tr>
             `).join('')}
           </tbody>
@@ -1274,16 +1060,15 @@
 
     function exportSessionJSON() {
       const payload = {
-        project: "CardsPsi - Quebra Cabeca das Escolhas (ARA1060)",
+        project: "CardsPsi - Quebra Cabeça das Escolhas (ARA1060 • Estácio)",
         participant: document.getElementById('participant-name').value,
         exportedAt: new Date().toISOString(),
         metrics: computeSessionMetrics(),
         cases: sessionState
       };
       const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url;
+      a.href = URL.createObjectURL(blob);
       a.download = `cardspsi_laudo_${Date.now()}.json`;
       a.click();
     }
@@ -1291,44 +1076,38 @@
     function exportCohortCSV() {
       const list = getCohortList();
       if (list.length === 0) {
-        alert("Banco do piloto vazio.");
+        alert("Banco vazio.");
         return;
       }
-      const headers = ["DataHora", "Participante", "Modalidade", "CasosConcluidos", "FlexibilidadePct", "FinalA", "FinalB", "FinalC", "MediaR1_s", "MediaR2_s"];
+      const headers = ["DataHora", "Participante", "Modalidade", "Casos", "FlexibilidadePct", "FinalA", "FinalB", "FinalC", "MediaR1_s", "MediaR2_s"];
       const rows = list.map(r => [
         `"${r.timestamp}"`, `"${r.participant}"`, `"${r.mode}"`,
         r.completedCases, r.flexibilityIndex, r.finalA, r.finalB, r.finalC, r.avgR1, r.avgR2
       ].join(','));
-      const csv = [headers.join(','), ...rows].join('\n');
-      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
-      const url = URL.createObjectURL(blob);
+      const blob = new Blob([[headers.join(','), ...rows].join('\n')], { type: "text/csv;charset=utf-8;" });
       const a = document.createElement('a');
-      a.href = url;
-      a.download = "cardspsi_piloto_turma.csv";
+      a.href = URL.createObjectURL(blob);
+      a.download = "cardspsi_amostra_estacio.csv";
       a.click();
     }
 
     function clearCohortDatabase() {
-      if (confirm("Deseja realmente apagar os registros salvos no banco local deste navegador?")) {
+      if (confirm("Deseja apagar os dados locais salvos neste navegador?")) {
         localStorage.removeItem(COHORT_STORAGE_KEY);
         renderCohortTable();
       }
     }
 
-    // =========================================================================
-    // 9. NAVEGAÇÃO DE ABAS E UTILITÁRIOS DE INTERFACE
-    // =========================================================================
     function switchTab(tabName) {
-      const tabs = ['board', 'report', 'manual', 'schedule'];
-      tabs.forEach(t => {
+      ['board', 'report', 'manual', 'schedule'].forEach(t => {
         const el = document.getElementById(`tab-${t}`);
         const btn = document.getElementById(`tab-btn-${t}`);
         if (t === tabName) {
           el.classList.remove('hidden');
-          btn.className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-slate-900 text-white dark:bg-sky-600 transition";
+          btn.className = "whitespace-nowrap px-2.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-white dark:bg-sky-600 transition";
         } else {
           el.classList.add('hidden');
-          btn.className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition";
+          btn.className = "whitespace-nowrap px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition";
         }
       });
       if (tabName === 'report') renderPsychometricReport();
@@ -1336,8 +1115,12 @@
 
     function toggleTheoryLens() {
       showTheoryLens = !showTheoryLens;
-      const btn = document.getElementById('btn-theory-lens');
-      btn.textContent = showTheoryLens ? "Lente Teórica: ON" : "Lente Teórica: OFF";
+      const label = showTheoryLens ? "Teoria: ON" : "Teoria: OFF";
+      const fullLabel = showTheoryLens ? "Lente Teórica: ON" : "Lente Teórica: OFF";
+      const mBtn = document.getElementById('btn-theory-lens-mobile');
+      const dBtn = document.getElementById('btn-theory-lens-desktop');
+      if (mBtn) mBtn.textContent = label;
+      if (dBtn) dBtn.textContent = fullLabel;
       renderDeliberationStation();
     }
 
@@ -1345,7 +1128,6 @@
       document.documentElement.classList.toggle('dark');
     }
 
-    // Inicialização Imediata
     window.addEventListener('DOMContentLoaded', () => {
       initEmptySessionState();
       selectCaseSlot(1);

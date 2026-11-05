@@ -1,40 +1,23 @@
 LICENÇA DE USO RESTRITO TEMPORÁRIO COM TRANSIÇÃO PROGRAMADA PARA APACHE 2.0
 
 Projeto: CardsPsi (Quebra Cabeça das Escolhas: Raciocínio Moral e Tomada de Decisão)
-Repositório Oficial: https://github.com/pedro-almeida/CardsPsi
-Autor Principal e Arquiteto do Software: Pedro Luís Tenório Rocha de Almeida
-Coautoras Acadêmicas (Instrumento Físico e Validação Empírica):
-- Maria Vitória Santos Braz
-- Maria Natalya Silva Leitão
-- Rayanne dos Santos Santana
-- Veridiana Mota Veras
-Instituição: Estácio IDOMED (Juazeiro do Norte - CE)
+Repositório: https://github.com/pedro-almeida/CardsPsi
+Autor Principal: Pedro Luís Tenório Rocha de Almeida
+Coautoras: Maria Vitória Santos Braz, Maria Natalya Silva Leitão, Rayanne dos Santos Santana e Veridiana Mota Veras
+Instituição: Faculdade Estácio de Juazeiro do Norte (CE)
 Disciplina: Processos Psicológicos Básicos: Motivação, Pensamento e Linguagem (ARA1060 - 2026.2)
-Docente Avaliador: Prof. Me. Jair Nunes Rocha
+Docente: Prof. Me. Jair Nunes Rocha
 
-================================================================================
-1. CLÁUSULA DE RETENÇÃO E USO RESTRITO ATUAL (TODOS OS DIREITOS RESERVADOS)
-================================================================================
-Enquanto este projeto encontrar-se em período de avaliação acadêmica oficial e
-validação empírica no semestre letivo 2026.2, TODOS OS DIREITOS SÃO RESERVADOS.
+1. CLÁUSULA DE RETENÇÃO TEMPORÁRIA DE DIREITOS
+Durante o período letivo de validação acadêmica do semestre 2026.2, todos os
+direitos patrimoniais sobre o código-fonte, marcas e diagramação permanecem
+reservados aos autores. É vedada a reprodução ou distribuição não autorizada
+por terceiros. A disponibilização no GitHub destina-se estritamente à avaliação
+docente e demonstração discente.
 
-Nenhuma pessoa física ou jurídica está autorizada a copiar, reproduzir, modificar,
-publicar, distribuir, sublicenciar, executar engenharia reversa ou explorar
-comercialmente ou academicamente o código-fonte, a interface gráfica, as matrizes
-psicométricas ou a documentação contida neste repositório sem autorização expressa
-e por escrito do autor principal.
-
-A disponibilização pública deste repositório no GitHub e no GitHub Pages tem como
-finalidade exclusiva a visualização docente, a demonstração prática em sala de aula
-e a verificação de autoria acadêmica.
-
-================================================================================
-2. CLÁUSULA DE TRANSIÇÃO FUTURA AUTOMÁTICA PARA APACHE LICENSE 2.0
-================================================================================
-Após o encerramento oficial do calendário avaliativo do semestre 2026.2 (dezembro de
-2026) ou mediante publicação formal da release "v1.0-public" pelo titular do
-repositório, todo o código-fonte deste projeto passará automaticamente a ser
-licenciado sob os termos da APACHE LICENSE, VERSION 2.0:
+2. CLÁUSULA DE TRANSIÇÃO AUTOMÁTICA PARA APACHE LICENSE 2.0
+Após a conclusão do calendário avaliativo do semestre 2026.2 (dezembro de 2026),
+este software passará a ser regido pelos termos da Licença Apache, Versão 2.0:
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -47,8 +30,5 @@ licenciado sob os termos da APACHE LICENSE, VERSION 2.0:
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-
-Até que a liberação formal ocorra, prevalece integralmente o bloqueio de utilização
-por terceiros disposto na Cláusula 1.
 
 Copyright (c) 2026 Pedro Luís Tenório Rocha de Almeida. Todos os direitos reservados.
