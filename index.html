@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>CardsPsi | Quebra Cabeça das Escolhas (ARA1060 • Estácio)</title>
+  <title>CardsPsi | Quebra Cabeça das Escolhas (Open Source • Apache 2.0)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -31,7 +31,7 @@
 
     .puzzle-slot {
       position: relative;
-      min-height: 170px;
+      min-height: 160px;
       border: 2px dashed #94a3b8;
       border-radius: 0.85rem;
       transition: all 0.22s ease-in-out;
@@ -109,7 +109,7 @@
               <span class="text-xs text-slate-400 font-semibold">•</span>
               <span class="text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300">Quebra Cabeça das Escolhas</span>
               <span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300">
-                ARA1060 • Estácio
+                Código Aberto • Apache 2.0
               </span>
             </div>
             <p class="text-[11px] text-slate-500 dark:text-slate-400 hidden xs:block truncate max-w-xs sm:max-w-md">
@@ -141,9 +141,9 @@
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
           <div class="flex flex-col leading-tight">
             <span id="badge-user-name" class="font-bold text-slate-800 dark:text-slate-100 truncate max-w-[120px] md:max-w-[170px]">Participante</span>
-            <span id="badge-user-sub" class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold truncate max-w-[120px] md:max-w-[170px]">Estudante • ARA1060</span>
+            <span id="badge-user-sub" class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold truncate max-w-[120px] md:max-w-[170px]">Todas as Idades</span>
           </div>
-          <button onclick="openLoginModal()" title="Trocar Usuário / Nova Sessão Acadêmica" class="ml-1 text-[10px] font-bold text-sky-600 dark:text-sky-400 hover:underline px-1.5 py-0.5 rounded bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 transition">
+          <button onclick="openLoginModal()" title="Identificação / Nova Sessão" class="ml-1 text-[10px] font-bold text-sky-600 dark:text-sky-400 hover:underline px-1.5 py-0.5 rounded bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 transition">
             Trocar
           </button>
         </div>
@@ -159,13 +159,13 @@
             3. Manual
           </button>
           <button onclick="switchTab('schedule')" id="tab-btn-schedule" class="whitespace-nowrap px-2.5 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 transition">
-            4. Grupo
+            4. Sobre & Open Source
           </button>
         </nav>
 
         <!-- UTILITY CONTROLS (DESKTOP) -->
         <div class="hidden sm:flex items-center gap-1.5 shrink-0">
-          <button onclick="toggleTheoryLens()" id="btn-theory-lens-desktop" title="Ativar Lente Teórica para Apresentação ao Prof. Jair" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 hover:bg-amber-500/20 transition">
+          <button onclick="toggleTheoryLens()" id="btn-theory-lens-desktop" title="Ativar Lente Teórica de Processos Psicológicos Básicos" class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 hover:bg-amber-500/20 transition">
             Lente Teórica: ON
           </button>
           <button onclick="toggleTheme()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
@@ -180,47 +180,53 @@
   <!-- MAIN VIEWPORT -->
   <main class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6">
 
-    <!-- METRICS, CONTROLS & THEME RIBBON -->
+    <!-- METRICS, CONTROLS & BASE 2 SCALE RIBBON -->
     <section class="no-print mb-4 sm:mb-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-3 sm:p-4 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-3.5">
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full lg:w-auto flex-1">
         <div>
           <div class="flex items-center justify-between">
             <label for="participant-name" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
-              Voluntário / Avaliado
+              Participante / Avaliado
             </label>
             <button onclick="openLoginModal()" class="text-[10px] text-sky-600 dark:text-sky-400 font-bold hover:underline">
-              Sessão Acadêmica
+              Sessão
             </button>
           </div>
-          <input id="participant-name" type="text" value="Participante Piloto 01" oninput="syncParticipantInputToSession()"
+          <input id="participant-name" type="text" value="Participante 01" oninput="syncParticipantInputToSession()"
             class="w-full mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500" />
         </div>
-        <div>
-          <label for="application-mode" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
-            Modalidade de Aplicação
-          </label>
-          <select id="application-mode" class="w-full mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold">
-            <option value="Piloto Individual">Piloto Individual (Cronometrado)</option>
-            <option value="Grupo / Seminário">Demonstração em Sala de Aula</option>
-            <option value="Clínico Educativo">Uso Educativo / Autoaplicação</option>
-          </select>
-        </div>
+
+        <!-- SELETOR EM BASE 2 (8, 16, 32, 64 CARDS) -->
         <div>
           <div class="flex items-center justify-between">
-            <label for="theme-filter-select" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
-              Modo de Sorteio / Eixo
+            <label for="board-size-select" class="block text-[10px] font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+              Escala da Rodada (Base 2)
             </label>
-            <span id="pool-count-badge" class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300">18 Casos</span>
+            <span id="active-scale-badge" class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-300">16 Cards</span>
           </div>
-          <select id="theme-filter-select" onchange="onThemeFilterChange()" class="w-full mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold">
-            <option value="ALL">Sorteio Aleatório Geral (6 de 18 casos)</option>
-            <option value="ESCOLAR">Psicologia Escolar / Educacional</option>
-            <option value="HOSPITALAR">Psicologia Hospitalar</option>
-            <option value="ORGANIZACIONAL">Psicologia Organizacional e do Trabalho</option>
-            <option value="CAPS">Saúde Mental Comunitária (CAPS)</option>
-            <option value="ETICA">Ética em Pesquisa e Estágio</option>
-            <option value="REGULACAO">Regulação Emocional / Vida Acadêmica</option>
-            <option value="ORIGINAIS">Casos Didáticos Originais (S1 a S6)</option>
+          <select id="board-size-select" onchange="onBoardSizeChange()" class="w-full mt-0.5 px-3 py-1.5 rounded-lg border border-sky-300 dark:border-sky-700 bg-sky-50/50 dark:bg-slate-800 text-xs sm:text-sm font-bold text-sky-900 dark:text-sky-200">
+            <option value="8">8 Cards (Sessão Rápida — Grade 2x4)</option>
+            <option value="16" selected>16 Cards (Sessão Padrão — Grade 4x4)</option>
+            <option value="32">32 Cards (Sessão Estendida — Grade 4x8)</option>
+            <option value="64">64 Cards (Sessão Completa — Banco Integral)</option>
+          </select>
+        </div>
+
+        <!-- FILTRO DE FAIXA ETÁRIA / CICLO VITAL -->
+        <div>
+          <div class="flex items-center justify-between">
+            <label for="age-filter-select" class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+              Faixa Etária / Contexto
+            </label>
+            <span id="pool-count-badge" class="text-[9px] font-bold px-1.5 py-0.2 rounded bg-sky-100 text-sky-800 dark:bg-sky-900/60 dark:text-sky-300">64 Casos</span>
+          </div>
+          <select id="age-filter-select" onchange="onAgeFilterChange()" class="w-full mt-0.5 px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold">
+            <option value="ALL">Todas as Idades (Ciclo Vital — 64 Casos)</option>
+            <option value="INFANCIA">Infância e Escolar (6 a 12 anos)</option>
+            <option value="ADOLESCENCIA">Adolescência (13 a 17 anos)</option>
+            <option value="JOVEM">Adultos Jovens (18 a 30 anos)</option>
+            <option value="ADULTO">Adultos (31 a 59 anos)</option>
+            <option value="LONGEVIDADE">Longevidade Ativa (60+ anos)</option>
           </select>
         </div>
       </div>
@@ -229,18 +235,18 @@
       <div class="flex flex-wrap items-center justify-between sm:justify-end gap-2.5 sm:gap-4 pt-2 lg:pt-0 border-t lg:border-t-0 border-slate-100 dark:border-slate-800">
         <div>
           <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Progresso</span>
-          <span id="progress-counter" class="text-sm sm:text-base font-extrabold text-sky-600 dark:text-sky-400">0 / 6 Casos</span>
+          <span id="progress-counter" class="text-sm sm:text-base font-extrabold text-sky-600 dark:text-sky-400">0 / 16 Concluídos</span>
         </div>
         <div>
           <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Tempo do Caso</span>
           <span id="live-timer" class="text-sm sm:text-base font-mono font-bold text-slate-700 dark:text-slate-200">0.0s</span>
         </div>
         <div class="flex items-center gap-1.5">
-          <button onclick="triggerNewRoundWithConfirmation()" title="Embaralhar pool e sortear 6 novos casos (Fisher-Yates)" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-sky-600 hover:bg-sky-700 text-white shadow-sm transition flex items-center gap-1">
+          <button onclick="triggerNewRoundWithConfirmation()" title="Sortear nova rodada (Fisher-Yates)" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-sky-600 hover:bg-sky-700 text-white shadow-sm transition flex items-center gap-1">
             <span>🎲</span>
-            <span class="hidden xs:inline">Sortear Nova Rodada</span>
+            <span class="hidden xs:inline">Sortear Rodada</span>
           </button>
-          <button onclick="resetCurrentSession()" title="Reiniciar respostas dos 6 casos da rodada atual" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-900 transition">
+          <button onclick="resetCurrentSession()" title="Reiniciar respostas dos cards atuais" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-900 transition">
             Reiniciar
           </button>
         </div>
@@ -250,25 +256,30 @@
     <!-- TAB 1: BOARD & DELIBERATION (RESPONSIVE STACK) -->
     <div id="tab-board" class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
 
-      <!-- LEFT: 2x3 BOARD GRID (7 COLS LG) -->
+      <!-- LEFT: BOARD GRID & BLOCK PAGINATION (7 COLS LG) -->
       <div class="order-2 lg:order-1 lg:col-span-7 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm">
-        <div class="flex items-center justify-between mb-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
           <div>
             <div class="flex items-center gap-2">
               <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600 dark:text-sky-400">01 / TABULEIRO MODULAR</span>
               <span id="board-mode-indicator" class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
-                Sorteio Ativo
+                16 Cards • Todas as Idades
               </span>
             </div>
             <h2 class="text-base sm:text-lg font-extrabold mt-0.5">Monte seu Mapa de Escolhas</h2>
           </div>
           <span class="text-[11px] text-slate-500 dark:text-slate-400 hidden sm:inline">
-            Toque em um caso para deliberar
+            Clique em qualquer card para deliberar
           </span>
         </div>
 
-        <!-- 2x3 GRID: 1 COL MOBILE, 2 COLS SM, 3 COLS MD+ -->
-        <div id="board-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 my-2">
+        <!-- BLOCK PAGINATION SELECTOR (FOR 32 AND 64 CARDS) -->
+        <div id="board-block-nav" class="hidden mb-3 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-wrap items-center gap-1 text-xs">
+          <!-- JS -->
+        </div>
+
+        <!-- ADAPTIVE GRID CONTAINER (DYNAMIC COLS BASED ON CARD COUNT) -->
+        <div id="board-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 my-2">
           <!-- Gerado via JS -->
         </div>
 
@@ -303,15 +314,15 @@
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm print-card">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
           <div>
-            <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">RESULTADO / RELATÓRIO DE AVALIAÇÃO COGNITIVA (ARA1060)</span>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">RESULTADO / RELATÓRIO DE AVALIAÇÃO COGNITIVA</span>
             <h2 class="text-xl sm:text-2xl font-extrabold mt-0.5">Perfil de Tomada de Decisão e Flexibilidade</h2>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-              Processos Psicológicos Básicos (ARA1060) • Prof. Jair Nunes Rocha • Faculdade Estácio de Juazeiro do Norte
+              CardsPsi — Quebra-Cabeça das Escolhas • Ferramenta Aberta (Open Source)
             </p>
           </div>
           <div class="no-print flex flex-wrap items-center gap-2">
             <button onclick="saveSessionToCohort()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 text-white hover:bg-emerald-700 transition">
-              + Salvar no Banco do Piloto
+              + Salvar Sessão
             </button>
             <button onclick="exportSessionJSON()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 text-white hover:bg-slate-700 transition">
               Exportar JSON
@@ -322,7 +333,7 @@
           </div>
         </div>
 
-        <!-- ACADEMIC SESSION BADGE IN REPORT -->
+        <!-- SESSION BADGE IN REPORT -->
         <div id="report-participant-card" class="mb-5 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
           <!-- Populated dynamically via JS -->
         </div>
@@ -338,7 +349,7 @@
             <thead>
               <tr class="border-b-2 border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 font-bold uppercase text-[10px]">
                 <th class="py-2.5 px-2">Espaço</th>
-                <th class="py-2.5 px-2">Dilema & Eixo</th>
+                <th class="py-2.5 px-2">Dilema & Faixa Etária</th>
                 <th class="py-2.5 px-2">1ª Escolha</th>
                 <th class="py-2.5 px-2">Escolha Final</th>
                 <th class="py-2.5 px-2">Status</th>
@@ -362,13 +373,13 @@
       <div class="no-print bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
           <div>
-            <h3 class="text-base font-extrabold">Banco Consolidado da Amostra Piloto (Estácio)</h3>
+            <h3 class="text-base font-extrabold">Banco de Sessões Gravadas (Histórico Local)</h3>
             <p class="text-xs text-slate-500 dark:text-slate-400">
-              Registros locais coletados pelas integrantes do grupo para apresentação em sala de aula no dia 06/11/2026.
+              Registros locais persistidos no navegador para oficinas, autoaplicações ou pesquisa.
             </p>
           </div>
           <div class="flex flex-wrap items-center gap-2">
-            <input id="cohort-search-input" type="text" oninput="renderCohortTable()" placeholder="Filtrar por nome/matrícula..."
+            <input id="cohort-search-input" type="text" oninput="renderCohortTable()" placeholder="Filtrar por nome/faixa..."
               class="px-2.5 py-1.5 rounded-lg text-xs border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:outline-none focus:ring-1 focus:ring-sky-500" />
             <button onclick="exportCohortCSV()" class="px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
               Baixar CSV
@@ -389,8 +400,8 @@
       <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4 mb-5">
           <div>
-            <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">ENTREGÁVEL ESCRITO (1,0 PONTO AV)</span>
-            <h2 class="text-xl sm:text-2xl font-extrabold mt-0.5">Manual Teórico e Passo a Passo de Uso</h2>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">GUIA COMPLETO DE USO</span>
+            <h2 class="text-xl sm:text-2xl font-extrabold mt-0.5">Manual Teórico e Passo a Passo Operacional</h2>
           </div>
           <div>
             <a href="MANUAL_ACADEMICO_2_PAGINAS.html" target="_blank" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-sky-600 text-white hover:bg-sky-700 transition">
@@ -405,86 +416,73 @@
               1. Fundamentos Psicológicos Estimulados
             </h3>
             <p>
-              O <strong>CardsPsi</strong> foi concebido para investigar a intersecção entre o <strong>pensamento dedutivo/indutivo</strong>, a <strong>tomada de decisão sob incerteza</strong>, as <strong>heurísticas de julgamento</strong> e as <strong>funções executivas</strong> mediadas pelo lobo pré frontal.
+              O <strong>CardsPsi</strong> investiga a confluência entre o <strong>pensamento dedutivo/indutivo</strong>, a <strong>tomada de decisão sob incerteza</strong>, as <strong>heurísticas de julgamento</strong> e as <strong>funções executivas</strong> mediadas pelo lobo pré frontal.
             </p>
             <p>
               Ao decidir sob limitação de tempo e dados incompletos (Fase 1), o sujeito mobiliza a <em>racionalidade limitada</em> (Herbert Simon) e atalhos cognitivos (Kahneman e Tversky). Ao receber a <em>Carta de Virada</em> (Fase 2), o córtex pré frontal é recrutado para modular o <em>controle inibitório</em> e a <em>flexibilidade cognitiva</em>, decidindo conscientemente se sustenta a ancoragem inicial ou se altera a rota comportamental.
             </p>
             <p>
-              A linguagem é estimulada como função reguladora e simbólica superior (Vygotsky): toda decisão deve ser acompanhada de justificação verbal ou textual coerente.
+              A linguagem é estimulada como função reguladora e simbólica superior (Vygotsky): toda decisão deve ser acompanhada de justificação discursiva coerente.
             </p>
           </div>
 
           <div class="space-y-3">
             <h3 class="font-extrabold text-emerald-700 dark:text-emerald-400 uppercase text-xs tracking-wider">
-              2. Regras Oficiais e Sequência de Uso
+              2. Regras Oficiais e Escala em Base 2
             </h3>
             <ol class="list-decimal list-inside space-y-2">
-              <li><strong>Tabuleiro 2x3:</strong> Composto por 6 espaços (Casos 01 a 06 sorteados do banco temático). Cada caso possui 3 opções geométricas (A, B e C), mas apenas uma peça ocupará cada espaço.</li>
+              <li><strong>Matriz em Base 2:</strong> Configurável em 8, 16, 32 ou 64 cards. Cada caso possui 3 opções conceituais (A, B e C), mas apenas uma peça ocupará cada espaço.</li>
               <li><strong>Fase 1 (Situação):</strong> Lê-se o caso inicial. O participante seleciona uma alternativa e encaixa a peça no tabuleiro.</li>
               <li><strong>Fase 2 (A Virada):</strong> Revela-se a informação surpresa oculta. O participante responde: <em>"Mantém ou muda? Por quê?"</em>.</li>
               <li><strong>Consolidação:</strong> O sistema ou aplicador valida se a decisão foi mantida ou alterada e registra a justificativa semântica.</li>
-              <li><strong>Finalização:</strong> Ao preencher os 6 casos, gera-se o Resultado / Relatório de avaliação com o Índice de Flexibilidade Cognitiva ($IFC$).</li>
+              <li><strong>Finalização:</strong> Ao preencher os cards da rodada, gera-se o Resultado / Relatório de avaliação com o Índice de Flexibilidade Cognitiva ($IFC$).</li>
             </ol>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- TAB 4: SCHEDULE & TEAM -->
+    <!-- TAB 4: SOBRE & OPEN SOURCE (PROJETO ABERTO) -->
     <div id="tab-schedule" class="hidden space-y-5">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
-          <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">DIVISÃO DE PAPÉIS</span>
-          <h2 class="text-lg sm:text-xl font-extrabold mt-0.5 mb-3">Integrantes do Grupo (5 Membros)</h2>
-          <ul class="space-y-2.5 text-xs sm:text-sm">
-            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="text-sky-700 dark:text-sky-400 block font-bold">1. Pedro Luís Tenório Rocha de Almeida</strong>
-              <span>Arquiteto do Software CardsPsi, Função 1 (Fundamentação Teórica de 2 páginas), Função 3 (Regras e Mecânica Oficial) e Função 5 (Roteiro e Apresentação Oral em Sala).</span>
-            </li>
-            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="text-emerald-700 dark:text-emerald-400 block font-bold">2. Maria Vitória Santos Braz</strong>
-              <span>Função 2 (Design e confecção física do tabuleiro e cartões em papel couché/cartolina 120-180 g/m²).</span>
-            </li>
-            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="text-emerald-700 dark:text-emerald-400 block font-bold">3. Rayanne dos Santos Santana</strong>
-              <span>Função 2 (Montagem material das 18 peças de encaixe e organização dos cartões de dilemas).</span>
-            </li>
-            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="text-amber-700 dark:text-amber-400 block font-bold">4. Maria Natalya Silva Leitão</strong>
-              <span>Função 4 (Condução do teste piloto prático com voluntários e cronometragem das reações).</span>
-            </li>
-            <li class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
-              <strong class="text-amber-700 dark:text-amber-400 block font-bold">5. Veridiana Mota Veras</strong>
-              <span>Função 4 (Compilação dos dados do piloto e suporte na diagramação dos slides do seminário).</span>
-            </li>
-          </ul>
+          <span class="text-[10px] font-extrabold uppercase tracking-wider text-sky-600">ARQUITETURA ABERTA</span>
+          <h2 class="text-lg sm:text-xl font-extrabold mt-0.5 mb-3">CardsPsi: Ferramenta Livre e Comunitária</h2>
+          <div class="space-y-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+            <p>
+              O <strong>CardsPsi</strong> é um projeto livre e de código aberto desenvolvido sob a <strong>Licença Apache 2.0</strong>, concebido para uso por psicólogos, neuropsicólogos, educadores, pesquisadores e qualquer pessoa interessada em autorreflexão cognitiva.
+            </p>
+            <p class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 italic">
+              "Nascido originalmente em ambiente acadêmico de Psicologia e disponibilizado como ferramenta aberta de código aberto."
+            </p>
+            <div class="pt-2">
+              <strong class="block text-slate-900 dark:text-white font-bold mb-1">Repositório Oficial no GitHub:</strong>
+              <a href="https://github.com/pedro-almeida/CardsPsi" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-white dark:bg-sky-600 font-bold text-xs hover:opacity-90 transition">
+                <span>pedro-almeida/CardsPsi</span> ↗
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-6 shadow-sm">
-          <span class="text-[10px] font-extrabold uppercase tracking-wider text-amber-600">CRONOGRAMA ACADÊMICO</span>
-          <h2 class="text-lg sm:text-xl font-extrabold mt-0.5 mb-3">Calendário da Disciplina (ARA1060 • 2026.2)</h2>
+          <span class="text-[10px] font-extrabold uppercase tracking-wider text-purple-600">ESCALABILIDADE EM BASE 2</span>
+          <h2 class="text-lg sm:text-xl font-extrabold mt-0.5 mb-3">Modularidade Dinâmica: 8, 16, 32 e 64 Cards</h2>
           <div class="space-y-2.5 text-xs sm:text-sm">
-            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-sky-600">
-              <div class="flex items-center justify-between">
-                <strong>28/10 a 04/11/2026</strong>
-                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-100 text-sky-800">Concluído</span>
-              </div>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Finalização do software, impressão do kit físico e aplicação do teste piloto.</p>
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-sky-500">
+              <strong>8 Cards (Sessão Rápida • 2x4)</strong>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Triagem expressa em 10 a 15 minutos para dinâmicas escolares ou avaliações de triagem.</p>
             </div>
-            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-emerald-600">
-              <div class="flex items-center justify-between">
-                <strong>06/11 e 13/11/2026 (08h20)</strong>
-                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">3,0 Pontos AV</span>
-              </div>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Apresentação dos instrumentos práticos e entrega do manual escrito ao Prof. Jair.</p>
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-emerald-500">
+              <strong>16 Cards (Sessão Padrão • 4x4)</strong>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Formato equilibrado para atendimentos individuais, com alta sensibilidade de métricas.</p>
             </div>
-            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-purple-600">
-              <div class="flex items-center justify-between">
-                <strong>27/11/2026</strong>
-                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-purple-100 text-purple-800">Prova AV</span>
-              </div>
-              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Avaliação individual oficial (7,0 pontos PNI + 3,0 pontos do projeto = 10,0).</p>
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-purple-500">
+              <strong>32 Cards (Sessão Estendida • 2 Blocos de 16)</strong>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Investigação profunda com paginação fluida entre blocos e análise ampliada.</p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border-l-4 border-amber-500">
+              <strong>64 Cards (Sessão Completa • 4 Blocos de 16)</strong>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Banco integral cobrindo infância, juventude, maturidade adulta e longevidade plena.</p>
             </div>
           </div>
         </div>
@@ -493,7 +491,7 @@
 
   </main>
 
-  <!-- MODAL: IDENTIFICAÇÃO RÁPIDA DE SESSÃO ACADÊMICA -->
+  <!-- MODAL: IDENTIFICAÇÃO LEVE DE SESSÃO -->
   <div id="academic-login-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-3.5 sm:p-4 hidden">
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-md w-full p-5 sm:p-6 shadow-2xl animate-piece">
       <div class="flex items-start justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3 mb-4">
@@ -506,7 +504,7 @@
               Identificação de Sessão
             </h3>
             <p class="text-xs text-slate-500 dark:text-slate-400">
-              CardsPsi • Comunidade Acadêmica Estácio
+              CardsPsi • Registro Local Descentralizado
             </p>
           </div>
         </div>
@@ -518,43 +516,38 @@
       <form id="academic-login-form" onsubmit="handleAcademicLoginSubmit(event)" class="space-y-3">
         <div>
           <label for="modal-user-name" class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
-            Nome Completo ou Apelido Acadêmico <span class="text-rose-500">*</span>
+            Nome Completo ou Apelido <span class="text-rose-500">*</span>
           </label>
-          <input id="modal-user-name" type="text" required placeholder="Ex.: Maria Vitória / Pedro Tenório"
-            class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500" />
-        </div>
-
-        <div>
-          <label for="modal-user-matricula" class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
-            Matrícula ou E-mail Institucional <span class="text-slate-400 font-normal">(Opcional)</span>
-          </label>
-          <input id="modal-user-matricula" type="text" placeholder="Ex.: 202308123456 ou aluno@estacio.br"
+          <input id="modal-user-name" type="text" required placeholder="Ex.: Alex Silva / Participante A"
             class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500" />
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           <div>
-            <label for="modal-user-role" class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
-              Perfil / Vínculo
+            <label for="modal-user-age" class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Faixa Etária
             </label>
-            <select id="modal-user-role" class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold">
-              <option value="Estudante de Psicologia">Estudante de Psicologia</option>
-              <option value="Docente / Avaliador">Docente / Avaliador</option>
-              <option value="Visitante / Comunidade Acadêmica">Visitante / Comunidade Acadêmica</option>
+            <select id="modal-user-age" class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold">
+              <option value="Todas as Idades">Todas as Idades</option>
+              <option value="Criança (6 a 12 anos)">Criança (6 a 12 anos)</option>
+              <option value="Adolescente (13 a 17 anos)">Adolescente (13 a 17 anos)</option>
+              <option value="Adulto Jovem (18 a 30 anos)">Adulto Jovem (18 a 30 anos)</option>
+              <option value="Adulto (31 a 59 anos)">Adulto (31 a 59 anos)</option>
+              <option value="Pessoa Idosa (60+ anos)">Pessoa Idosa (60+ anos)</option>
             </select>
           </div>
           <div>
-            <label for="modal-user-turma" class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
-              Turma / Semestre
+            <label for="modal-user-goal" class="block text-[11px] font-bold text-slate-700 dark:text-slate-300 mb-1">
+              Finalidade / Contexto
             </label>
-            <input id="modal-user-turma" type="text" value="ARA1060 — 2026.2"
+            <input id="modal-user-goal" type="text" value="Autoaplicação" placeholder="Ex.: Clínica, Oficina, Pesquisa"
               class="w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs sm:text-sm font-semibold" />
           </div>
         </div>
 
         <div class="pt-2 flex flex-col sm:flex-row items-center gap-2">
           <button type="submit" class="w-full sm:flex-1 py-2.5 px-4 rounded-xl font-extrabold text-xs sm:text-sm bg-sky-600 hover:bg-sky-700 text-white shadow-sm transition">
-            Entrar e Iniciar Sessão
+            Iniciar Sessão
           </button>
           <button type="button" onclick="quickVisitorAccess()" class="w-full sm:w-auto py-2.5 px-3.5 rounded-xl font-bold text-xs bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 transition">
             Acesso como Visitante
@@ -567,610 +560,2083 @@
   <!-- FOOTER -->
   <footer class="no-print border-t border-slate-200 dark:border-slate-800 py-3 mt-auto text-center text-xs text-slate-500 dark:text-slate-400 px-3">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5">
-      <span><strong>CardsPsi</strong> • Quebra Cabeça das Escolhas • Faculdade Estácio de Juazeiro do Norte (2026.2)</span>
-      <span>Uso Acadêmico Restrito • Futura Licença Apache 2.0</span>
+      <span><strong>CardsPsi</strong> • Quebra Cabeça das Escolhas • Ferramenta Aberta de Avaliação Cognitiva</span>
+      <span>Licença Aberta Apache 2.0 • Código Aberto</span>
     </div>
   </footer>
 
   <!-- SCRIPT LOGIC -->
   <script>
-    // BANCO COMPLETO DE CASOS EXPANDIDO (18 CASOS)
+    // BANCO COMPLETO DE CASOS EXPANDIDO (64 CASOS PARA TODAS AS IDADES)
     const ALL_CASES_POOL = [
   {
     "id": 1,
     "code": "CASO 01",
-    "theme": "Vida Universitária / Dilemas Éticos",
-    "themeTag": "ORIGINAIS",
-    "title": "Um nome no projeto",
-    "colorHex": "#0f766e",
-    "situation": "Um colega participou pouco do trabalho, mas pede para ter seu nome na entrega. O grupo está dividido e o prazo termina hoje.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "O Brinquedo do Recreio",
+    "colorHex": "#0284c7",
+    "situation": "No recreio, seu colega trouxe um jogo novo muito disputado. Ele prometeu emprestar para você, mas outro amigo pediu antes chorando porque teve um dia difícil.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Incluir sem conversar",
-        "fullText": "Incluir o nome para evitar conflito.",
-        "style": "Heurística de Evitação de Conflito (Sistema 1)"
+        "shortLabel": "Insistir na promessa",
+        "fullText": "Exigir o jogo imediatamente porque a promessa foi feita primeiro.",
+        "style": "Pensamento Egocêntrico Normativo"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Excluir sem conversar",
-        "fullText": "Não incluir o nome, seguindo a contribuição observada.",
-        "style": "Algoritmo de Regra Rígida (Deontológico)"
+        "shortLabel": "Ceder sem falar nada",
+        "fullText": "Ficar quieto e abrir mão para não criar confusão na rodinha.",
+        "style": "Esquiva Passiva de Conflito"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Negociar uma saída",
-        "fullText": "Conversar e negociar uma tarefa final possível.",
-        "style": "Resolução Dialógica Cooperativa (Sistema 2)"
+        "shortLabel": "Propor jogar juntos",
+        "fullText": "Sugerir que os três joguem em equipe ou dividam o tempo do recreio.",
+        "style": "Cooperação Pró-Social Descentralizada"
       }
     },
     "twistCode": "VIRADA 01",
-    "twistText": "O colega passou vários dias sem acesso à internet porque precisou cuidar de um familiar. Ninguém sabia disso, e ainda restam 40 minutos até a entrega.",
-    "theoryNote": "Avalia o erro fundamental de atribuição e a capacidade do córtex pré-frontal de inibir um juízo punitivo inicial perante contingência humanitária."
+    "twistText": "O sinal vai tocar em 10 minutos e o jogo tem peças pequenas que demoram para guardar.",
+    "theoryNote": "Estimula o controle inibitório sobre o impulso de posse e a transição da heteronomia para a cooperação mútua (Piaget)."
   },
   {
     "id": 2,
     "code": "CASO 02",
-    "theme": "Comunicação Digital e Boatos",
-    "themeTag": "ORIGINAIS",
-    "title": "O print que circulou",
-    "colorHex": "#1e40af",
-    "situation": "Uma mensagem no grupo afirma que um funcionário da escola agiu de forma injusta. Há um print, mas ninguém sabe a origem completa.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "A Fila da Merenda",
+    "colorHex": "#0369a1",
+    "situation": "Na fila da merenda escolar, um colega menor pede para passar na sua frente dizendo que está com muita fome.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Repassar com ressalva",
-        "fullText": "Repassar o print com um aviso de cautela.",
-        "style": "Heurística de Disponibilidade / Difusão Rápida"
+        "shortLabel": "Manter a ordem da fila",
+        "fullText": "Dizer que todos devem esperar a vez na ordem de chegada.",
+        "style": "Raciocínio Moral Baseado em Regras"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Checar as fontes",
-        "fullText": "Procurar fontes e contexto antes de compartilhar.",
-        "style": "Verificação Analítica Prudente (Controle Inibitório)"
+        "shortLabel": "Deixar passar direto",
+        "fullText": "Dar o seu lugar na fila sem consultar os que estão atrás.",
+        "style": "Altruísmo Impulsivo Individual"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Não postar; conversar",
-        "fullText": "Não compartilhar e conversar diretamente com alguém envolvido.",
-        "style": "Preservação Ética e Comunicação Dialógica"
+        "shortLabel": "Consultar os colegas",
+        "fullText": "Perguntar aos colegas da fila se todos concordam em acolher o pedido especial.",
+        "style": "Justiça Procedimental Coletiva"
       }
     },
     "twistCode": "VIRADA 02",
-    "twistText": "Surge um vídeo que parece contradizer parte do print. Porém, ele também está cortado e não mostra o início do episódio.",
-    "theoryNote": "Testa a resistência ao viés de confirmação e a tolerância à ambiguidade perante fragmentos digitais truncados."
+    "twistText": "A inspetora avisa que a quantidade de sobremesa é limitada e pode acabar para os últimos da fila.",
+    "theoryNote": "Avalia o conflito entre compaixão espontânea e consideração pelos direitos do coletivo sob escassez de recursos."
   },
   {
     "id": 3,
     "code": "CASO 03",
-    "theme": "Racionalidade sob Pressão de Tempo",
-    "themeTag": "ORIGINAIS",
-    "title": "Qual caminho escolher?",
-    "colorHex": "#b45309",
-    "situation": "Você precisa chegar a um encontro em 20 minutos. O trajeto habitual leva 18 min; um atalho costuma levar 12 min, mas há relatos de obras.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "O Pote de Tinta Entornado",
+    "colorHex": "#0891b2",
+    "situation": "Durante uma aula de artes, você esbarra sem querer no pote de tinta azul do colega e mancha o desenho quase pronto dele.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Usar o atalho",
-        "fullText": "Usar o atalho por ser geralmente mais rápido.",
-        "style": "Heurística de Risco / Ganho Imediato"
+        "shortLabel": "Tentar limpar escondido",
+        "fullText": "Tentar secar o papel rapidamente antes que alguém perceba.",
+        "style": "Esquiva de Culpa por Medo de Punição"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Seguir rota habitual",
-        "fullText": "Seguir o trajeto habitual, com menor incerteza.",
-        "style": "Aversão à Perda / Previsibilidade"
+        "shortLabel": "Pedir desculpas na hora",
+        "fullText": "Assumir o erro imediatamente perante o colega e o professor.",
+        "style": "Responsabilização Moral Direta"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Buscar mais dados",
-        "fullText": "Buscar uma informação atual e então decidir.",
-        "style": "Deliberação Racional Otimizadora"
+        "shortLabel": "Oferecer ajuda no desenho",
+        "fullText": "Pedir desculpas e ajudar a recriar o trabalho com novas ideias criativas.",
+        "style": "Reparação Ativa Empática"
       }
     },
     "twistCode": "VIRADA 03",
-    "twistText": "O aviso de obras é de ontem. O aplicativo está desatualizado e você só tem dois minutos para decidir antes de sair.",
-    "theoryNote": "Demonstra o princípio da Racionalidade Limitada (Simon): quando o tempo se esgota e os dados são imperfeitos, a mente adota critérios satisfatórios."
+    "twistText": "O colega começa a rir e diz que a mancha parece uma nuvem de tempestade no céu dele.",
+    "theoryNote": "Trabalha a autorregulação do medo da reprovação externa e a flexibilidade simbólica na ressignificação de erros."
   },
   {
     "id": 4,
     "code": "CASO 04",
-    "theme": "Justiça Distributiva e Escassez",
-    "themeTag": "ORIGINAIS",
-    "title": "A última vaga",
-    "colorHex": "#15803d",
-    "situation": "Uma oficina gratuita tem apenas uma vaga. Três pessoas precisam dela: uma chegou primeiro, outra tem maior necessidade e outra tem mais experiência.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "A Escolha do Time",
+    "colorHex": "#0e7490",
+    "situation": "Na aula de educação física, você foi escolhido como capitão. O último aluno que sobrou tem pouca habilidade motora e costuma ser excluído.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Priorizar quem chegou",
-        "fullText": "Dar a vaga a quem chegou primeiro.",
-        "style": "Igualitarismo Cronológico Simples"
+        "shortLabel": "Escolher quem joga melhor",
+        "fullText": "Tentar trocar o jogador com o outro time para aumentar as chances de sucesso.",
+        "style": "Competitividade Instrumental"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Priorizar necessidade",
-        "fullText": "Priorizar quem demonstra maior necessidade.",
-        "style": "Equidade Substantiva Compensatória"
+        "shortLabel": "Aceitar com desânimo",
+        "fullText": "Deixar ele no time, mas colocá-lo como reserva isolado.",
+        "style": "Conformismo Apático"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Definir critérios juntos",
-        "fullText": "Discutir critérios públicos e decidir em conjunto.",
-        "style": "Pacto Social Pós-Convencional (Kohlberg)"
+        "shortLabel": "Integrar com estratégia",
+        "fullText": "Acolher o colega na defesa com incentivo e instruções simples de posicionamento.",
+        "style": "Liderança Inclusiva Cooperativa"
       }
     },
     "twistCode": "VIRADA 04",
-    "twistText": "A pessoa que chegou primeiro já perdeu outras chances; a que tem maior necessidade não consegue pagar outra oficina.",
-    "theoryNote": "Tensiona concepções concorrentes de justiça distributiva diante da escassez material de vagas e recursos sociais."
+    "twistText": "O jogo vale um ponto extra na pontuação bimestral da turma e o time adversário está invicto.",
+    "theoryNote": "Tensiona a pressão por desempenho quantitativo versus empatia e integração da diversidade na infância."
   },
   {
     "id": 5,
     "code": "CASO 05",
-    "theme": "Deontologia e Mediação Institucional",
-    "themeTag": "ORIGINAIS",
-    "title": "Uma regra e uma exceção",
-    "colorHex": "#6d28d9",
-    "situation": "A biblioteca proíbe retirar um material raro. Uma estudante pede levá-lo para casa porque não pode permanecer no local no horário disponível.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "O Segredo do Colega",
+    "colorHex": "#059669",
+    "situation": "Um amigo da escola confidencia que pegou escondido o estojo bonito de outro colega e pede que você guarde segredo.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Cumprir a regra",
-        "fullText": "Aplicar a regra sem exceção.",
-        "style": "Preservação Normativa Deontológica Rígida"
+        "shortLabel": "Contar à coordenação",
+        "fullText": "Denunciar o amigo imediatamente para a professora da sala.",
+        "style": "Heteronomia Punitiva Rígida"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Fazer exceção",
-        "fullText": "Permitir discretamente a retirada.",
-        "style": "Atalho Particularista / Risco Sistêmico"
+        "shortLabel": "Guardar o segredo",
+        "fullText": "Manter o pacto de silêncio para não trair a lealdade do amigo.",
+        "style": "Lealdade Grupal Incondicional"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Buscar um acordo",
-        "fullText": "Buscar uma solução autorizada que respeite a necessidade.",
-        "style": "Inteligência Criativa Institucional"
+        "shortLabel": "Incentivar a devolução",
+        "fullText": "Dialogar com o amigo e acompanhá-lo para devolver o objeto voluntariamente.",
+        "style": "Mediação Moral Autônoma"
       }
     },
     "twistCode": "VIRADA 05",
-    "twistText": "A equipe informa que outras pessoas também dependem desse material. Existe uma opção de consulta digital que ainda não foi oferecida.",
-    "theoryNote": "Ilustra o teste kantiano da universalização: exceções sigilosas fragmentam a regra coletiva, enquanto a mediação dialógica constrói equidade pública."
+    "twistText": "O dono do estojo está chorando muito porque o item foi um presente do avô falecido.",
+    "theoryNote": "Estimula a diferenciação entre cumplicidade prejudicial e cuidado ético verdadeiro no desenvolvimento moral infantil."
   },
   {
     "id": 6,
     "code": "CASO 06",
-    "theme": "Mérito e Cooperação em Grupo",
-    "themeTag": "ORIGINAIS",
-    "title": "Prêmio do grupo",
-    "colorHex": "#be123c",
-    "situation": "Uma equipe ganhou um pequeno prêmio. A liderança trabalhou mais horas, mas outras pessoas deram ideias decisivas. Não há divisão combinada.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "A Prova em Dupla",
+    "colorHex": "#10b981",
+    "situation": "Em uma atividade avaliativa em dupla, seu parceiro quer colocar a resposta dele que você sabe com certeza que está errada.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Receber pela liderança",
-        "fullText": "Entregar a maior parte a quem liderou.",
-        "style": "Meritocracia Quantitativa de Horas"
+        "shortLabel": "Impor sua resposta",
+        "fullText": "Apagar a resposta dele e escrever a sua sem mais explicações.",
+        "style": "Dominância Unilateral Rígida"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Dividir igualmente",
-        "fullText": "Dividir igualmente entre todos.",
-        "style": "Isonomia Paritária Simples"
+        "shortLabel": "Concordar com o colega",
+        "fullText": "Deixar a resposta dele para evitar discussão e chateação.",
+        "style": "Submissão Evitativa"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Discutir a divisão",
-        "fullText": "Combinar uma divisão com critérios de contribuição e necessidade.",
-        "style": "Justiça Cooperativa e Deliberada"
+        "shortLabel": "Explicar o raciocínio",
+        "fullText": "Mostrar no livro ou no cálculo o motivo da sua resposta com calma.",
+        "style": "Argumentação Dialógica Construtiva"
       }
     },
     "twistCode": "VIRADA 06",
-    "twistText": "Uma integrante que participou menos realizou justamente a ação que evitou a falha do projeto no último dia.",
-    "theoryNote": "Avalia a revisão do viés da visibilidade imediata diante da percepção do impacto qualitativo real em tarefas coletivas."
+    "twistText": "O tempo para entrega da folha expira em exatamente dois minutos.",
+    "theoryNote": "Exercita a tomada de decisão sob restrição severa de tempo e a capacidade de argumentação assertiva não agressiva."
   },
   {
     "id": 7,
     "code": "CASO 07",
-    "theme": "Psicologia Escolar / Educacional",
-    "themeTag": "ESCOLAR",
-    "title": "O Aluno Desatento e a Queixa Escolar",
-    "colorHex": "#0284c7",
-    "situation": "Uma professora exige encaminhamento imediato de um aluno de 8 anos para diagnóstico de TDAH e medicação, ameaçando reprová-lo se a família não trouxer resposta até sexta-feira.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "O Cachorro Machucado",
+    "colorHex": "#15803d",
+    "situation": "No caminho para a escola, você e seu irmão encontram um filhote de cachorro com a pata machucada na calçada.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Observação Institucional",
-        "fullText": "Realizar observação participante em sala e escuta dos professores antes de qualquer encaminhamento externo.",
-        "style": "Planejada / Analítica: Investigação Ecológica do Contexto"
+        "shortLabel": "Seguir para a escola",
+        "fullText": "Apressar o passo para não levar advertência por atraso no portão.",
+        "style": "Prioridade Normativa Institucional"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Encaminhar de Imediato",
-        "fullText": "Acolher a pressão da professora e emitir encaminhamento urgente para neuropediatria para cessar o conflito.",
-        "style": "Impulsiva / Reativa: Atendimento à Urgência sem Análise Crítica"
+        "shortLabel": "Ficar com o animal",
+        "fullText": "Sentar na calçada e esperar até que algum adulto passe por perto.",
+        "style": "Reatividade Acolhedora sem Plano"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Adaptação e Acolhimento",
-        "fullText": "Propor adaptações curriculares lúdicas na rotina e agendar acolhimento conjunto com a família.",
-        "style": "Criativa / Adaptativa: Mediação Pedagógica Dialógica"
+        "shortLabel": "Acionar um adulto conhecido",
+        "fullText": "Ligar para os pais ou pedir socorro ao comércio vizinho para acolher o animal.",
+        "style": "Ação Responsável Articulada"
       }
     },
     "twistCode": "VIRADA 07",
-    "twistText": "Descobre-se que os pais enfrentam separação conflituosa recente e a criança dorme apenas 4 horas por noite; nas aulas práticas de artes e ciências, o aluno é focado e colaborativo.",
-    "theoryNote": "Problematiza a medicalização da infância e o viés de rotulação diagnóstica versus a avaliação ecológica das contingências ambientais no desenvolvimento cognitivo."
+    "twistText": "Hoje é o dia da avaliação diagnóstica mais importante do semestre na primeira aula.",
+    "theoryNote": "Analisa a hierarquia de valores infantis perante deveres escolares formais versus empatia pelo sofrimento animal."
   },
   {
     "id": 8,
     "code": "CASO 08",
-    "theme": "Psicologia Escolar / Educacional",
-    "themeTag": "ESCOLAR",
-    "title": "Segredo e Risco no Pátio Escolar",
-    "colorHex": "#4338ca",
-    "situation": "No atendimento escolar de orientação, um aluno de 16 anos confidencia que consome bebidas alcoólicas aos finais de semana e pede sigilo absoluto. A coordenação exige relatório completo da conversa.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "A Moeda Encontrada",
+    "colorHex": "#166534",
+    "situation": "No pátio da escola, você encontra uma cédula de dez reais no chão perto do bebedouro. Ninguém está olhando.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Sustentar o Sigilo",
-        "fullText": "Explicar à gestão as balizas éticas do sigilo profissional (Art. 9º do CFP), resguardando o vínculo com o adolescente.",
-        "style": "Planejada / Analítica: Rigor Ético Deontológico"
+        "shortLabel": "Ficar com o dinheiro",
+        "fullText": "Guardar a cédula no bolso para comprar lanche na cantina.",
+        "style": "Oportunismo Hedonista Imediato"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Repassar à Direção",
-        "fullText": "Informar os fatos de imediato à coordenação para resguardar a instituição de responsabilidade civil.",
-        "style": "Impulsiva / Reativa: Quebra Precipitada de Confidencialidade"
+        "shortLabel": "Deixar onde está",
+        "fullText": "Não encostar no dinheiro para não ser acusado de nada.",
+        "style": "Comportamento Inibitório por Medo"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Pacto de Autonomia",
-        "fullText": "Apoiar o estudante para que ele próprio dialogue com os responsáveis sobre limites e autocuidado com suporte profissional.",
-        "style": "Criativa / Adaptativa: Desenvolvimento de Protagonismo Moral"
+        "shortLabel": "Entregar no setor de achados",
+        "fullText": "Levar a cédula para a secretaria ou professor responsável.",
+        "style": "Integridade Cívica Descentralizada"
       }
     },
     "twistCode": "VIRADA 08",
-    "twistText": "O jovem revela que o grupo combinou de dirigir o carro de um dos pais após a festa de formatura da próxima noite sem habilitação.",
-    "theoryNote": "Tensiona a inviolabilidade do sigilo com o dever ético de proteção da vida sob perigo iminente (Art. 10º do Código de Ética), mobilizando o raciocínio moral pós-convencional."
+    "twistText": "Um colega humilde da turma vizinha se aproxima procurando aflito o dinheiro da passagem de volta para casa.",
+    "theoryNote": "Trabalha a inibição do impulso de apropriação e o reconhecimento do impacto das ações individuais no outro."
   },
   {
     "id": 9,
     "code": "CASO 09",
-    "theme": "Psicologia Hospitalar",
-    "themeTag": "HOSPITALAR",
-    "title": "Autonomia vs. Diretivas Familiares",
-    "colorHex": "#047857",
-    "situation": "Um paciente lúcido de 72 anos internado em enfermaria oncológica recusa uma cirurgia mutiladora invasiva, optando por cuidados paliativos. Os filhos exigem a operação à força.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "O Apelido Inconveniente",
+    "colorHex": "#155e75",
+    "situation": "No grupo de mensagens da turma, começaram a espalhar figurinhas zombando do corte de cabelo de uma menina tímida.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Garantir Autonomia",
-        "fullText": "Registrar a plena capacidade cognitiva do paciente em prontuário e defender seu direito de autodeterminação em reunião clínica.",
-        "style": "Planejada / Analítica: Princípio Bioético da Autonomia"
+        "shortLabel": "Encaminhar a figurinha",
+        "fullText": "Rir e repassar a brincadeira para não ser considerado chato pelo grupo.",
+        "style": "Conformidade Social com Assédio"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Ceder à Família",
-        "fullText": "Persuadir o idoso a aceitar a intervenção para reduzir a angústia familiar e evitar ameaças de processo contra o hospital.",
-        "style": "Impulsiva / Reativa: Paternalismo Médico e Evitação de Litígio"
+        "shortLabel": "Sair do grupo em silêncio",
+        "fullText": "Fechar o aplicativo para não se envolver no problema.",
+        "style": "Esquiva Neutra Individualista"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Conferência Familiar",
-        "fullText": "Organizar conferência clínica com paciente, equipe multidisciplinar e filhos para acolher o luto antecipatório e construir diretivas conjuntas.",
-        "style": "Criativa / Adaptativa: Mediação Bioética de Cuidados Paliativos"
+        "shortLabel": "Reprovar no grupo e acolher",
+        "fullText": "Escrever que a brincadeira passou dos limites e mandar mensagem de apoio à colega.",
+        "style": "Defesa Pró-Social da Vítima"
       }
     },
     "twistCode": "VIRADA 09",
-    "twistText": "O filho mais velho admite que a família depende financeiramente de um benefício vitalício do pai que será cancelado se ele falecer neste mês.",
-    "theoryNote": "Traz à tona o conflito entre autonomia da vontade e pressões econômico-familiares implícitas, avaliando a flexibilidade cognitiva perante interesses velados."
+    "twistText": "A menina parou de responder às mensagens e avisou à família que não quer ir à aula amanhã.",
+    "theoryNote": "Desenvolve a coragem moral infantil contra a pressão de conformidade dos pares em meios digitais."
   },
   {
     "id": 10,
     "code": "CASO 10",
-    "theme": "Psicologia Hospitalar",
-    "themeTag": "HOSPITALAR",
-    "title": "Comunicação de Notícias Críticas na UTI",
-    "colorHex": "#b91c1c",
-    "situation": "O médico plantonista pede que a psicóloga dê a notícia de óbito à mãe na recepção da UTI desacompanhada de médico, alegando que está atendendo outra parada cardíaca urgente.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "O Jogo de Tabuleiro Perdido",
+    "colorHex": "#047857",
+    "situation": "Em um jogo em família, você estava vencendo com ampla folga, mas cometeu um descuido e seu irmão mais novo virou o placar.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Exigir Presença Médica",
-        "fullText": "Recusar a comunicação solitária do óbito clínico, aguardando que o médico declare o falecimento em conjunto com a escuta psicológica.",
-        "style": "Planejada / Analítica: Delimitação Ético-Técnica Interdisciplinar"
+        "shortLabel": "Abandonar a partida",
+        "fullText": "Dizer que o jogo não vale mais nada e sair da mesa emburrado.",
+        "style": "Baixa Tolerância à Frustração"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Comunicar Sozinha",
-        "fullText": "Transmitir a notícia imediatamente à mãe para não deixá-la em agonia na sala de espera.",
-        "style": "Impulsiva / Reativa: Assunção Inadequada de Atribuição Médica"
+        "shortLabel": "Exigir voltar a jogada",
+        "fullText": "Reclamar que se distraiu e pedir para refazer o movimento anterior.",
+        "style": "Resistência à Perda de Controle"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Acolhimento Preliminar",
-        "fullText": "Acolher a mãe em sala privativa, informar sobre a gravidade extrema e preparar a escuta emocional até que o médico se desvencilhe.",
-        "style": "Criativa / Adaptativa: Protocolo de Cuidado Gradual SPIKES"
+        "shortLabel": "Parabenizar o irmão",
+        "fullText": "Reconhecer a boa jogada do irmão e continuar a partida até o fim com bom humor.",
+        "style": "Regulação Emocional Esportiva"
       }
     },
     "twistCode": "VIRADA 10",
-    "twistText": "A mãe relata ter insuficiência cardíaca crônica e desfalece ao escutar a palavra 'crítico' antes de qualquer informação detalhada.",
-    "theoryNote": "Analisa o controle inibitório e a regulação emocional do profissional sob choque situacional agudo e protocolos de comunicação de notícias difíceis (SPIKES)."
+    "twistText": "O irmão comemora de forma excessiva e faz brincadeiras provocativas sobre sua derrota.",
+    "theoryNote": "Testa o controle inibitório da raiva e a capacidade de autorregulação diante de provocações interpessoais."
   },
   {
     "id": 11,
     "code": "CASO 11",
-    "theme": "Psicologia Organizacional e do Trabalho",
-    "themeTag": "ORGANIZACIONAL",
-    "title": "Assédio Moral Velado e Metas Opressivas",
-    "colorHex": "#475569",
-    "situation": "Um colaborador relata que a gerência passou a impor cobranças humilhantes e piadas depreciativas após seu retorno de licença médica, temendo ser demitido se fizer denúncia formal.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "A Tarefa de Casa Esquecida",
+    "colorHex": "#0284c7",
+    "situation": "Você percebeu no início da aula que esqueceu o caderno da lição de casa em cima da mesa do quarto.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Documentar Padrão",
-        "fullText": "Realizar escuta clínica do trabalho, mapear o nexo de causalidade laboral e instruir canais formais com sigilo.",
-        "style": "Planejada / Analítica: Protocolo de Diagnóstico Institucional"
+        "shortLabel": "Copiar do colega",
+        "fullText": "Pedir o caderno do colega para copiar as respostas rapidamente antes da chamada.",
+        "style": "Atalho Transgressor de Conveniência"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Confrontar Gestão",
-        "fullText": "Ir diretamente à mesa da gerência exigir retratação pública imediata para defender o trabalhador.",
-        "style": "Impulsiva / Reativa: Atuação Reativa Sem Retaguarda de Evidências"
+        "shortLabel": "Inventar uma desculpa",
+        "fullText": "Dizer que o cachorro rasgou o caderno ou que a luz faltou na rua.",
+        "style": "Narrativa Defensiva Falsa"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Pesquisa de Clima",
-        "fullText": "Inserir indicadores anônimos de saúde mental e assédio no diagnóstico setorial, articulando ações com a CIPA e RH.",
-        "style": "Criativa / Adaptativa: Intervenção Sistêmica Organizacional"
+        "shortLabel": "Assumir o esquecimento",
+        "fullText": "Falar a verdade para a professora e se comprometer a trazer a lição no dia seguinte.",
+        "style": "Autoeficácia e Responsabilidade"
       }
     },
     "twistCode": "VIRADA 11",
-    "twistText": "O trabalhador apresenta e-mails comprovando que a chefia possui ordens expressas da diretoria para forçar demissões sem justa causa para cortar despesas.",
-    "theoryNote": "Explora a psicodinâmica do trabalho de Dejours: a dialética entre defesas individuais, sofrimento ético e precarização das relações produtivas."
+    "twistText": "A professora avisa que quem não entregar hoje perderá a pontuação integral da etapa.",
+    "theoryNote": "Mede a tolerância às consequências reais da verdade versus o impulso de recorrer a mentiras contingentes."
   },
   {
     "id": 12,
     "code": "CASO 12",
-    "theme": "Psicologia Organizacional e do Trabalho",
-    "themeTag": "ORGANIZACIONAL",
-    "title": "Demanda de Declaração sob Burnout",
-    "colorHex": "#c2410c",
-    "situation": "A diretoria exige que o setor de psicologia emita declaração atestando que uma colaboradora com sintomas claros de esgotamento e choro frequente está 'plenamente apta e motivada' para uma auditoria externa.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "O Colega Novo na Sala",
+    "colorHex": "#1d4ed8",
+    "situation": "Um aluno transferido de outro estado chegou à turma no meio do ano e não conhece ninguém, ficando sozinho no intervalo.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Negar Declaração",
-        "fullText": "Fundamentar a impossibilidade ética de atestar aptidão sob sofrimento visível e encaminhar para avaliação de saúde ocupacional.",
-        "style": "Planejada / Analítica: Resolução CFP 06/2019 e Integridade Ética"
+        "shortLabel": "Manter seu grupo fechado",
+        "fullText": "Ficar com seus melhores amigos de sempre sem dar atenção ao recém-chegado.",
+        "style": "Endogrupo Rígido e Excludente"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Assinar com Ressalvas",
-        "fullText": "Emitir um documento brando para preservar o emprego da funcionária e evitar retaliações da diretoria.",
-        "style": "Impulsiva / Reativa: Conivência Institucional sob Medo"
+        "shortLabel": "Observar de longe",
+        "fullText": "Esperar que ele tome a iniciativa de vir falar com alguém.",
+        "style": "Passividade Social"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Reestruturar Escopo",
-        "fullText": "Apresentar plano de remanejamento temporário de tarefas da auditoria, assegurando afastamento sem perda de remuneração.",
-        "style": "Criativa / Adaptativa: Mediação de Ergonomia Psicossocial"
+        "shortLabel": "Convidar para a roda",
+        "fullText": "Ir até ele, apresentar a escola e chamá-lo para lanchar com seu grupo.",
+        "style": "Hospitalidade e Empatia Ativa"
       }
     },
     "twistCode": "VIRADA 12",
-    "twistText": "A colaboradora confidencia que depende dos bônus dessa auditoria para custear a medicação de alto custo de seu filho com síndrome rara.",
-    "theoryNote": "Submete o julgamento a uma escolha trágica entre o cumprimento irrestrito das normas éticas e o impacto socioeconômico direto sobre a subsistência do sujeito."
+    "twistText": "Seus amigos dizem que ele fala com sotaque esquisito e zombam da sua atitude de chamá-lo.",
+    "theoryNote": "Explora a capacidade de sustentar condutas inclusivas perante a ridicularização ou preconceito dos pares."
   },
   {
     "id": 13,
     "code": "CASO 13",
-    "theme": "Saúde Mental Comunitária (CAPS)",
-    "themeTag": "CAPS",
-    "title": "Crise Aguda no Território Comunitário",
-    "colorHex": "#0891b2",
-    "situation": "Um usuário do CAPS com histórico de sofrimento mental severo está em crise de agitação na praça do bairro. Vizinhos acionam a polícia militar exigindo internação forçada imediata.",
+    "ageGroup": "Infância (6 a 12 anos)",
+    "ageTag": "INFANCIA",
+    "title": "A Divisão do Lanche",
+    "colorHex": "#2563eb",
+    "situation": "Sua mãe preparou um bolo especial com apenas duas fatias generosas. Um colega que esqueceu o lanche olha com vontade.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Intervenção Territorial",
-        "fullText": "Enviar equipe do CAPS ao local para desescalada verbal, assegurando acolhimento no território e evitando contenção policial violenta.",
-        "style": "Planejada / Analítica: Diretrizes da Luta Antimanicomial (Lei 10.216)"
+        "shortLabel": "Comer tudo sozinho",
+        "fullText": "Comer as duas fatias rapidamente para não ter que dividir.",
+        "style": "Consumo Egoísta Imediato"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Deixar Condução Policial",
-        "fullText": "Permitir que a polícia conduza o usuário diretamente ao hospital geral para garantir a segurança física imediata dos transeuntes.",
-        "style": "Impulsiva / Reativa: Terceirização Punitiva da Crise Psíquica"
+        "shortLabel": "Dar uma migalha",
+        "fullText": "Dividir apenas um pedacinho minúsculo para cumprir tabela.",
+        "style": "Generosidade Aparente / Insuficiente"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Rede com Lideranças",
-        "fullText": "Articular uma liderança comunitária respeitada e familiares próximos para estabelecer vínculo afetivo de acolhimento na UBS vizinha.",
-        "style": "Criativa / Adaptativa: Apoio Matricial e Cuidado Territorial"
+        "shortLabel": "Dividir ao meio com equidade",
+        "fullText": "Oferecer uma fatia inteira para o colega para que ambos fiquem alimentados.",
+        "style": "Partilha Solidária Genuína"
       }
     },
     "twistCode": "VIRADA 13",
-    "twistText": "A guarnição policial já chegou ao local empunhando armas de choque e o usuário segura uma ferramenta usada na horta comunitária.",
-    "theoryNote": "Testa a capacidade executiva de manejo de risco iminente sob descompensação, articulando intervenções despatologizantes em ambiente comunitário aberto."
+    "twistText": "Você descobre que a aula da tarde será estendida e a próxima refeição demorará mais 4 horas.",
+    "theoryNote": "Avalia a disposição para adiar a saciedade individual imediata em benefício da nutrição compartilhada."
   },
   {
     "id": 14,
     "code": "CASO 14",
-    "theme": "Saúde Mental Comunitária (CAPS)",
-    "themeTag": "CAPS",
-    "title": "Redução de Danos vs. Abstinência Exigida",
-    "colorHex": "#7c2d12",
-    "situation": "No CAPS AD, um usuário dependente de álcool quer apoio para manter o convívio com a filha, mas declara que não conseguirá parar totalmente de beber de imediato.",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "O Desafio Perigoso na Rede",
+    "colorHex": "#4f46e5",
+    "situation": "Um grupo popular da escola está participando de uma trend em vídeo que envolve pular de um muro alto e desafia você a fazer o mesmo para entrar no grupo.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Redução de Danos",
-        "fullText": "Pactuar metas graduais de diminuição do uso e acompanhamento psicossocial, priorizando a segurança e afeto com a criança.",
-        "style": "Planejada / Analítica: Paradigma de Redução de Danos"
+        "shortLabel": "Aceitar para ser aceito",
+        "fullText": "Realizar o salto perigoso para provar coragem e ser integrado no grupo.",
+        "style": "Submissão à Pressão de Pares"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Exigir Abstinência",
-        "fullText": "Condicionar qualquer relatório favorável à comprovação de abstinência total imediata para não colocar a criança em risco.",
-        "style": "Impulsiva / Reativa: Modelo Moral / Proibicionista Rígido"
+        "shortLabel": "Inventar uma lesão",
+        "fullText": "Fingir dor no tornozelo para não ter que pular nem ser zoado.",
+        "style": "Esquiva Dissimulada"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Cuidado Compartilhado",
-        "fullText": "Construir rede de suporte familiar para supervisionar a rotina da criança enquanto o pai consolida o plano terapêutico singular.",
-        "style": "Criativa / Adaptativa: Fortalecimento da Parentalidade Positiva"
+        "shortLabel": "Recusar abertamente",
+        "fullText": "Dizer com firmeza que não vale a pena arriscar a integridade por likes.",
+        "style": "Asserção Autônoma de Limites"
       }
     },
     "twistCode": "VIRADA 14",
-    "twistText": "O Conselho Tutelar envia intimação concedendo 48 horas para envio de relatório técnico decisivo sobre a manutenção provisória da guarda.",
-    "theoryNote": "Contrapõe a temporalidade subjetiva e gradual da clínica da dependência à urgência burocrática dos prazos do sistema de garantia de direitos."
+    "twistText": "O líder da turma começa a gravar ao vivo apontando o celular diretamente para seu rosto.",
+    "theoryNote": "Investiga a maturidade pré-frontal na resistência à coação grupal sob exposição midiática em tempo real."
   },
   {
     "id": 15,
     "code": "CASO 15",
-    "theme": "Ética em Pesquisa e Estágio",
-    "themeTag": "ETICA",
-    "title": "Manipulação de Amostra Científica",
-    "colorHex": "#854d0e",
-    "situation": "O bolsista líder de uma pesquisa acadêmica propõe replicar respostas em questionários vazios para atingir o N amostral exigido pelo edital cujo prazo final expira à meia-noite.",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "O Vício em Telas e o Exame",
+    "colorHex": "#4338ca",
+    "situation": "Na véspera do simulado de vestibular, você se pega há três horas rolando feeds de vídeos curtos sem conseguir parar.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Recusa Deontológica",
-        "fullText": "Recusar terminantemente a manipulação de dados e relatar a real amostra coletada na seção de limitações metodológicas do artigo.",
-        "style": "Planejada / Analítica: Rigor e Integridade Científica (CNS 510)"
+        "shortLabel": "Continuar navegando",
+        "fullText": "Desistir de estudar e seguir nas redes até o sono chegar.",
+        "style": "Fuga Procrastinatória Dopaminérgica"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Consentir pelo Fomento",
-        "fullText": "Aceitar a alteração dos dados para não perder a bolsa de fomento e o financiamento do laboratório.",
-        "style": "Impulsiva / Reativa: Fraude sob Pressão de Resultados"
+        "shortLabel": "Culpar-se com ansiedade",
+        "fullText": "Desligar o celular em crise de pânico e tentar ler sem foco.",
+        "style": "Reatividade Ansiosa Desorganizada"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Coleta Emergencial Válida",
-        "fullText": "Mobilizar mutirão presencial e virtual de coleta ética em regime de plantão de 12 horas e pedir dilação de prazo justificada ao comitê.",
-        "style": "Criativa / Adaptativa: Resolução Proativa Respeitando a Ética"
+        "shortLabel": "Aplicar controle de estímulo",
+        "fullText": "Guardar o aparelho em outro cômodo, fazer pausa de 10 min e revisar os pontos-chave.",
+        "style": "Metacognição e Gestão do Foco"
       }
     },
     "twistCode": "VIRADA 15",
-    "twistText": "O orientador da pesquisa envia áudio afirmando que a perda do fomento acarretará o cancelamento de todas as bolsas de iniciação científica do grupo.",
-    "theoryNote": "Submete o sujeito ao clássico dilema de obediência à autoridade (Milgram) e aos custos individuais da integridade ética na produção do conhecimento."
+    "twistText": "Um colega envia mensagem dizendo que o gabarito de uma prova antiga caiu em um fórum e todos estão decorando.",
+    "theoryNote": "Analisa a disciplina de autorregulação executiva contra atalhos ilícitos em momentos de vulnerabilidade."
   },
   {
     "id": 16,
     "code": "CASO 16",
-    "theme": "Ética em Pesquisa e Estágio",
-    "themeTag": "ETICA",
-    "title": "Duplo Vínculo no Estágio de Clínica",
-    "colorHex": "#581c87",
-    "situation": "Uma estagiária do Serviço-Escola de Psicologia percebe na triagem que a nova paciente agendada é irmã da sua futura cunhada com quem convive em encontros familiares.",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "O Desabafo no Caderno",
+    "colorHex": "#3730a3",
+    "situation": "Você encontra esquecido no laboratório o caderno de poesias de um colega tímido com relatos de tristeza profunda e isolamento.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Encaminhar Paciente",
-        "fullText": "Apresentar a situação na supervisão e realizar o encaminhamento ético e acolhedor para outro colega estagiário da clínica.",
-        "style": "Planejada / Analítica: Prevenção de Conflito de Papéis (Art. 2º CFP)"
+        "shortLabel": "Postar trechos anônimos",
+        "fullText": "Tirar fotos e postar para gerar curiosidade entre os estudantes.",
+        "style": "Violação de Privacidade Hedonista"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Atender em Segredo",
-        "fullText": "Iniciar os atendimentos sem comunicar a supervisão, confiando na própria capacidade de separar o pessoal do profissional.",
-        "style": "Impulsiva / Reativa: Minimização Incorreta de Contratransferência"
+        "shortLabel": "Deixar onde encontrou",
+        "fullText": "Ignorar o conteúdo e não se intrometer no sofrimento alheio.",
+        "style": "Indiferença Desvinculada"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Pacto Transparente",
-        "fullText": "Explicar tecnicamente à paciente os motivos do impedimento ético antes do início do vínculo e auxiliá-la na transição de terapeuta.",
-        "style": "Criativa / Adaptativa: Esclarecimento Pedagógico e Manejo da Queixa"
+        "shortLabel": "Devolver em sigilo e acolher",
+        "fullText": "Entregar o caderno em mãos de forma reservada, demonstrando escuta empática.",
+        "style": "Acolhimento Cuidadoso Ético"
       }
     },
     "twistCode": "VIRADA 16",
-    "twistText": "A paciente chora intensamente e afirma que só buscou a faculdade porque sabia que a estagiária era de sua confiança e ameaça desistir de qualquer tratamento se for trocada.",
-    "theoryNote": "Explora os limites da aliança terapêutica e a necessidade de controle inibitório para não converter a queixa clínica em promiscuidade relacional contratransferencial."
+    "twistText": "Outros colegas viram você pegando o caderno e começam a exigir saber o que estava escrito.",
+    "theoryNote": "Tensiona a preservação do sigilo e da dignidade do outro perante a curiosidade hostil do grupo social."
   },
   {
     "id": 17,
     "code": "CASO 17",
-    "theme": "Regulação Emocional sob Pressão Acadêmica",
-    "themeTag": "REGULACAO",
-    "title": "Procrastinação Ansiosa e Estimulantes",
-    "colorHex": "#9f1239",
-    "situation": "Na véspera da avaliação teórica oficial (peso 7,0), um estudante sem conseguir concentrar-se recebe oferta de um colega para ingerir psicoestimulante sem prescrição para virar a noite estudando.",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "A Festa Sem Autorização",
+    "colorHex": "#6366f1",
+    "situation": "Seus amigos mais próximos planejaram ir a uma festa noturna sem autorização das famílias e pedem que você confirme o álibi deles.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Higiene do Sono e Foco",
-        "fullText": "Rejeitar a substância ilegal, priorizar 6 horas de repouso restaurador e estudar os resumos nucleares pela manhã.",
-        "style": "Planejada / Analítica: Regulação Fisiológica e Coping Adaptativo"
+        "shortLabel": "Mentir para os pais deles",
+        "fullText": "Confirmar a história falsa caso os pais perguntem para proteger os amigos.",
+        "style": "Cumplicidade Desonesta"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Tomar o Estimulante",
-        "fullText": "Ingerir a medicação para vencer a sonolência e ler toda a bibliografia durante a madrugada sem pausas.",
-        "style": "Impulsiva / Reativa: Doping Cognitivo com Risco Iatrogênico"
+        "shortLabel": "Avisar os pais às escondidas",
+        "fullText": "Ligar anonimamente para os responsáveis sem conversar com os amigos.",
+        "style": "Intervenção Terceirizada Oculta"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Estudo Compartilhado",
-        "fullText": "Fazer uma sessão curta de 2 horas com colegas para tirar dúvidas e praticar exercícios de regulação autonômica antes de dormir.",
-        "style": "Criativa / Adaptativa: Suporte Social e Manejo da Ansiedade"
+        "shortLabel": "Recusar ser álibi falso",
+        "fullText": "Esclarecer que não mentirá para as famílias e alertá-los sobre os riscos daquela escolha.",
+        "style": "Diferenciação Ética Individual"
       }
     },
     "twistCode": "VIRADA 17",
-    "twistText": "Devido a um apagão elétrico no campus, a faculdade comunica que a avaliação foi transferida para as 16h, mas o colega já está sob crise de taquicardia por cafeína e cansaço.",
-    "theoryNote": "Aplica a Lei de Yerkes-Dodson: níveis excessivos de ativação simpática degradam a recuperação de memória e o raciocínio dedutivo complexo em provas."
+    "twistText": "A festa acontecerá em um bairro distante e com relatos de violência recente.",
+    "theoryNote": "Avalia o equilíbrio entre lealdade juvenil e percepção do perigo objetivo à vida e à integridade dos pares."
   },
   {
     "id": 18,
     "code": "CASO 18",
-    "theme": "Regulação Emocional sob Pressão Acadêmica",
-    "themeTag": "REGULACAO",
-    "title": "Disputa de Autoria em Trabalho Integrado",
-    "colorHex": "#065f46",
-    "situation": "Dois grupos de discentes se uniram para elaborar um projeto de intervenção comunitária. Ao submeter para um congresso regional renomado, surge conflito agressivo sobre quem será o primeiro autor.",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "A Votação do Grêmio Estudantil",
+    "colorHex": "#4f46e5",
+    "situation": "Na eleição do grêmio estudantil, seu melhor amigo concorre com propostas fracas contra uma candidata competente de quem você não é próximo.",
     "options": {
       "A": {
         "letter": "A",
-        "shortLabel": "Taxonomia CRediT",
-        "fullText": "Adotar a taxonomia científica internacional de autoria (CRediT) para mapear objetivamente quem liderou a redação e concepção.",
-        "style": "Planejada / Analítica: Avaliação Metodológica Meritória Transparente"
+        "shortLabel": "Votar no amigo cegamente",
+        "fullText": "Votar e fazer campanha para o amigo unicamente pelo afeto pessoal.",
+        "style": "Personalismo Afetivo Não Crítico"
       },
       "B": {
         "letter": "B",
-        "shortLabel": "Ordem Alfabética Rápida",
-        "fullText": "Listar por ordem alfabética para estancar o atrito imediatamente, desconsiderando a carga horária investida.",
-        "style": "Impulsiva / Reativa: Pacificação Superficial por Esquiva"
+        "shortLabel": "Anular o voto",
+        "fullText": "Não votar em ninguém para não se sentir culpado nem se comprometer.",
+        "style": "Isolamento Político Evitativo"
       },
       "C": {
         "letter": "C",
-        "shortLabel": "Coautoria Compartilhada",
-        "fullText": "Estabelecer coautoria compartilhada de liderança e alternar a ordem de destaque entre o artigo e a apresentação oral.",
-        "style": "Criativa / Adaptativa: Negociação Cooperativa Ganha-Ganha"
+        "shortLabel": "Votar no melhor projeto",
+        "fullText": "Votar na candidata preparada e explicar com franqueza ao amigo os critérios adotados.",
+        "style": "Cidadania Institucional Pós-Convencional"
       }
     },
     "twistCode": "VIRADA 18",
-    "twistText": "O sistema de submissão do congresso não aceita coautoria compartilhada nem empates, exigindo a ordem hierárquica definitiva até as 23h59 de hoje.",
-    "theoryNote": "Ilustra os desafios da regulação emocional em dinâmicas de competição intra-grupo versus cooperação científica, demandando flexibilidade e inteligência relacional."
+    "twistText": "O amigo afirma que sua amizade será rompida caso você não apoie publicamente a chapa dele.",
+    "theoryNote": "Tensiona vínculos afetivos imediatos versus integridade de princípios públicos e democráticos na juventude."
+  },
+  {
+    "id": 19,
+    "code": "CASO 19",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "O Dilema do Trabalho em Grupo",
+    "colorHex": "#7c3aed",
+    "situation": "Uma integrante do trabalho escolar fez uma apresentação fraca e o professor pergunta na frente de todos quem foi responsável pela parte dela.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Expor a colega em público",
+        "fullText": "Dizer que a culpa foi inteiramente dela para resguardar a própria nota.",
+        "style": "Atribuição Externa Hostil"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Assumir a culpa toda",
+        "fullText": "Dizer que você errou na revisão para livrar a colega da vergonha.",
+        "style": "Auto-sacrifício Desproporcional"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Apresentar a responsabilidade do grupo",
+        "fullText": "Explicar que o grupo dividiu as tarefas e assumir coletivamente a necessidade de ajustes.",
+        "style": "Solidariedade e Raciocínio Coletivo"
+      }
+    },
+    "twistCode": "VIRADA 19",
+    "twistText": "O professor oferece a chance de refazer a parte com desconto de nota apenas para quem reescrever.",
+    "theoryNote": "Mede a lealdade corporativa versus egoísmo meritocrático diante de avaliações institucionais formais."
+  },
+  {
+    "id": 20,
+    "code": "CASO 20",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "A Foto Descontextualizada",
+    "colorHex": "#6d28d9",
+    "situation": "Chega ao seu celular uma foto constrangedora de uma colega de sala tirada no vestiário feminino.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Repassar imediatamente",
+        "fullText": "Encaminhar para outros grupos para ganhar notoriedade social.",
+        "style": "Violência Digital Imatura"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Manter salva no aparelho",
+        "fullText": "Não repassar, mas guardar o arquivo no histórico de mídia.",
+        "style": "Conivência Oculta"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Apagar e alertar os canais",
+        "fullText": "Deletar na hora, alertar quem enviou sobre crime digital e avisar a coordenação com sigilo.",
+        "style": "Controle Inibitório e Cuidado Moral"
+      }
+    },
+    "twistCode": "VIRADA 20",
+    "twistText": "A mensagem foi configurada com visualização única e expira em 5 segundos.",
+    "theoryNote": "Exige rápida inibição de curiosidade destrutiva e firmeza moral diante de violações de intimidade."
+  },
+  {
+    "id": 21,
+    "code": "CASO 21",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "A Escolha da Carreira",
+    "colorHex": "#5b21b6",
+    "situation": "Seus pais querem que você preste vestibular para Direito, mas sua vocação genuína é para Artes Visuais e Design.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Ceder totalmente aos pais",
+        "fullText": "Inscrever-se no curso desejado pela família para evitar conflitos domésticos.",
+        "style": "Heteronomia Vocacional Passiva"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Confrontar com agressividade",
+        "fullText": "Gritar que eles estragaram sua vida e romper o diálogo em casa.",
+        "style": "Rebeldia Reativa sem Projeto"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Construir plano estruturado",
+        "fullText": "Apresentar o mercado de design, custos e perspectivas com maturidade e firmeza serena.",
+        "style": "Autonomia Assertiva Dialógica"
+      }
+    },
+    "twistCode": "VIRADA 21",
+    "twistText": "A família condiciona o pagamento de qualquer curso à aprovação na carreira indicada por eles.",
+    "theoryNote": "Desenvolve a deliberação de longo prazo e a resiliência vocacional perante chantagens econômicas familiares."
+  },
+  {
+    "id": 22,
+    "code": "CASO 22",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "O Dinheiro do Evento Escolar",
+    "colorHex": "#8b5cf6",
+    "situation": "Como tesoureiro da formatura, você sobrou com 200 reais não contabilizados no caixa após o fechamento das contas da festa.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Gastar com coisas pessoais",
+        "fullText": "Usar o dinheiro extra considerando como taxa pelo trabalho de cobrança.",
+        "style": "Corrupção de Conveniência"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Deixar na gaveta sem falar",
+        "fullText": "Guardar a quantia em envelope sem registrar no livro oficial.",
+        "style": "Omissão de Controle"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Prestar contas com transparência",
+        "fullText": "Registrar a sobra formalmente na planilha e propor destinação coletiva para o fundo.",
+        "style": "Probidade e Transparência"
+      }
+    },
+    "twistCode": "VIRADA 22",
+    "twistText": "Você está com a mensalidade do seu curso atrasada e seu nome pode ir para o mural de inadimplentes.",
+    "theoryNote": "Submete o participante ao clássico teste de integridade contábil diante de privação financeira individual severa."
+  },
+  {
+    "id": 23,
+    "code": "CASO 23",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "A Roupa Fora do Padrão",
+    "colorHex": "#7c3aed",
+    "situation": "Um colega comparece à escola usando roupas que expressam sua identidade de gênero, sofrendo risos e cochichos nos corredores.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Participar do deboche",
+        "fullText": "Rir junto para não parecer destoante do grupo hegemônico.",
+        "style": "Cumplicidade Opressiva por Conformismo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Fingir que não vê",
+        "fullText": "Caminhar olhando para o chão para não se indispor com ninguém.",
+        "style": "Isolamento Conivente"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Cumprimentar com afeto e sentar junto",
+        "fullText": "Acolher o colega abertamente, demonstrando que a diversidade é bem-vinda.",
+        "style": "Coragem Empática e Inclusão"
+      }
+    },
+    "twistCode": "VIRADA 23",
+    "twistText": "O grupo mais popular da escola avisa que quem andar com ele será excluído da festa de fim de ano.",
+    "theoryNote": "Avalia a sustentação de princípios de direitos humanos contra o risco real de ostracismo social na adolescência."
+  },
+  {
+    "id": 24,
+    "code": "CASO 24",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "A Carona Arriscada",
+    "colorHex": "#6366f1",
+    "situation": "Ao final de um show, o motorista da carona ingeriu cerveja e insiste que está ótimo para dirigir a turma de volta.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Entrar no carro mesmo assim",
+        "fullText": "Arriscar a viagem com medo de ficar sozinho na madrugada.",
+        "style": "Subestimação de Risco Físico"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Discutir agressivamente",
+        "fullText": "Tomar as chaves aos gritos provocando uma briga física na saída do evento.",
+        "style": "Escalada Reativa de Conflito"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Chamar transporte por aplicativo",
+        "fullText": "Recusar entrar no carro, convencer os amigos e pedir transporte seguro compartilhado.",
+        "style": "Gerenciamento de Crise e Segurança"
+      }
+    },
+    "twistCode": "VIRADA 24",
+    "twistText": "Nenhum aplicativo aceita corridas para a região naquele horário da madrugada.",
+    "theoryNote": "Tensiona a inteligência prática de sobrevivência e busca de alternativas criativas seguras sob pressão extrema."
+  },
+  {
+    "id": 25,
+    "code": "CASO 25",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "O Furo na Fila do Cinema",
+    "colorHex": "#4f46e5",
+    "situation": "Seus amigos chamam você para 'furar' uma fila de mais de cem pessoas no cinema alegando que 'todo mundo faz isso'.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Entrar no meio da fila",
+        "fullText": "Aproveitar a brecha para não esperar em pé.",
+        "style": "Normalização de Microtransgressões"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Ficar com vergonha mas aceitar",
+        "fullText": "Baixar a cabeça e furar a fila sentindo desconforto interno.",
+        "style": "Dissonância Ética Submissa"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Ir para o final da fila",
+        "fullText": "Recusar a vantagem indevida e convidar os amigos a respeitarem quem chegou antes.",
+        "style": "Consistência Ética e Respeito ao Coletivo"
+      }
+    },
+    "twistCode": "VIRADA 25",
+    "twistText": "Os ingressos para a sessão estão nos últimos assentos disponíveis e podem esgotar.",
+    "theoryNote": "Avalia a consistência do senso de justiça procedimental perante a perspectiva de perda de um benefício imediato."
+  },
+  {
+    "id": 26,
+    "code": "CASO 26",
+    "ageGroup": "Adolescência (13 a 17 anos)",
+    "ageTag": "ADOLESCENCIA",
+    "title": "O Colega em Isolamento",
+    "colorHex": "#4338ca",
+    "situation": "Você percebe que um amigo de infância parou de responder no grupo, não almoça mais e apresenta marcas de ferimentos no braço.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Contar aos outros como fofoca",
+        "fullText": "Espalhar para a turma que ele está agindo de forma estranha.",
+        "style": "Exploração Sensacionalista do Trauma"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Achar que é 'fase' e esperar",
+        "fullText": "Não intervir acreditando que cada um cuida da sua vida.",
+        "style": "Omissão de Socorro Psicológico"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Buscar conversa acolhedora e ajuda",
+        "fullText": "Ouvir o amigo sem julgamentos e apoiá-lo para buscar a orientação psicológica escolar.",
+        "style": "Apoio Psicossocial e Preservação da Vida"
+      }
+    },
+    "twistCode": "VIRADA 26",
+    "twistText": "O colega faz ameaças de que se alguém souber ele tomará atitudes ainda mais extremas.",
+    "theoryNote": "Desenvolve a capacidade de agir com responsabilidade ética superior perante o risco real à vida (suicidologia/posvenção)."
+  },
+  {
+    "id": 27,
+    "code": "CASO 27",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "O Primeiro Emprego e o Atalho",
+    "colorHex": "#0d9488",
+    "situation": "No período de experiência no trabalho, seu supervisor sugere que você ignore uma checagem de segurança para bater a meta do turno.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Ignorar a checagem",
+        "fullText": "Seguir a instrução do chefe para garantir a efetivação no cargo.",
+        "style": "Obediência Servil à Autoridade"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Denunciar anonimamente sem checar",
+        "fullText": "Mandar mensagem para a matriz acusando o chefe de fraude.",
+        "style": "Reatividade Punitiva sem Diálogo"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Pontuar o risco com respeito",
+        "fullText": "Demonstrar tecnicamente que a falha pode gerar prejuízo maior e realizar a checagem com agilidade.",
+        "style": "Assertividade Profissional Deontológica"
+      }
+    },
+    "twistCode": "VIRADA 27",
+    "twistText": "O sistema trava durante a checagem e o supervisor ameaça não renovar seu contrato.",
+    "theoryNote": "Tensiona a preservação de padrões éticos e técnicos versus a sobrevivência econômica do primeiro emprego."
+  },
+  {
+    "id": 28,
+    "code": "CASO 28",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "O Cartão de Crédito Emprestado",
+    "colorHex": "#0f766e",
+    "situation": "Um primo querido pede seu cartão de crédito emprestado para comprar um curso online urgente prometendo pagar no mês seguinte.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Emprestar sem garantias",
+        "fullText": "Passar o cartão imediatamente pelo afeto familiar sem calcular o impacto no seu limite.",
+        "style": "Generosidade Financeira Temerária"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Recusar com hostilidade",
+        "fullText": "Dizer que família e dinheiro não se misturam de forma ríspida.",
+        "style": "Rejeição Reativa Conflitiva"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Negociar limites claros",
+        "fullText": "Explicar seu limite de orçamento e propor contribuir com uma parcela menor em dinheiro como apoio.",
+        "style": "Planejamento e Limite Saudável"
+      }
+    },
+    "twistCode": "VIRADA 28",
+    "twistText": "Você descobre que ele já está inadimplente em outros três bancos familiares.",
+    "theoryNote": "Exercita a inibição da impulsividade afetiva em finanças pessoais e a preservação de limites relacionais."
+  },
+  {
+    "id": 29,
+    "code": "CASO 29",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "O Trabalho de Conclusão e a IA",
+    "colorHex": "#115e59",
+    "situation": "Com prazo apertado para entrega do TCC, uma ferramenta de inteligência artificial generativa escreve 30 páginas perfeitas sem fontes comprovadas.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Entregar o texto gerado",
+        "fullText": "Submeter o capítulo completo como se fosse de sua autoria sem checagem.",
+        "style": "Plágio e Fraude Intelectual"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Apagar tudo em desespero",
+        "fullText": "Entrar em colapso e pedir trancamento do semestre.",
+        "style": "Catastrofização e Desistência"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Usar como roteiro crítico",
+        "fullText": "Utilizar a estrutura como ponto de partida, checar fontes reais na biblioteca e redigir com voz autoral.",
+        "style": "Uso Ético e Crítico de Tecnologias"
+      }
+    },
+    "twistCode": "VIRADA 29",
+    "twistText": "A banca examinadora adotou um software de detecção algorítmica rigoroso nesta semana.",
+    "theoryNote": "Trabalha a integridade intelectual diante da sedução do atalho tecnológico contemporâneo."
+  },
+  {
+    "id": 30,
+    "code": "CASO 30",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "O Relacionamento e o Projeto de Vida",
+    "colorHex": "#134e4a",
+    "situation": "Você recebe uma proposta excelente de bolsa ou trabalho no exterior, mas sua parceria amorosa não pode viajar pelos próximos dois anos.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Recusar a oportunidade",
+        "fullText": "Abrir mão imediatamente do seu sonho profissional pelo relacionamento.",
+        "style": "Renúncia Vocacional Não Dialogada"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Terminar pelo aplicativo",
+        "fullText": "Encerrar o vínculo amoroso de forma fria e viajar sem olhar para trás.",
+        "style": "Descarte Relacional Imaturo"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Construir pacto de transição",
+        "fullText": "Sentar para alinhar expectativas, planos de visita e avaliar possibilidades de apoio recíproco.",
+        "style": "Negociação de Projeto a Dois"
+      }
+    },
+    "twistCode": "VIRADA 30",
+    "twistText": "A oportunidade no exterior exige resposta irrevogável em até 48 horas.",
+    "theoryNote": "Avalia a tomada de decisão existencial complexa sob pressão de tempo e maturação de vínculos afetivos."
+  },
+  {
+    "id": 31,
+    "code": "CASO 31",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "A Mensagem Noturna da Empresa",
+    "colorHex": "#047857",
+    "situation": "Às 23h30 de um domingo, seu gestor envia cobranças em tom de urgência sobre uma apresentação de terça-feira.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Responder na hora trabalhando a noite toda",
+        "fullText": "Levantar da cama e passar a madrugada trabalhando sem descanso.",
+        "style": "Hiperdisponibilidade Tóxica"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Bloquear o chefe no aplicativo",
+        "fullText": "Excluir o aplicativo e faltar ao trabalho no dia seguinte.",
+        "style": "Fuga Agressiva de Conflito"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Organizar a resposta para o início do expediente",
+        "fullText": "Visualizar, agendar a entrega para o início da manhã de segunda e manter o sono preservado.",
+        "style": "Demarcação Saudável de Limites"
+      }
+    },
+    "twistCode": "VIRADA 31",
+    "twistText": "O gestor liga insistentemente pelo telefone residencial acordando seus familiares.",
+    "theoryNote": "Analisa o equilíbrio entre dedicação profissional e preservação da saúde mental sob cultura de exaustão."
+  },
+  {
+    "id": 32,
+    "code": "CASO 32",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "A Reprovação Inesperada",
+    "colorHex": "#059669",
+    "situation": "Após meses de preparação para um concurso público ou seleção concorrida, seu nome não aparece na lista de aprovados por uma questão.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Abandonar os estudos",
+        "fullText": "Queimar os livros e afirmar que meritocracia é mentira e nada vale a pena.",
+        "style": "Reação Frustrada de Desamparo Aprendido"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Entrar em litígio sem fundamento",
+        "fullText": "Contratar advogados para processar a banca sem checar o edital.",
+        "style": "Negação Reativa da Realidade"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Auditar o desempenho e recalcular a rota",
+        "fullText": "Pedir vista da prova, entender as lacunas de conhecimento e estruturar cronograma adaptativo.",
+        "style": "Resiliência e Aprendizagem com o Erro"
+      }
+    },
+    "twistCode": "VIRADA 32",
+    "twistText": "A banca examinadora anulou uma questão com gabarito dúbio que beneficia diretamente sua classificação.",
+    "theoryNote": "Estimula a flexibilidade de julgamento perante reveses imediatos e a contenção de conclusões catastróficas."
+  },
+  {
+    "id": 33,
+    "code": "CASO 33",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "A Divisão do Aluguel Republicano",
+    "colorHex": "#065f46",
+    "situation": "Em uma casa compartilhada entre estudantes e jovens profissionais, um dos moradores perde o emprego e não tem como pagar o aluguel do mês.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Expulsar imediatamente",
+        "fullText": "Trocar a fechadura e reter os pertences do colega sem conversa.",
+        "style": "Intolerância Punitiva Desumana"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Assumir a dívida sem prazo",
+        "fullText": "Pagar a parte dele indefinidamente sem pactuar nenhuma contrapartida.",
+        "style": "Condescendência Financeira sem Limite"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Estabelecer acordo transitório",
+        "fullText": "Ratear a parcela provisoriamente por 60 dias mediante tarefas de apoio na casa e busca de renda.",
+        "style": "Equidade Cooperativa Sustentável"
+      }
+    },
+    "twistCode": "VIRADA 33",
+    "twistText": "O proprietário do imóvel notifica que não aceitará nenhum atraso e cobrará multa diária alta.",
+    "theoryNote": "Tensiona a solidariedade interpessoal comunitária com as contingências de contratos formais de moradia."
+  },
+  {
+    "id": 34,
+    "code": "CASO 34",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "O Colega que Leva os Louros",
+    "colorHex": "#0f766e",
+    "situation": "Em uma reunião estratégica, um colega de equipe apresenta como se fosse dele a proposta de inovação que você desenvolveu durante semanas.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Desmascarar aos gritos na reunião",
+        "fullText": "Interromper a fala acusando o colega de furto intelectual na frente da diretoria.",
+        "style": "Reatividade Agressiva Explosiva"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Guardar ressentimento em silêncio",
+        "fullText": "Ficar calado, não dizer nada e acumular raiva por meses.",
+        "style": "Passividade Tóxica Ressentida"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Intervir com dados e elegância técnica",
+        "fullText": "Complementar a fala mostrando os relatórios e métricas de autoria própria com postura colaborativa.",
+        "style": "Afirmação Estratégica Inteligente"
+      }
+    },
+    "twistCode": "VIRADA 34",
+    "twistText": "O diretor pede que quem teve a ideia assuma a liderança do projeto imediatamente com orçamento restrito.",
+    "theoryNote": "Exercita a gestão de conflitos no ambiente corporativo e a capacidade de autopromoção ética sem perda do controle emocional."
+  },
+  {
+    "id": 35,
+    "code": "CASO 35",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "A Pressão por Consumo de Substâncias",
+    "colorHex": "#115e59",
+    "situation": "Em uma confraternização da empresa, diretores começam a beber pesadamente e pressionam quem está tomando suco a brindar com doses de destilado.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Beber contra a vontade",
+        "fullText": "Ceder à coerção para não parecer puritano nem perder oportunidades políticas na firma.",
+        "style": "Submissão Conformista ao Grupo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Criticar moralmente a conduta de todos",
+        "fullText": "Fazer um discurso repreendendo os hábitos etílicos dos colegas.",
+        "style": "Hostilidade Moralizante Deslocada"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Sustentar sua escolha com naturalidade",
+        "fullText": "Erguer o copo com simpatia, brindar com sua bebida e manter o posicionamento com leveza.",
+        "style": "Autonomia e Segurança Emocional"
+      }
+    },
+    "twistCode": "VIRADA 35",
+    "twistText": "O diretor principal pede que você seja o motorista da van da equipe na volta por estar sóbrio.",
+    "theoryNote": "Mede a solidez do controle inibitório perante dinâmicas corporativas de coerção informal de consumo."
+  },
+  {
+    "id": 36,
+    "code": "CASO 36",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "O Investimento 'Certeiro'",
+    "colorHex": "#134e4a",
+    "situation": "Um influenciador digital promete retorno de 10% ao mês garantido em um esquema financeiro inovador e pede que você entre logo.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Investir todas as economias",
+        "fullText": "Transferir sua reserva de emergência buscando ganho rápido espetacular.",
+        "style": "Heurística de Ganância / Efeito Manada"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Ignorar sem entender nada",
+        "fullText": "Rejeitar qualquer investimento e guardar o dinheiro desvalorizando na gaveta.",
+        "style": "Aversão Total ao Risco por Ignorância"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Pesquisar regulação e riscos",
+        "fullText": "Consultar a CVM, entender o funcionamento e priorizar diversificação com segurança comprovada.",
+        "style": "Racionalidade Financeira Analítica"
+      }
+    },
+    "twistCode": "VIRADA 36",
+    "twistText": "Vários amigos próximos já colocaram dinheiro e estão mostrando supostos comprovantes de saque.",
+    "theoryNote": "Testa a resistência a fraudes financeiras e a prudência investigativa perante a validação social dos pares."
+  },
+  {
+    "id": 37,
+    "code": "CASO 37",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "A Mudança de Carreira",
+    "colorHex": "#0d9488",
+    "situation": "Aos 26 anos, você percebe que a área em que se formou não traz sentido nem sustentabilidade e deseja migrar para tecnologia ou saúde.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Abandonar tudo no impulso",
+        "fullText": "Pedir demissão amanhã sem reserva financeira nem planejamento de transição.",
+        "style": "Impulsividade Transgressora Temerária"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Permanecer infeliz para sempre",
+        "fullText": "Conformar-se com a frustração para evitar o desconforto de começar de novo.",
+        "style": "Inércia Existencial / Medo do Novo"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Estruturar transição gradual",
+        "fullText": "Montar reserva, iniciar cursos noturnos e migrar com portfólio prático validado em 18 meses.",
+        "style": "Planejamento Adaptativo Realista"
+      }
+    },
+    "twistCode": "VIRADA 37",
+    "twistText": "Sua empresa atual oferece uma promoção com aumento de 15% mas com o dobro de horas extras.",
+    "theoryNote": "Avalia a flexibilidade cognitiva para sustentar metas de longo prazo contra recompensas imediatas de curto fôlego."
+  },
+  {
+    "id": 38,
+    "code": "CASO 38",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "O Feed Comparativo",
+    "colorHex": "#047857",
+    "situation": "Ao abrir as redes sociais em um domingo à noite, você vê fotos de colegas de faculdade em viagens de luxo e sente-se atrasado na vida.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Postar fotos ostentando dívidas",
+        "fullText": "Gastar no cartão para simular um estilo de vida irreal nas redes.",
+        "style": "Inveja Compensatória / Vaidade"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Entrar em espiral de auto-depreciação",
+        "fullText": "Acreditar que é um fracassado e isolar-se de todos os amigos.",
+        "style": "Comparação Social Destrutiva"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Desconectar e focar no processo próprio",
+        "fullText": "Reconhecer que feeds são vitrines editadas, valorizar suas conquistas reais e cuidar de si.",
+        "style": "Autocompaixão e Senso de Realidade"
+      }
+    },
+    "twistCode": "VIRADA 38",
+    "twistText": "Um dos colegas da foto perfeita confidencia no privado que está com depressão severa e dívidas impagáveis.",
+    "theoryNote": "Estimula a quebra de heurísticas de representatividade e a consolidação de critérios internos de autorrealização."
+  },
+  {
+    "id": 39,
+    "code": "CASO 39",
+    "ageGroup": "Adultos Jovens (18 a 30 anos)",
+    "ageTag": "JOVEM",
+    "title": "A Votação em Condomínio",
+    "colorHex": "#0f766e",
+    "situation": "Na primeira reunião de condomínio do seu prédio, um morador propõe proibir a entrada de animais de estimação para reduzir barulho.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Votar sim sem refletir",
+        "fullText": "Apoiar a proibição apenas para terminar a reunião rápido e ir embora.",
+        "style": "Apatia Cívica Precipitada"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Iniciar bate-boca agressivo",
+        "fullText": "Insultar o morador proponente gerando clima hostil no edifício.",
+        "style": "Escalada Beligerante Não Construtiva"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Propor regras de convivência e bom senso",
+        "fullText": "Defender a presença dos animais com regras claras sobre limpeza, coleiras e horários de silêncio.",
+        "style": "Mediação Comunitária Equilibrada"
+      }
+    },
+    "twistCode": "VIRADA 39",
+    "twistText": "A maioria dos idosos do prédio depende emocionalmente de seus animais como suporte diário.",
+    "theoryNote": "Aplica o pensamento pós-convencional e a construção de pactos coletivos na vida urbana adulta."
+  },
+  {
+    "id": 40,
+    "code": "CASO 40",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "A Demissão em Massa",
+    "colorHex": "#b45309",
+    "situation": "Como gestor, você recebe ordem superior para demitir 30% da sua equipe sem critérios claros para reduzir custos da matriz.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Cumprir a lista sem questionar",
+        "fullText": "Demitir quem estiver mais vulnerável sem ponderar competências ou impactos.",
+        "style": "Cumprimento Cego de Ordens"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Pedir demissão em protesto",
+        "fullText": "Abandonar o cargo na hora deixando a equipe desprotegida e sem liderança.",
+        "style": "Abandono de Papel por Esgotamento"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Apresentar plano de otimização alternativo",
+        "fullText": "Propor redução de custos operacionais e lay-off parcial negociado para salvar postos de trabalho.",
+        "style": "Liderança Responsável e Negociação"
+      }
+    },
+    "twistCode": "VIRADA 40",
+    "twistText": "A matriz aceita avaliar alternativas mas exige economia mínima comprovada até amanhã às 18h.",
+    "theoryNote": "Tensiona a responsabilidade ética da liderança intermediária entre a frieza orçamentária e a dignidade do trabalho."
+  },
+  {
+    "id": 41,
+    "code": "CASO 41",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "O Cuidado com os Pais Idosos",
+    "colorHex": "#92400e",
+    "situation": "Sua mãe viúva de 78 anos teve uma queda em casa e não consegue mais morar totalmente sozinha. Os irmãos divergem sobre as providências.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Internar em asilo sem consentimento",
+        "fullText": "Colocar em instituição de longa permanência sem escutar os desejos da própria idosa.",
+        "style": "Decisão Paternalista Unilateral"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Ignorar a gravidade do fato",
+        "fullText": "Achar que foi um acidente pontual e não mudar nada na rotina da mãe.",
+        "style": "Negação do Declínio Funcional"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Organizar rede de suporte e escuta",
+        "fullText": "Conversar com a mãe, avaliar adaptação da casa, cuidadores compartilhados e divisão com irmãos.",
+        "style": "Cuidado Integral Intergeracional"
+      }
+    },
+    "twistCode": "VIRADA 41",
+    "twistText": "A mãe declara com lucidez que prefere morrer a sair da casa onde viveu por cinquenta anos.",
+    "theoryNote": "Avalia a deliberação ética em bioética clínica entre a autonomia do sujeito maduro e a responsabilidade protetiva da família."
+  },
+  {
+    "id": 42,
+    "code": "CASO 42",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "O Conflito de Gerações no Trabalho",
+    "colorHex": "#78350f",
+    "situation": "Um estagiário talentoso de 20 anos questiona metodologias tradicionais da sua empresa que são seguidas há mais de duas décadas por você.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Repreender o jovem pela audácia",
+        "fullText": "Dizer que quem não tem experiência deve calar a boca e obedecer.",
+        "style": "Rigidez Autoritária Geracional"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Fazer de conta que concorda e ignorar",
+        "fullText": "Fingir que acolheu as ideias mas manter tudo exatamente igual nas costas dele.",
+        "style": "Cinismo Institucional"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Promover mentoria bidirecional",
+        "fullText": "Unir a experiência prática acumulada com as ferramentas digitais trazidas pelo jovem em projeto piloto.",
+        "style": "Intercâmbio e Flexibilidade Geracional"
+      }
+    },
+    "twistCode": "VIRADA 42",
+    "twistText": "O cliente mais importante da empresa pede exatamente soluções modernas sugeridas pelo jovem.",
+    "theoryNote": "Testa a capacidade do profissional sênior de inibir o orgulho corporativo e aprender com as novas gerações."
+  },
+  {
+    "id": 43,
+    "code": "CASO 43",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "A Crise de Sentido da Meia-Idade",
+    "colorHex": "#b45309",
+    "situation": "Aos 45 anos, com carreira estável e família formada, você é acometido por um sentimento persistente de vazio e rotina burocrática.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Tomar decisões impulsivas drásticas",
+        "fullText": "Abandonar o casamento e o emprego no calor da emoção em busca de emoções fáceis.",
+        "style": "Reatividade Regressiva de Crise"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Silenciar com medicamentos sem terapia",
+        "fullText": "Automedicar-se para anestesiar a angústia existencial sem buscar as causas profundas.",
+        "style": "Anestesia Emocional Evitativa"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Iniciar processo de individuação",
+        "fullText": "Buscar terapia, resgatar projetos altruístas autênticos e ressignificar prioridades de vida com maturidade.",
+        "style": "Integração Psíquica e Autenticidade (Jung)"
+      }
+    },
+    "twistCode": "VIRADA 43",
+    "twistText": "Você descobre uma causa comunitária na sua cidade que precisa exatamente do seu saber profissional voluntário.",
+    "theoryNote": "Desenvolve a generatividade versus estagnação (Erikson) como estágio superior do desenvolvimento psicossocial adulto."
+  },
+  {
+    "id": 44,
+    "code": "CASO 44",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "A Auditoria Fiscal e o Amigo",
+    "colorHex": "#92400e",
+    "situation": "Na conferência de balanço da empresa, você constata que um colega querido fraudou notas de reembolso de viagens para pagar cirurgia do filho.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Encobrir a fraude e assinar junto",
+        "fullText": "Adulterar os livros para proteger o amigo assumindo risco penal.",
+        "style": "Cumplicidade Ilegal por Compaixão"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Expor com denúncia pública imediata",
+        "fullText": "Chamar a polícia na empresa sem conversar previamente com o envolvido.",
+        "style": "Punição Radical sem Contextualização"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Chamar para regularização imediata",
+        "fullText": "Conversar com o colega, orientá-lo a repor os valores e acionar os canais de apoio formal da empresa.",
+        "style": "Firmeza Ética com Empatia Prática"
+      }
+    },
+    "twistCode": "VIRADA 44",
+    "twistText": "A auditoria externa iniciará a inspeção das contas em exatamente 24 horas.",
+    "theoryNote": "Tensiona a deontologia formal contábil com a compaixão diante de dramas de saúde familiar de subordinados."
+  },
+  {
+    "id": 45,
+    "code": "CASO 45",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "A Herança Familiar Dividida",
+    "colorHex": "#78350f",
+    "situation": "Após o falecimento dos genitores, uma chácara de valor afetivo precisa ser partilhada entre três irmãos com condições financeiras muito desiguais.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Exigir venda em leilão judicial",
+        "fullText": "Entrar na justiça para liquidar o bem rapidamente sem dialogar.",
+        "style": "Litigiosidade Fraternal Destrutiva"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Renunciar a tudo com amargura",
+        "fullText": "Abrir mão dos seus direitos acumulando ressentimento para o resto da vida.",
+        "style": "Falsa Paz com Dano Emocional"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Propor mediação familiar estruturada",
+        "fullText": "Pactuar uso compartilhado, compensações justas e respeito à memória dos pais com apoio técnico neutro.",
+        "style": "Mediação de Conflitos e Conciliação"
+      }
+    },
+    "twistCode": "VIRADA 45",
+    "twistText": "Um dos irmãos mora na propriedade com filhos pequenos e não tem para onde ir se o imóvel for vendido agora.",
+    "theoryNote": "Avalia a modulação entre direitos legais estritos de herança e critérios substantivos de equidade e afeto fraternal."
+  },
+  {
+    "id": 46,
+    "code": "CASO 46",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "O Diagnóstico Crônico",
+    "colorHex": "#b45309",
+    "situation": "Aos 50 anos, um exame de rotina detecta hipertensão arterial grave e início de diabetes, exigindo mudanças drásticas de dieta e estilo de vida.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Negar o diagnóstico e continuar como antes",
+        "fullText": "Dizer que os médicos exageram e manter sedentarismo e alimentação prejudicial.",
+        "style": "Negação Onipotente da Fragilidade"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Entrar em pânico hipocondríaco",
+        "fullText": "Parar de trabalhar achando que vai ter um infarto a qualquer segundo.",
+        "style": "Catastrofização Paralisante"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Elaborar plano de reabilitação e autocuidado",
+        "fullText": "Assumir a adesão ao tratamento, readequar alimentação, praticar exercícios e valorizar a longevidade com saúde.",
+        "style": "Coping Focado no Problema"
+      }
+    },
+    "twistCode": "VIRADA 46",
+    "twistText": "Sua rotina profissional exige viagens frequentes e refeições em restaurantes de estrada.",
+    "theoryNote": "Mede a flexibilidade adaptativa para reorganizar hábitos consolidados há décadas perante limites do corpo biológico."
+  },
+  {
+    "id": 47,
+    "code": "CASO 47",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "O Filho Adolescente sob Suspeita",
+    "colorHex": "#92400e",
+    "situation": "Você desconfia que seu filho de 15 anos está envolvido com grupos de bullying digital após notar mudanças bruscas de comportamento.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Invadir o celular sem dialogar",
+        "fullText": "Arrombar senhas e expor as conversas dele na mesa de jantar.",
+        "style": "Violação Autoritária sem Vínculo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Fingir que não percebeu nada",
+        "fullText": "Terceirizar a responsabilidade achando que a escola deve resolver.",
+        "style": "Omissão Parental Negligente"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Conduzir conversa profunda e firme",
+        "fullText": "Sentar com o jovem, demonstrar amor incondicional, apontar as evidências e estabelecer limites éticos claros.",
+        "style": "Autoridade Democrática e Vínculo"
+      }
+    },
+    "twistCode": "VIRADA 47",
+    "twistText": "O adolescente desaba em choro e revela que na verdade ele é o alvo das chantagens do grupo.",
+    "theoryNote": "Trabalha a inibição do julgamento preconceituoso dos pais e a escuta ativa antes de medidas disciplinares punitivas."
+  },
+  {
+    "id": 48,
+    "code": "CASO 48",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "A Tentação do Suborno",
+    "colorHex": "#78350f",
+    "situation": "Em um processo de licenciamento de obra da sua pequena empresa, um fiscal insinua que um 'cafézinho' liberaria o alvará em 2 dias em vez de 6 meses.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Pagar a propina na hora",
+        "fullText": "Pagar o valor solicitado para não atrasar o faturamento do negócio.",
+        "style": "Conivência com a Corrupção Sistêmica"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Agressão física ao fiscal",
+        "fullText": "Partir para a violência verbal criando um escândalo descontrolado.",
+        "style": "Descontrole Emocional Reativo"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Recusar com firmeza e registrar canais",
+        "fullText": "Rejeitar a solicitação, exigir protocolo formal e denunciar a tentativa de concussão à ouvidoria pública.",
+        "style": "Cidadania e Legalidade Inegociável"
+      }
+    },
+    "twistCode": "VIRADA 48",
+    "twistText": "O atraso de 6 meses ameaça a folha de pagamento de dez funcionários contratados.",
+    "theoryNote": "Submete a integridade moral ao teste dos custos econômicos imediatos da retidão ética nos negócios."
+  },
+  {
+    "id": 49,
+    "code": "CASO 49",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "O Reconhecimento da Falha Própria",
+    "colorHex": "#b45309",
+    "situation": "Como diretor de projeto, você cometeu um erro de cálculo que gerou prejuízo financeiro e percebe que a culpa está caindo sobre um subordinado.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Deixar o subordinado levar a culpa",
+        "fullText": "Ficar calado para não manchar sua reputação de alto executivo.",
+        "style": "Cobardia Moral Instrumental"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Culpar as ferramentas digitais",
+        "fullText": "Dizer que o software falhou sem assumir o comando da equipe.",
+        "style": "Terceirização Desonesta de Responsabilidade"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Assumir a autoria do erro publicamente",
+        "fullText": "Apresentar-se à diretoria, assumir a falha de cálculo e blindar o colaborador de retaliações.",
+        "style": "Nobreza Ética e Liderança Exemplar"
+      }
+    },
+    "twistCode": "VIRADA 49",
+    "twistText": "A empresa adota política de tolerância zero e pode rescindir o contrato do líder que errar.",
+    "theoryNote": "Avalia a coragem cívica e o altruísmo ético de quem lidera quando os custos da verdade recaem sobre si."
+  },
+  {
+    "id": 50,
+    "code": "CASO 50",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "O Vício Oculto do Cônjuge",
+    "colorHex": "#92400e",
+    "situation": "Você descobre que sua parceria de casamento acumula dívidas astronômicas em apostas esportivas online sem seu conhecimento.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Pedir divórcio litigioso no mesmo dia",
+        "fullText": "Expulsar o cônjuge de casa e cortar todas as pontes sem diálogo prévio.",
+        "style": "Reação Drástica sem Diagnóstico"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Tentar pagar tudo em segredo",
+        "fullText": "Vender patrimônio pessoal para cobrir as apostas sem exigir tratamento.",
+        "style": "Codependência Habilitadora do Vício"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Proteger o patrimônio e exigir tratamento",
+        "fullText": "Separar finanças legalmente, acolher a queixa como dependência comportamental e vincular apoio a tratamento médico especializado.",
+        "style": "Cuidado Lúcido com Limites de Proteção"
+      }
+    },
+    "twistCode": "VIRADA 50",
+    "twistText": "A família do cônjuge acusa você de ser insensível por colocar limites patrimoniais.",
+    "theoryNote": "Tensiona a regulação emocional entre amor afetivo e proteção contra a autodestruição gerada por vícios."
+  },
+  {
+    "id": 51,
+    "code": "CASO 51",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "A Oportunidade Tardia",
+    "colorHex": "#78350f",
+    "situation": "Aos 55 anos, surge a chance de cursar a pós-graduação dos seus sonhos, mas amigos e parentes dizem que 'não tem mais idade para isso'.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Desistir pelo preconceito alheio",
+        "fullText": "Acreditar no preconceito etário e conformar-se com o fim do aprendizado formal.",
+        "style": "Internalização do Etarismo / Ageísmo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Fazer escondido com culpa",
+        "fullText": "Matricular-se sem contar a ninguém com vergonha de ser julgado.",
+        "style": "Insegurança Social Tardia"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Assumir o estudo com orgulho e vigor",
+        "fullText": "Celebrar o aprendizado ao longo de toda a vida (*lifelong learning*) e inspirar pessoas de todas as idades.",
+        "style": "Lifelong Learning e Vitalidade Intelectual"
+      }
+    },
+    "twistCode": "VIRADA 51",
+    "twistText": "As aulas serão inteiramente em ambiente virtual com plataformas que você nunca utilizou antes.",
+    "theoryNote": "Estimula a neuroplasticidade na maturidade e a flexibilidade para dominar novas ferramentas pedagógicas."
+  },
+  {
+    "id": 52,
+    "code": "CASO 52",
+    "ageGroup": "Adultos (31 a 59 anos)",
+    "ageTag": "ADULTO",
+    "title": "A Voluntariedade na Comunidade",
+    "colorHex": "#b45309",
+    "situation": "Uma enchente desabriga 50 famílias no seu bairro e a igreja local pede que quem puder ceda um quarto vago por três dias.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Fechar as portas com desconfiança",
+        "fullText": "Achar que o governo deve resolver e não envolver sua casa.",
+        "style": "Individualismo Defensivo Insular"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Acolher sem nenhuma checagem prévia",
+        "fullText": "Colocar dez pessoas desconhecidas sem coordenar com os líderes da triagem.",
+        "style": "Impulsividade Assistencialista Caótica"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Articular acolhimento coordenado e seguro",
+        "fullText": "Oferecer o espaço cadastrado via triagem comunitária, com regras de apoio mútuo e respeito familiar.",
+        "style": "Cidadania Solidária Estruturada"
+      }
+    },
+    "twistCode": "VIRADA 52",
+    "twistText": "Uma das pessoas acolhidas tem histórico de descompensação psíquica sob crises agudas.",
+    "theoryNote": "Exercita a gestão comunitária de crises e a manutenção do acolhimento humano sob contingências complexas."
+  },
+  {
+    "id": 53,
+    "code": "CASO 53",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "O Celular Moderno e a Autonomia",
+    "colorHex": "#6b21a8",
+    "situation": "Seus filhos compraram um smartphone de última geração e querem que você faça pagamentos e compras pelo banco digital, mas você tem medo de golpes.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Recusar terminantemente e guardar o aparelho",
+        "fullText": "Guardar o aparelho na gaveta e continuar pegando filas de duas horas no sol na agência física.",
+        "style": "Resistência Rígida à Tecnologia"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Entregar senhas para os filhos fazerem tudo",
+        "fullText": "Passar todas as senhas pessoais e perder totalmente o controle do próprio dinheiro.",
+        "style": "Perda Passiva de Autonomia"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Aprender com paciência e medidas de segurança",
+        "fullText": "Fazer um curso de inclusão digital para idosos, aprender os passos básicos e manter a autonomia financeira protegida.",
+        "style": "Adaptação Tecnológica Ativa com Cautela"
+      }
+    },
+    "twistCode": "VIRADA 53",
+    "twistText": "A agência bancária física do seu bairro encerrou o atendimento presencial em definitivo.",
+    "theoryNote": "Estimula a neuroplasticidade na velhice e a superação do medo de ferramentas digitais contemporâneas."
+  },
+  {
+    "id": 54,
+    "code": "CASO 54",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Carteira de Habilitação",
+    "colorHex": "#581c87",
+    "situation": "Aos 76 anos, após quase 50 anos dirigindo sem multas, seu médico oftalmologista adverte que seus reflexos visuais noturnos já não são seguros para o trânsito.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Ignorar o médico e dirigir à noite",
+        "fullText": "Continuar dirigindo normalmente afirmando que 'tem mais prática que qualquer jovem'.",
+        "style": "Ilusão de Invulnerabilidade Senil"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Vender o carro em depressão e não sair mais de casa",
+        "fullText": "Sentir-se inútil e abandonar todas as atividades sociais e de lazer.",
+        "style": "Luto Desadaptativo por Perda de Papel"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Adaptar o uso com lucidez e alternativas",
+        "fullText": "Cessar viagens noturnas voluntariamente, usar o carro apenas em rotas curtas diurnas e adotar transporte por aplicativo.",
+        "style": "Gerenciamento Lúcido da Senescência"
+      }
+    },
+    "twistCode": "VIRADA 54",
+    "twistText": "Um vizinho idoso que você costuma levar semanalmente ao médico precisa de carona urgente às 20h.",
+    "theoryNote": "Tensiona a autoimagem de autonomia e utilidade contra a responsabilidade com a segurança pública no trânsito."
+  },
+  {
+    "id": 55,
+    "code": "CASO 55",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Herança dos Sonhos Próprios",
+    "colorHex": "#3b0764",
+    "situation": "Aos 70 anos, você acumulou uma economia e sonha em realizar uma viagem de intercâmbio cultural, mas os filhos sugerem que você guarde o dinheiro para a herança deles.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Ceder o dinheiro aos filhos imediatamente",
+        "fullText": "Abrir mão dos seus desejos para agradar a expectativa dos descendentes.",
+        "style": "Anulação da Subjetividade na Velhice"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Gastar tudo com ostentação em vingança",
+        "fullText": "Torrar as economias de forma desordenada apenas para contrariar a família.",
+        "style": "Reatividade Birrenta Destrutiva"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Realizar o projeto com transparência serena",
+        "fullText": "Explicar aos filhos que a maior herança já foi a educação dada e desfrutar dos frutos do próprio trabalho com dignidade.",
+        "style": "Autocuidado Existencial e Plenitude (Erikson)"
+      }
+    },
+    "twistCode": "VIRADA 55",
+    "twistText": "Um dos netos adoece e precisa de uma cirurgia particular urgente não coberta pelo plano.",
+    "theoryNote": "Avalia a flexibilidade entre autorrealização na maturidade tardia e a solidariedade familiar essencial."
+  },
+  {
+    "id": 56,
+    "code": "CASO 56",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "O Novo Relacionamento Amoroso",
+    "colorHex": "#6b21a8",
+    "situation": "Aos 72 anos, viúvo(a) há uma década, você conhece alguém especial no grupo de caminhada e decide iniciar um relacionamento afetivo, enfrentando ciúmes e piadas dos filhos.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Terminar pelo julgamento dos filhos",
+        "fullText": "Afastar-se do parceiro para não criar atritos no almoço de domingo da família.",
+        "style": "Heteronomia Afetiva Tardía"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Romper com os filhos agressivamente",
+        "fullText": "Proibir a entrada dos filhos em casa e viver o romance isolado de todos.",
+        "style": "Polarização Afetiva Conflitiva"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Assumir o afeto com naturalidade e diálogo",
+        "fullText": "Conversar com os filhos com segurança e afeto, deixando claro que o amor não tem prazo de validade e é um direito seu.",
+        "style": "Autodeterminação Afetiva na Longevidade"
+      }
+    },
+    "twistCode": "VIRADA 56",
+    "twistText": "O novo companheiro propõe morarem juntos na mesma casa compartilhando despesas.",
+    "theoryNote": "Desmistifica o etarismo quanto à sexualidade, romance e convivência íntima nas idades maduras."
+  },
+  {
+    "id": 57,
+    "code": "CASO 57",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Doação de Bens em Vida",
+    "colorHex": "#581c87",
+    "situation": "Um dos filhos pede que você passe o imóvel principal para o nome dele em cartório com cláusula de usufruto, alegando 'facilitar burocracias futuras'.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Assinar a escritura sem consultar ninguém",
+        "fullText": "Fazer a transferência cega movido pela pressão e carinho pelo filho.",
+        "style": "Vulnerabilidade Jurídica Precipitada"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Acusar o filho de ladrão aos berros",
+        "fullText": "Romper o diálogo em família de forma escandalosa.",
+        "style": "Agressividade Defensiva Primária"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Buscar assessoria jurídica independente",
+        "fullText": "Consultar a defensoria pública ou advogado neutro e garantir que seus direitos de posse e moradia fiquem 100% resguardados.",
+        "style": "Autodefesa e Prudência Legal na Terceira Idade"
+      }
+    },
+    "twistCode": "VIRADA 57",
+    "twistText": "O filho afirma que se você não assinar ele não permitirá que você conviva com seus netos.",
+    "theoryNote": "Aborda a prevenção da violência patrimonial e psicológica contra a pessoa idosa (Estatuto da Pessoa Idosa)."
+  },
+  {
+    "id": 58,
+    "code": "CASO 58",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Solidão de Domingo",
+    "colorHex": "#3b0764",
+    "situation": "Os domingos costumavam ser cheios de parentes em casa, mas com o crescimento dos netos as visitas tornaram-se raras e rápidas, gerando sensação de abandono.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Isolar-se em depressão e lamentação",
+        "fullText": "Passar o dia na cama assistindo televisão com queixas constantes de solidão.",
+        "style": "Desengajamento Social Depressivo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Fazer chantagem emocional nos grupos",
+        "fullText": "Mandar mensagens cobrando visitas forçadas e reclamando de ingratidão.",
+        "style": "Manipulação Afetiva Disfuncional"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Criar novos projetos e vínculos de pares",
+        "fullText": "Engajar-se em grupos culturais, voluntariado, horta comunitária e atividades com pessoas da mesma fase de vida.",
+        "style": "Resiliência e Reinvenção Social na Velhice"
+      }
+    },
+    "twistCode": "VIRADA 58",
+    "twistText": "A associação de bairro vizinha está procurando contadores de histórias seniores para crianças de abrigos.",
+    "theoryNote": "Estimula a generatividade e a reconstrução de propósito social significativo na longevidade ativa."
+  },
+  {
+    "id": 59,
+    "code": "CASO 59",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Opinião não Solicitada",
+    "colorHex": "#6b21a8",
+    "situation": "Ao visitar a casa de um filho, você repara que a educação dada aos netos é completamente diferente da que você praticava no seu tempo.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Intervir desautorizando os pais na frente das crianças",
+        "fullText": "Gritar com os filhos e dizer que eles não sabem educar ninguém.",
+        "style": "Invasão de Papel Parental Conflitiva"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Ir embora ofendido em silêncio",
+        "fullText": "Ficar emburrado no canto e recusar-se a conversar com os netos.",
+        "style": "Passividade Agressiva Frustrada"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Oferecer escuta amorosa e aconselhamento sutil",
+        "fullText": "Respeitar a autoridade dos pais, ser um refúgio acolhedor e seguro para os netos e orientar apenas quando solicitado.",
+        "style": "Sabedoria Geracional e Respeito de Fronteiras"
+      }
+    },
+    "twistCode": "VIRADA 59",
+    "twistText": "A criança pede expressamente a sua ajuda para lidar com um conflito difícil que tem com o pai.",
+    "theoryNote": "Desenvolve a modulação da sabedoria acumulada sem desrespeitar os limites do núcleo familiar da nova geração."
+  },
+  {
+    "id": 60,
+    "code": "CASO 60",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Limitação Física do Corpo",
+    "colorHex": "#581c87",
+    "situation": "Uma artrose no joelho impede você de fazer suas caminhadas longas matinais favoritas que realizava religiosamente há trinta anos.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Parar todo e qualquer exercício",
+        "fullText": "Ficar sentado o dia inteiro lamentando a deterioração do corpo físico.",
+        "style": "Rendição Passiva ao Sedentarismo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Forçar a caminhada sentindo dor intensa",
+        "fullText": "Continuar correndo e caminhando no sacrifício, agravando a lesão articular.",
+        "style": "Negação Obstinada do Limite Biológico"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Migrar para hidroginástica e fisioterapia",
+        "fullText": "Adaptar-se à natação, pilates adaptado ou hidroginástica, mantendo a saúde cardiovascular e novos amigos.",
+        "style": "Adaptação Plástica e Otimização Seletiva com Compensação (Baltes)"
+      }
+    },
+    "twistCode": "VIRADA 60",
+    "twistText": "A piscina comunitária fica um pouco mais distante da sua residência e exige pegar ônibus.",
+    "theoryNote": "Aplica o modelo SOC de Paul Baltes (Seleção, Otimização e Compensação) no envelhecimento bem-sucedido."
+  },
+  {
+    "id": 61,
+    "code": "CASO 61",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Descoberta de um Talento Tardio",
+    "colorHex": "#3b0764",
+    "situation": "Aos 68 anos, você começa a pintar quadros por diversão e um curador de arte local elogia suas telas e convida para uma exposição coletiva.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Recusar por achar que 'não tem idade'",
+        "fullText": "Dizer que é bobagem de velho e que passaria vergonha ao lado de artistas jovens.",
+        "style": "Inibição por Auto-Etarismo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Achar-se o maior mestre da cidade",
+        "fullText": "Encher-se de soberba e romper com os professores da oficina básica.",
+        "style": "Vaidade Compensatória Ilusória"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Participar com humildade, alegria e entrega",
+        "fullText": "Expor os trabalhos, celebrar a expressão artística e mostrar que a criatividade floresce em qualquer idade.",
+        "style": "Criatividade e Expressão Plena na Maturidade"
+      }
+    },
+    "twistCode": "VIRADA 61",
+    "twistText": "A galeria pede dez telas originais prontas com prazo de entrega de quatro semanas.",
+    "theoryNote": "Estimula a autoeficácia e a capacidade de engajamento em novos projetos expressivos de vida na longevidade."
+  },
+  {
+    "id": 62,
+    "code": "CASO 62",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "O Testamento e a Paz Familiar",
+    "colorHex": "#6b21a8",
+    "situation": "Com a idade avançada, você deseja organizar a destinação de seus pertences e memórias para evitar que os parentes briguem no futuro.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Deixar tudo sem registro 'para eles se entenderem'",
+        "fullText": "Não fazer nada e permitir que o caos sucessório se instale após sua partida.",
+        "style": "Omissão Irresponsável perante a Finitude"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Chantajear os herdeiros com promessas de bens",
+        "fullText": "Usar o testamento como instrumento de manipulação e controle sobre os filhos.",
+        "style": "Uso Tirânico do Poder Sucessório"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Elaborar diretivas claras e transparentes em cartório",
+        "fullText": "Organizar a partilha com assessoria jurídica justa, conversar abertamente com a família e selar a união fraterna.",
+        "style": "Organização Serena da Finitude e Legado"
+      }
+    },
+    "twistCode": "VIRADA 62",
+    "twistText": "Um dos filhos exige receber adiantado a sua parte da herança para abrir um comércio de risco.",
+    "theoryNote": "Desenvolve a serenidade da finitude humana com justiça e proteção da própria subsistência até o fim da vida."
+  },
+  {
+    "id": 63,
+    "code": "CASO 63",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Decisão sobre Cuidados de Fim de Vida",
+    "colorHex": "#581c87",
+    "situation": "Seu médico pergunta se você gostaria de registrar suas Diretivas Antecipadas de Vontade para o caso de uma internação grave com perda de consciência.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Recusar falar sobre o assunto por superstição",
+        "fullText": "Dizer que falar de morte atrai doença e proibir o médico de tocar no tema.",
+        "style": "Tabu e Negação da Mortalidade"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Dizer para fazerem qualquer coisa que quiserem",
+        "fullText": "Terceirizar completamente a decisão aos parentes sem expressar seus desejos.",
+        "style": "Passividade sem Autonomia Médica"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Registrar seus valores e limites com clareza",
+        "fullText": "Formalizar que deseja alívio da dor e dignidade sem distanásia ou prolongamento artificial fútil de sofrimento.",
+        "style": "Autonomia Bioética e Ortotanásia Digna"
+      }
+    },
+    "twistCode": "VIRADA 63",
+    "twistText": "A família se mostra dividida e teme que a decisão pareça abandono de cuidados.",
+    "theoryNote": "Aborda as diretivas antecipadas de vontade e a bioética paliativista como ápice da maturidade e dignidade humana."
+  },
+  {
+    "id": 64,
+    "code": "CASO 64",
+    "ageGroup": "Longevidade (60+ anos)",
+    "ageTag": "LONGEVIDADE",
+    "title": "A Síntese da Vida e a Gratidão",
+    "colorHex": "#3b0764",
+    "situation": "Ao olhar para trás aos 80 anos, você recorda tanto os acertos e alegrias quanto os erros, dores e oportunidades perdidas ao longo da trajetória.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Viver mergulhado em amargura e remorso",
+        "fullText": "Lamentar dia e noite o que poderia ter sido diferente, sentindo que a vida foi injusta.",
+        "style": "Desespero e Falha na Integração do Ego (Erikson)"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Fingir que nunca cometeu nenhum erro",
+        "fullText": "Adotar uma postura arrogante negando todas as falhas e vulnerabilidades do passado.",
+        "style": "Negação Narcísica Rígida"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Integrar a história com sabedoria e gratidão",
+        "fullText": "Aceitar a própria narrativa como única, perdoar a si mesmo e aos outros e transmitir amor às futuras gerações.",
+        "style": "Integridade do Ego e Sabedoria Existencial (Erikson)"
+      }
+    },
+    "twistCode": "VIRADA 64",
+    "twistText": "Um jovem da sua família pede que você grave depoimentos em áudio contando as lições mais importantes que aprendeu na vida.",
+    "theoryNote": "Consolida a integridade do ego versus desespero proposta por Erik Erikson como coroamento do desenvolvimento humano."
   }
 ];
 
     // ESTADO DA RODADA ATIVA
+    let currentBoardSize = 16; // 8, 16, 32 ou 64 cards
+    let currentAgeFilter = "ALL";
+    let activeBlockIndex = 0; // Para 32 e 64 cards (blocos de 16)
     let CASES_DATA = [];
     let activeCaseId = 1;
     let showTheoryLens = true;
     let caseTimerStart = performance.now();
     let timerInterval = null;
     let sessionState = {};
-    let currentThemeFilter = "ALL";
 
-    // ESTADO DO USUÁRIO ACADÊMICO
-    const USER_SESSION_STORAGE_KEY = "CARDSPSI_CURRENT_USER_SESSION";
-    const COHORT_STORAGE_KEY = "CARDSPSI_PILOT_COHORT_2026";
+    // ESTADO DO USUÁRIO
+    const USER_SESSION_STORAGE_KEY = "CARDSPSI_OPEN_SESSION_USER";
+    const COHORT_STORAGE_KEY = "CARDSPSI_OPEN_COHORT_DATABASE";
     let currentUser = {
-      name: "Participante Piloto 01",
-      matricula: "",
-      role: "Estudante de Psicologia",
-      turma: "ARA1060 — 2026.2"
+      name: "Participante 01",
+      ageGroup: "Todas as Idades",
+      goal: "Autoaplicação"
     };
 
     // ALGORITMO FISHER-YATES SHUFFLE
@@ -1183,27 +2649,28 @@
       return array;
     }
 
-    // INICIALIZAÇÃO DE UMA NOVA RODADA DE 6 CASOS
-    function initNewRound(themeFilter = "ALL") {
-      currentThemeFilter = themeFilter;
-      let pool = [];
+    // INICIALIZAÇÃO DE UMA NOVA RODADA DE N CASOS (8, 16, 32 ou 64)
+    function initNewRound(boardSize = currentBoardSize, ageFilter = currentAgeFilter) {
+      currentBoardSize = parseInt(boardSize, 10);
+      currentAgeFilter = ageFilter;
+      activeBlockIndex = 0;
 
-      if (themeFilter === "ALL") {
+      let pool = [];
+      if (ageFilter === "ALL") {
         pool = [...ALL_CASES_POOL];
-      } else if (themeFilter === "ORIGINAIS") {
-        pool = ALL_CASES_POOL.filter(c => c.themeTag === "ORIGINAIS");
       } else {
-        const themeMatches = ALL_CASES_POOL.filter(c => c.themeTag === themeFilter);
-        const others = ALL_CASES_POOL.filter(c => c.themeTag !== themeFilter);
-        // Garante 6 casos mesmo se o tema tiver menos de 6
-        pool = [...themeMatches, ...shuffleArray(others)];
+        const ageMatches = ALL_CASES_POOL.filter(c => c.ageTag === ageFilter);
+        const others = ALL_CASES_POOL.filter(c => c.ageTag !== ageFilter);
+        // Prioriza a faixa etária selecionada e preenche o restante com sorteio
+        pool = [...ageMatches, ...shuffleArray(others)];
       }
 
-      // Embaralha o pool via Fisher-Yates e seleciona exatamente 6 casos
-      const shuffledPool = shuffleArray(pool);
-      const selected = shuffledPool.slice(0, 6);
+      // Embaralha o pool via Fisher-Yates
+      const shuffled = shuffleArray(pool);
+      // Seleciona exatamente o número de cards da escala (8, 16, 32 ou 64)
+      const selected = shuffled.slice(0, currentBoardSize);
 
-      // Clona e randomiza a ordem visual das opções na bandeja de cada caso
+      // Prepara os cards com ordem aleatória de botões na bandeja (anti-memorização)
       CASES_DATA = selected.map((c, idx) => {
         const clone = JSON.parse(JSON.stringify(c));
         clone.slotIndex = idx + 1;
@@ -1218,38 +2685,43 @@
       renderDeliberationStation();
       renderPsychometricReport();
 
-      // Atualiza badge de modo
+      // Atualiza badges
+      const scaleBadge = document.getElementById('active-scale-badge');
+      if (scaleBadge) scaleBadge.textContent = `${currentBoardSize} Cards`;
+
       const modeLabels = {
-        "ALL": "Sorteio Geral (6 de 18)",
-        "ESCOLAR": "Eixo Escolar / Educacional",
-        "HOSPITALAR": "Eixo Hospitalar",
-        "ORGANIZACIONAL": "Eixo Organizacional (POT)",
-        "CAPS": "Eixo Saúde Mental (CAPS)",
-        "ETICA": "Eixo Ética / Estágio",
-        "REGULACAO": "Eixo Regulação Emocional",
-        "ORIGINAIS": "Casos Originais S1-S6"
+        "ALL": "Todas as Idades",
+        "INFANCIA": "Infância (6-12)",
+        "ADOLESCENCIA": "Adolescência (13-17)",
+        "JOVEM": "Adultos Jovens (18-30)",
+        "ADULTO": "Adultos (31-59)",
+        "LONGEVIDADE": "Longevidade (60+)"
       };
       const modeIndicator = document.getElementById('board-mode-indicator');
       if (modeIndicator) {
-        modeIndicator.textContent = modeLabels[themeFilter] || "Sorteio Ativo";
+        modeIndicator.textContent = `${currentBoardSize} Cards • ${modeLabels[ageFilter] || 'Geral'}`;
       }
+    }
+
+    function onBoardSizeChange() {
+      const size = document.getElementById('board-size-select').value;
+      initNewRound(size, currentAgeFilter);
+    }
+
+    function onAgeFilterChange() {
+      const filter = document.getElementById('age-filter-select').value;
+      initNewRound(currentBoardSize, filter);
     }
 
     function triggerNewRoundWithConfirmation() {
-      const filter = document.getElementById('theme-filter-select').value;
       const values = Object.values(sessionState);
       const hasProgress = values.some(v => v.stage !== "INITIAL");
       if (hasProgress) {
-        if (!confirm("Você já iniciou a deliberação desta rodada. Deseja sortear 6 novos casos e reiniciar o tabuleiro?")) {
+        if (!confirm(`Você já iniciou a deliberação desta rodada de ${currentBoardSize} cards. Deseja sortear novos casos e reiniciar?`)) {
           return;
         }
       }
-      initNewRound(filter);
-    }
-
-    function onThemeFilterChange() {
-      const filter = document.getElementById('theme-filter-select').value;
-      initNewRound(filter);
+      initNewRound(currentBoardSize, currentAgeFilter);
     }
 
     function initEmptySessionState() {
@@ -1270,15 +2742,49 @@
 
     function renderBoardGrid() {
       const grid = document.getElementById('board-grid');
+      const blockNav = document.getElementById('board-block-nav');
       let completedCount = 0;
 
-      grid.innerHTML = CASES_DATA.map((c, index) => {
+      // Se tamanho for 32 ou 64 cards, ativa paginação por blocos de 16
+      const isPaginated = currentBoardSize > 16;
+      let displayCases = CASES_DATA;
+
+      if (isPaginated) {
+        blockNav.classList.remove('hidden');
+        const numBlocks = Math.ceil(currentBoardSize / 16);
+        const startIdx = activeBlockIndex * 16;
+        const endIdx = Math.min(startIdx + 16, currentBoardSize);
+        displayCases = CASES_DATA.slice(startIdx, endIdx);
+
+        blockNav.innerHTML = Array.from({ length: numBlocks }, (_, b) => {
+          const bStart = b * 16 + 1;
+          const bEnd = Math.min((b + 1) * 16, currentBoardSize);
+          const blockCases = CASES_DATA.slice(b * 16, bEnd);
+          const doneInBlock = blockCases.filter(c => sessionState[c.id] && sessionState[c.id].stage === "COMPLETED").length;
+          const isActive = b === activeBlockIndex;
+          return `
+            <button onclick="setActiveBlock(${b})" class="flex-1 min-w-[120px] py-1.5 px-2.5 rounded-lg font-bold text-center transition flex items-center justify-between ${isActive ? 'bg-sky-600 text-white shadow-sm' : 'bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200'}">
+              <span>Bloco ${b + 1} (${bStart}-${bEnd})</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded ${isActive ? 'bg-sky-800 text-sky-200' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}">${doneInBlock}/${blockCases.length}</span>
+            </button>
+          `;
+        }).join('');
+      } else {
+        blockNav.classList.add('hidden');
+      }
+
+      // Ajusta colunas da grade conforme o número de cards exibidos
+      if (currentBoardSize === 8) {
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 my-2";
+      } else {
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5 my-2";
+      }
+
+      grid.innerHTML = displayCases.map(c => {
         const st = sessionState[c.id];
         const isCurrent = c.id === activeCaseId;
         const chosenLetter = st.finalChoice || st.initialChoice;
         const chosenObj = chosenLetter ? c.options[chosenLetter] : null;
-
-        if (st.stage === "COMPLETED") completedCount++;
 
         let badge = `<span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Vazio</span>`;
         if (st.stage === "TWIST") {
@@ -1290,17 +2796,17 @@
 
         if (!chosenObj) {
           return `
-            <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot cursor-pointer p-3 flex flex-col justify-between items-center text-center bg-slate-50/70 dark:bg-slate-800/30 hover:bg-slate-100 dark:hover:bg-slate-800/60 ${isCurrent ? 'active-slot' : ''}">
+            <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot cursor-pointer p-2.5 flex flex-col justify-between items-center text-center bg-slate-50/70 dark:bg-slate-800/30 hover:bg-slate-100 dark:hover:bg-slate-800/60 ${isCurrent ? 'active-slot' : ''}">
               <div class="w-full flex items-center justify-between">
-                <span class="text-[10px] font-extrabold text-slate-400">ESPAÇO 0${index + 1} • ${c.code}</span>
+                <span class="text-[10px] font-extrabold text-slate-400">CARD 0${c.slotIndex}</span>
                 ${badge}
               </div>
-              <div class="my-auto py-2">
-                <div class="w-10 h-10 rounded-full bg-slate-200/80 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-extrabold text-base flex items-center justify-center mx-auto mb-1.5" style="border-top: 3px solid ${c.colorHex}">
-                  ${index + 1}
+              <div class="my-auto py-1.5">
+                <div class="w-8 h-8 rounded-full bg-slate-200/80 dark:bg-slate-700 text-slate-700 dark:text-slate-200 font-extrabold text-sm flex items-center justify-center mx-auto mb-1" style="border-top: 3px solid ${c.colorHex}">
+                  ${c.slotIndex}
                 </div>
                 <p class="text-xs font-bold text-slate-800 dark:text-slate-200 line-clamp-1">${c.title}</p>
-                <p class="text-[9px] font-semibold text-sky-700 dark:text-sky-300 uppercase mt-0.5 truncate max-w-[140px] mx-auto">${c.theme}</p>
+                <p class="text-[9px] font-semibold text-sky-700 dark:text-sky-300 uppercase mt-0.5 truncate max-w-[120px] mx-auto">${c.ageGroup}</p>
               </div>
               <span class="text-[10px] text-sky-600 dark:text-sky-400 font-semibold">Tocar para abrir</span>
             </div>
@@ -1308,29 +2814,36 @@
         }
 
         return `
-          <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot filled-slot animate-piece cursor-pointer p-3 flex flex-col justify-between bg-white dark:bg-slate-800 shadow-sm ${isCurrent ? 'active-slot' : ''}">
+          <div onclick="selectCaseSlot(${c.id})" class="puzzle-slot filled-slot animate-piece cursor-pointer p-2.5 flex flex-col justify-between bg-white dark:bg-slate-800 shadow-sm ${isCurrent ? 'active-slot' : ''}">
             <div>
-              <div class="h-2 w-full rounded-full mb-2" style="background-color: ${c.colorHex}"></div>
+              <div class="h-1.5 w-full rounded-full mb-1.5" style="background-color: ${c.colorHex}"></div>
               <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-slate-400">ESPAÇO 0${index + 1} • ${c.code}</span>
-                <span class="text-base font-extrabold" style="color: ${c.colorHex}">Peça ${chosenObj.letter}</span>
+                <span class="text-[10px] font-bold text-slate-400">CARD 0${c.slotIndex}</span>
+                <span class="text-sm font-extrabold" style="color: ${c.colorHex}">Peça ${chosenObj.letter}</span>
               </div>
             </div>
-            <div class="my-2 text-center">
-              <p class="text-xs sm:text-sm font-extrabold text-slate-900 dark:text-white leading-tight">
+            <div class="my-1.5 text-center">
+              <p class="text-xs font-extrabold text-slate-900 dark:text-white leading-tight line-clamp-1">
                 ${chosenObj.shortLabel}
               </p>
-              <p class="text-[9px] font-semibold text-slate-400 uppercase mt-0.5 truncate">${c.theme}</p>
+              <p class="text-[9px] font-semibold text-slate-400 uppercase mt-0.5 truncate">${c.ageGroup}</p>
             </div>
-            <div class="pt-1.5 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
+            <div class="pt-1 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
               ${badge}
-              <span class="text-[10px] font-mono text-slate-400">${(st.timeR1Seconds + st.timeR2Seconds).toFixed(1)}s</span>
+              <span class="text-[9px] font-mono text-slate-400">${(st.timeR1Seconds + st.timeR2Seconds).toFixed(1)}s</span>
             </div>
           </div>
         `;
       }).join('');
 
-      document.getElementById('progress-counter').textContent = `${completedCount} / 6 Casos`;
+      // Contagem geral de concluídos no total selecionado
+      completedCount = CASES_DATA.filter(c => sessionState[c.id] && sessionState[c.id].stage === "COMPLETED").length;
+      document.getElementById('progress-counter').textContent = `${completedCount} / ${currentBoardSize} Concluídos`;
+    }
+
+    function setActiveBlock(bIndex) {
+      activeBlockIndex = bIndex;
+      renderBoardGrid();
     }
 
     function renderDeliberationStation() {
@@ -1338,12 +2851,11 @@
       const c = CASES_DATA.find(item => item.id === activeCaseId) || CASES_DATA[0];
       if (!c) return;
       const st = sessionState[c.id];
-      const slotIndex = CASES_DATA.findIndex(item => item.id === c.id) + 1;
 
       const theoryBox = showTheoryLens ? `
         <div class="mt-3.5 p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/70 text-xs leading-relaxed">
           <strong class="block text-amber-800 dark:text-amber-300 uppercase tracking-wider text-[10px] mb-0.5">
-            🔬 Lente Teórica (ARA1060 • Prof. Jair Nunes Rocha)
+            🔬 Lente Teórica (Processos Psicológicos Básicos)
           </strong>
           <span class="text-amber-900 dark:text-amber-200">${c.theoryNote}</span>
         </div>
@@ -1355,12 +2867,12 @@
           <div>
             <div class="flex items-center justify-between mb-1.5">
               <span class="px-2 py-0.5 rounded-full text-[11px] font-extrabold text-white" style="background-color: ${c.colorHex}">
-                ESPAÇO 0${slotIndex} • ${c.code} • 1ª RODADA
+                CARD 0${c.slotIndex} DE ${currentBoardSize} • 1ª RODADA
               </span>
               <span class="text-xs font-semibold text-slate-400">Passo 1 de 2</span>
             </div>
             <div class="mb-1">
-              <span class="text-[10px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-300">${c.theme}</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-300">${c.ageGroup}</span>
               <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">${c.title}</h3>
             </div>
             <p class="mt-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-800/80 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
@@ -1369,7 +2881,7 @@
 
             <div class="mt-3.5">
               <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-                Selecione a peça para o espaço 0${slotIndex} (ordem dinâmica anti-memorização):
+                Selecione a peça para o Card 0${c.slotIndex} (ordem dinâmica anti-memorização):
               </p>
               <div class="space-y-2">
                 ${displayKeys.map(letter => {
@@ -1404,7 +2916,7 @@
           <div class="animate-piece">
             <div class="flex items-center justify-between mb-1.5">
               <span class="px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-amber-600 text-white">
-                04 / SEGUNDA RODADA • ${c.twistCode}
+                CARD 0${c.slotIndex} • SEGUNDA RODADA • ${c.twistCode}
               </span>
               <span class="text-xs font-bold text-amber-600 dark:text-amber-400">Fato Novo!</span>
             </div>
@@ -1434,7 +2946,7 @@
                 Justificativa Cognitiva (Opcional):
               </label>
               <input id="twist-justification" type="text" value="${st.justification}"
-                placeholder="Ex.: Troquei para negociar após a contingência..."
+                placeholder="Ex.: Troquei para cooperar após o fato novo..."
                 class="w-full px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs focus:outline-none focus:ring-2 focus:ring-sky-500" />
             </div>
 
@@ -1475,7 +2987,7 @@
         <div class="animate-piece space-y-3">
           <div class="flex items-center justify-between">
             <span class="px-2 py-0.5 rounded-full text-[11px] font-extrabold bg-emerald-600 text-white">
-              ✓ ESPAÇO 0${slotIndex} • ${c.code} CONSOLIDADO
+              ✓ CARD 0${c.slotIndex} CONSOLIDADO
             </span>
             <button onclick="reopenCase(${c.id})" class="text-xs font-semibold text-sky-600 hover:underline">
               Refazer
@@ -1483,7 +2995,7 @@
           </div>
 
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">${c.theme}</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">${c.ageGroup}</span>
             <h3 class="text-base sm:text-lg font-extrabold">${c.title}</h3>
           </div>
 
@@ -1508,7 +3020,7 @@
           ${nextUnfinished ? `
             <button onclick="selectCaseSlot(${nextUnfinished.id})"
               class="w-full py-2.5 px-3 rounded-xl font-extrabold text-xs sm:text-sm bg-sky-600 hover:bg-sky-700 text-white shadow transition">
-              Próximo: ESPAÇO 0${CASES_DATA.findIndex(item => item.id === nextUnfinished.id) + 1} (${nextUnfinished.code}) →
+              Próximo: CARD 0${nextUnfinished.slotIndex} →
             </button>
           ` : `
             <button onclick="switchTab('report')"
@@ -1537,11 +3049,19 @@
 
     function selectCaseSlot(caseId) {
       activeCaseId = caseId;
+      const c = CASES_DATA.find(item => item.id === caseId);
+      if (c && currentBoardSize > 16) {
+        // Altera automaticamente para o bloco correto se o card estiver em outro bloco
+        const targetBlock = Math.floor((c.slotIndex - 1) / 16);
+        if (targetBlock !== activeBlockIndex) {
+          activeBlockIndex = targetBlock;
+        }
+      }
       startCaseTimer();
       renderBoardGrid();
       renderDeliberationStation();
 
-      // Scroll suave para o painel de deliberação em telas móveis
+      // Scroll suave em dispositivos móveis
       if (window.innerWidth < 1024) {
         const target = document.getElementById('deliberation-panel-anchor');
         if (target) {
@@ -1600,6 +3120,7 @@
       renderPsychometricReport();
     }
 
+    // CÁLCULO DINÂMICO DE MÉTRICAS ADAPTADO A 8, 16, 32 E 64 CARDS
     function computeSessionMetrics() {
       const values = Object.values(sessionState);
       const completed = values.filter(v => v.stage === "COMPLETED");
@@ -1624,6 +3145,7 @@
       const avgR2 = totalCompleted > 0 ? (sumR2 / totalCompleted) : 0;
 
       return {
+        boardSize: currentBoardSize,
         totalCompleted,
         changedCount,
         maintainedCount: totalCompleted - changedCount,
@@ -1643,24 +3165,23 @@
       const participantCard = document.getElementById('report-participant-card');
 
       const pName = document.getElementById('participant-name').value || currentUser.name || "Participante";
-      const appMode = document.getElementById('application-mode').value;
 
       if (participantCard) {
         participantCard.innerHTML = `
           <div>
-            <span class="text-slate-400 font-bold uppercase text-[9px] block">Avaliado / Estudante</span>
+            <span class="text-slate-400 font-bold uppercase text-[9px] block">Participante</span>
             <strong class="text-sm font-bold text-slate-900 dark:text-white truncate block">${pName}</strong>
-            <span class="text-[10px] text-slate-500 font-mono">${currentUser.matricula || "Matrícula não informada"}</span>
+            <span class="text-[10px] text-slate-500">${currentUser.ageGroup}</span>
           </div>
           <div>
-            <span class="text-slate-400 font-bold uppercase text-[9px] block">Perfil & Turma</span>
-            <strong class="text-xs font-semibold text-sky-700 dark:text-sky-300 block truncate">${currentUser.role}</strong>
-            <span class="text-[10px] text-slate-500 font-mono">${currentUser.turma || "ARA1060"}</span>
+            <span class="text-slate-400 font-bold uppercase text-[9px] block">Finalidade</span>
+            <strong class="text-xs font-semibold text-sky-700 dark:text-sky-300 block truncate">${currentUser.goal}</strong>
+            <span class="text-[10px] text-slate-500">Escala: ${currentBoardSize} Cards (Base 2)</span>
           </div>
           <div>
-            <span class="text-slate-400 font-bold uppercase text-[9px] block">Modalidade de Teste</span>
-            <strong class="text-xs font-semibold text-slate-800 dark:text-slate-200 block truncate">${appMode}</strong>
-            <span class="text-[10px] text-slate-500">Banco: ${currentThemeFilter}</span>
+            <span class="text-slate-400 font-bold uppercase text-[9px] block">Faixa do Banco</span>
+            <strong class="text-xs font-semibold text-slate-800 dark:text-slate-200 block truncate">${currentAgeFilter}</strong>
+            <span class="text-[10px] text-slate-500">Progresso: ${m.totalCompleted}/${currentBoardSize}</span>
           </div>
           <div>
             <span class="text-slate-400 font-bold uppercase text-[9px] block">Emissão do Relatório</span>
@@ -1674,7 +3195,7 @@
         <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
           <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Flexibilidade Cognitiva ($IFC$)</span>
           <div class="text-2xl sm:text-3xl font-extrabold text-sky-600 dark:text-sky-400 mt-1">${m.flexibilityIndex}%</div>
-          <p class="text-[11px] text-slate-500 mt-0.5">${m.changedCount} trocas / ${m.maintainedCount} manutenções</p>
+          <p class="text-[11px] text-slate-500 mt-0.5">${m.changedCount} trocas / ${m.maintainedCount} manutenções de ${m.totalCompleted} concluídos</p>
         </div>
         <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700">
           <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Distribuição das Escolhas</span>
@@ -1695,13 +3216,13 @@
         </div>
       `;
 
-      tbody.innerHTML = CASES_DATA.map((c, index) => {
+      tbody.innerHTML = CASES_DATA.map(c => {
         const st = sessionState[c.id];
         if (st.stage !== "COMPLETED") {
           return `
             <tr>
-              <td class="py-2.5 px-2 font-bold">Espaço 0${index + 1}</td>
-              <td class="py-2.5 px-2">${c.title} <span class="text-[10px] text-slate-400 block">${c.theme}</span></td>
+              <td class="py-2.5 px-2 font-bold">Card 0${c.slotIndex}</td>
+              <td class="py-2.5 px-2">${c.title} <span class="text-[10px] text-slate-400 block">${c.ageGroup}</span></td>
               <td colspan="5" class="py-2.5 px-2 text-slate-400 italic">Pendente de conclusão no tabuleiro.</td>
             </tr>
           `;
@@ -1709,10 +3230,10 @@
         const badgeClass = st.actionTaken === "MUDOU" ? "bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-200" : "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-200";
         return `
           <tr>
-            <td class="py-2.5 px-2 font-bold">Espaço 0${index + 1}</td>
+            <td class="py-2.5 px-2 font-bold">Card 0${c.slotIndex}</td>
             <td class="py-2.5 px-2">
               <strong class="font-bold text-slate-900 dark:text-white">${c.title}</strong>
-              <span class="text-[10px] text-sky-700 dark:text-sky-300 block font-semibold">${c.theme}</span>
+              <span class="text-[10px] text-sky-700 dark:text-sky-300 block font-semibold">${c.ageGroup}</span>
             </td>
             <td class="py-2.5 px-2 font-semibold">Peça ${st.initialChoice}</td>
             <td class="py-2.5 px-2 font-semibold">Peça ${st.finalChoice}</td>
@@ -1725,10 +3246,10 @@
 
       synthesis.innerHTML = `
         <strong class="block uppercase tracking-wider text-xs mb-1 text-slate-900 dark:text-white">
-          Parecer Cognitivo Automatizado (${pName} • ${currentUser.role}):
+          Parecer Cognitivo Automatizado (${pName} • ${currentUser.ageGroup}):
         </strong>
         <p>
-          O avaliado concluiu <strong>${m.totalCompleted} de 6 casos</strong> da rodada ativa no modo <em>${currentThemeFilter}</em>. Apresentou um Índice de Flexibilidade Cognitiva de <strong>${m.flexibilityIndex}%</strong> (${m.changedCount} alterações após as informações surpresa da Carta de Virada). 
+          O participante concluiu <strong>${m.totalCompleted} de ${currentBoardSize} cards</strong> na rodada ativa em escala base 2. Apresentou um Índice de Flexibilidade Cognitiva de <strong>${m.flexibilityIndex}%</strong> (${m.changedCount} alterações após o fato novo da Carta de Virada). 
           O tempo médio para a decisão inicial sob incerteza foi de <strong>${m.avgR1.toFixed(1)}s</strong>, enquanto a deliberação analítica e controle inibitório diante do fato novo demandaram <strong>${m.avgR2.toFixed(1)}s</strong>.
         </p>
       `;
@@ -1748,22 +3269,20 @@
     function saveSessionToCohort() {
       const m = computeSessionMetrics();
       if (m.totalCompleted === 0) {
-        alert("Conclua ao menos 1 caso antes de salvar.");
+        alert("Conclua ao menos 1 card antes de salvar.");
         return;
       }
-      const pName = document.getElementById('participant-name').value || currentUser.name || "Voluntário";
-      const mode = document.getElementById('application-mode').value;
+      const pName = document.getElementById('participant-name').value || currentUser.name || "Participante";
       const list = getCohortList();
 
       list.push({
         id: Date.now(),
         timestamp: new Date().toLocaleString('pt-BR'),
         participant: pName,
-        matricula: currentUser.matricula || "-",
-        role: currentUser.role || "Estudante",
-        turma: currentUser.turma || "ARA1060",
-        mode,
-        themeFilter: currentThemeFilter,
+        ageGroup: currentUser.ageGroup || "Todas as Idades",
+        goal: currentUser.goal || "Autoaplicação",
+        boardSize: currentBoardSize,
+        ageFilter: currentAgeFilter,
         completedCases: m.totalCompleted,
         flexibilityIndex: m.flexibilityIndex,
         finalA: m.countFinal.A,
@@ -1775,7 +3294,7 @@
 
       localStorage.setItem(COHORT_STORAGE_KEY, JSON.stringify(list));
       renderCohortTable();
-      alert(`Sessão de "${pName}" registrada com sucesso no Banco Acadêmico!`);
+      alert(`Sessão de "${pName}" (${currentBoardSize} cards) registrada com sucesso!`);
     }
 
     function renderCohortTable() {
@@ -1787,14 +3306,13 @@
       if (query) {
         list = list.filter(r => 
           (r.participant && r.participant.toLowerCase().includes(query)) ||
-          (r.matricula && r.matricula.toLowerCase().includes(query)) ||
-          (r.turma && r.turma.toLowerCase().includes(query)) ||
-          (r.role && r.role.toLowerCase().includes(query))
+          (r.ageGroup && r.ageGroup.toLowerCase().includes(query)) ||
+          (r.goal && r.goal.toLowerCase().includes(query))
         );
       }
 
       if (list.length === 0) {
-        container.innerHTML = `<p class="text-slate-400 italic">Nenhum registro encontrado no banco local.</p>`;
+        container.innerHTML = `<p class="text-slate-400 italic">Nenhum registro encontrado no histórico local.</p>`;
         return;
       }
       container.innerHTML = `
@@ -1802,11 +3320,10 @@
           <thead>
             <tr class="border-b border-slate-200 dark:border-slate-700 text-slate-400 text-[10px] uppercase font-bold">
               <th class="py-2 px-2">Data/Hora</th>
-              <th class="py-2 px-2">Nome / Participante</th>
-              <th class="py-2 px-2">Matrícula</th>
-              <th class="py-2 px-2">Perfil</th>
-              <th class="py-2 px-2">Turma</th>
-              <th class="py-2 px-2">Modalidade</th>
+              <th class="py-2 px-2">Participante</th>
+              <th class="py-2 px-2">Faixa Etária</th>
+              <th class="py-2 px-2">Contexto</th>
+              <th class="py-2 px-2">Cards</th>
               <th class="py-2 px-2">Flexibilidade</th>
               <th class="py-2 px-2">A/B/C</th>
               <th class="py-2 px-2">R1/R2</th>
@@ -1817,10 +3334,9 @@
               <tr>
                 <td class="py-1.5 px-2 font-mono text-[11px]">${r.timestamp}</td>
                 <td class="py-1.5 px-2 font-bold">${r.participant}</td>
-                <td class="py-1.5 px-2 font-mono text-[11px]">${r.matricula || "-"}</td>
-                <td class="py-1.5 px-2 text-[11px] text-sky-700 dark:text-sky-300 font-semibold">${r.role || "Estudante"}</td>
-                <td class="py-1.5 px-2 text-[11px]">${r.turma || "ARA1060"}</td>
-                <td class="py-1.5 px-2">${r.mode}</td>
+                <td class="py-1.5 px-2 text-[11px] text-sky-700 dark:text-sky-300 font-semibold">${r.ageGroup || "-"}</td>
+                <td class="py-1.5 px-2 text-[11px]">${r.goal || "-"}</td>
+                <td class="py-1.5 px-2 font-mono text-[11px]">${r.completedCases}/${r.boardSize || 16}</td>
                 <td class="py-1.5 px-2 font-bold text-sky-600">${r.flexibilityIndex}%</td>
                 <td class="py-1.5 px-2 font-mono text-[11px]">${r.finalA}/${r.finalB}/${r.finalC}</td>
                 <td class="py-1.5 px-2 font-mono text-[11px]">${r.avgR1}s / ${r.avgR2}s</td>
@@ -1833,18 +3349,18 @@
 
     function exportSessionJSON() {
       const payload = {
-        project: "CardsPsi - Quebra Cabeça das Escolhas (ARA1060 • Estácio)",
+        project: "CardsPsi - Quebra Cabeça das Escolhas (Open Source • Apache 2.0)",
         documentType: "Resultado / Relatório de Avaliação Cognitiva",
         user: currentUser,
         participantName: document.getElementById('participant-name').value,
-        applicationMode: document.getElementById('application-mode').value,
-        themeFilter: currentThemeFilter,
+        boardSize: currentBoardSize,
+        ageFilter: currentAgeFilter,
         exportedAt: new Date().toISOString(),
         metrics: computeSessionMetrics(),
         roundCases: CASES_DATA.map(c => ({
           id: c.id,
-          code: c.code,
-          theme: c.theme,
+          slotIndex: c.slotIndex,
+          ageGroup: c.ageGroup,
           title: c.title,
           decision: sessionState[c.id]
         }))
@@ -1859,29 +3375,29 @@
     function exportCohortCSV() {
       const list = getCohortList();
       if (list.length === 0) {
-        alert("Banco vazio.");
+        alert("Histórico vazio.");
         return;
       }
-      const headers = ["DataHora", "Participante", "Matricula", "Perfil", "Turma", "Modalidade", "EixoTematico", "CasosConcluidos", "FlexibilidadePct", "FinalA", "FinalB", "FinalC", "MediaR1_s", "MediaR2_s"];
+      const headers = ["DataHora", "Participante", "FaixaEtaria", "Contexto", "CardsTotal", "Concluidos", "FlexibilidadePct", "FinalA", "FinalB", "FinalC", "MediaR1_s", "MediaR2_s"];
       const rows = list.map(r => [
-        `"${r.timestamp}"`, `"${r.participant}"`, `"${r.matricula || ''}"`, `"${r.role || ''}"`, `"${r.turma || ''}"`,
-        `"${r.mode}"`, `"${r.themeFilter || 'ALL'}"`, r.completedCases, r.flexibilityIndex, r.finalA, r.finalB, r.finalC, r.avgR1, r.avgR2
+        `"${r.timestamp}"`, `"${r.participant}"`, `"${r.ageGroup || ''}"`, `"${r.goal || ''}"`,
+        r.boardSize || 16, r.completedCases, r.flexibilityIndex, r.finalA, r.finalB, r.finalC, r.avgR1, r.avgR2
       ].join(','));
       const blob = new Blob([[headers.join(','), ...rows].join('\n')], { type: "text/csv;charset=utf-8;" });
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = "cardspsi_amostra_estacio.csv";
+      a.download = "cardspsi_historico_sessoes.csv";
       a.click();
     }
 
     function clearCohortDatabase() {
-      if (confirm("Deseja apagar os dados locais salvos neste navegador?")) {
+      if (confirm("Deseja apagar os registros locais salvos neste navegador?")) {
         localStorage.removeItem(COHORT_STORAGE_KEY);
         renderCohortTable();
       }
     }
 
-    // SISTEMA DE LOGIN E IDENTIFICAÇÃO ACADÊMICA
+    // IDENTIFICAÇÃO E SESSÃO LEVE
     function loadUserSession() {
       try {
         const raw = localStorage.getItem(USER_SESSION_STORAGE_KEY);
@@ -1900,15 +3416,15 @@
 
     function updateUserUI() {
       const pInput = document.getElementById('participant-name');
-      if (pInput && (!pInput.value || pInput.value === "Participante Piloto 01")) {
-        pInput.value = currentUser.name || "Participante Piloto 01";
+      if (pInput && (!pInput.value || pInput.value === "Participante 01")) {
+        pInput.value = currentUser.name || "Participante 01";
       }
 
       // Header desktop badge
       const bName = document.getElementById('badge-user-name');
       const bSub = document.getElementById('badge-user-sub');
-      if (bName) bName.textContent = currentUser.name || "Visitante";
-      if (bSub) bSub.textContent = `${currentUser.role || 'Estudante'} • ${currentUser.turma || 'ARA1060'}`;
+      if (bName) bName.textContent = currentUser.name || "Participante";
+      if (bSub) bSub.textContent = `${currentUser.ageGroup || 'Geral'} • ${currentUser.goal || 'Autoaplicação'}`;
 
       // Header mobile badge
       const bMobileName = document.getElementById('badge-user-name-mobile');
@@ -1916,13 +3432,11 @@
 
       // Inputs no modal
       const mName = document.getElementById('modal-user-name');
-      const mMatricula = document.getElementById('modal-user-matricula');
-      const mRole = document.getElementById('modal-user-role');
-      const mTurma = document.getElementById('modal-user-turma');
+      const mAge = document.getElementById('modal-user-age');
+      const mGoal = document.getElementById('modal-user-goal');
       if (mName) mName.value = currentUser.name || "";
-      if (mMatricula) mMatricula.value = currentUser.matricula || "";
-      if (mRole) mRole.value = currentUser.role || "Estudante de Psicologia";
-      if (mTurma) mTurma.value = currentUser.turma || "ARA1060 — 2026.2";
+      if (mAge) mAge.value = currentUser.ageGroup || "Todas as Idades";
+      if (mGoal) mGoal.value = currentUser.goal || "Autoaplicação";
     }
 
     function syncParticipantInputToSession() {
@@ -1949,16 +3463,15 @@
     function handleAcademicLoginSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('modal-user-name').value.trim();
-      const matricula = document.getElementById('modal-user-matricula').value.trim();
-      const role = document.getElementById('modal-user-role').value;
-      const turma = document.getElementById('modal-user-turma').value.trim();
+      const ageGroup = document.getElementById('modal-user-age').value;
+      const goal = document.getElementById('modal-user-goal').value.trim();
 
       if (!name) {
-        alert("Por favor, preencha seu nome ou apelido acadêmico.");
+        alert("Por favor, preencha seu nome ou identificador.");
         return;
       }
 
-      saveUserSession({ name, matricula, role, turma });
+      saveUserSession({ name, ageGroup, goal });
       const pInput = document.getElementById('participant-name');
       if (pInput) pInput.value = name;
 
@@ -1968,13 +3481,12 @@
 
     function quickVisitorAccess() {
       saveUserSession({
-        name: "Visitante Acadêmico",
-        matricula: "",
-        role: "Visitante / Comunidade Acadêmica",
-        turma: "ARA1060 — 2026.2"
+        name: "Visitante",
+        ageGroup: "Todas as Idades",
+        goal: "Autoaplicação"
       });
       const pInput = document.getElementById('participant-name');
-      if (pInput) pInput.value = "Visitante Acadêmico";
+      if (pInput) pInput.value = "Visitante";
       closeLoginModal();
       renderPsychometricReport();
     }
@@ -2011,7 +3523,7 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       loadUserSession();
-      initNewRound("ALL");
+      initNewRound(16, "ALL");
     });
   </script>
 </body>

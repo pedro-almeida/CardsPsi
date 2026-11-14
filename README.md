@@ -1,24 +1,35 @@
-# CardsPsi 🧩 | Quebra Cabeça das Escolhas
+# CardsPsi — Quebra-Cabeça das Escolhas
 
-![Status](https://img.shields.io/badge/Status-Valida%C3%A7%C3%A3o_Acad%C3%AAmica_2026.2-0284c7?style=for-the-badge)
-![Disciplina](https://img.shields.io/badge/Disciplina-ARA1060_Processos_Psicol%C3%B3gicos-0f766e?style=for-the-badge)
-![Instituição](https://img.shields.io/badge/Institui%C3%A7%C3%A3o-Est%C3%A1cio-1e293b?style=for-the-badge)
-![Licença](https://img.shields.io/badge/Licen%C3%A7a-Restrita_(Futura_Apache_2.0)-b45309?style=for-the-badge)
+![Licença Apache 2.0](https://img.shields.io/badge/Licen%C3%A7a-Apache_2.0-blue?style=for-the-badge)
+![Repositório](https://img.shields.io/badge/GitHub-pedro--almeida%2FCardsPsi-0f766e?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Open_Source-emerald?style=for-the-badge)
+![Escala](https://img.shields.io/badge/Escala_Base_2-8_|_16_|_32_|_64_Cards-purple?style=for-the-badge)
 
-> **Instrumento Híbrido (Software Web Responsivo + Tabuleiro Físico) para Estimulação e Avaliação Psicométrica do Pensamento, Tomada de Decisão sob Incerteza, Heurísticas e Flexibilidade Cognitiva.**
+O **CardsPsi (Quebra-Cabeça das Escolhas)** é uma ferramenta aberta e interativa para avaliação, reflexão e estimulação dos processos cognitivos superiores: **tomada de decisão sob incerteza**, **heurísticas de julgamento**, **controle inibitório** e **flexibilidade cognitiva**.
+
+> *Nascido originalmente em ambiente acadêmico de Psicologia e disponibilizado como ferramenta aberta de código aberto.*
 
 ---
 
-## 📖 Visão Geral do Projeto
+## 🧩 Como Funciona o CardsPsi
 
-O **CardsPsi (Quebra Cabeça das Escolhas)** foi desenvolvido como instrumento prático avaliativo da disciplina **Processos Psicológicos Básicos: Motivação, Pensamento e Linguagem (ARA1060)** do curso de Psicologia da **Faculdade Estácio de Juazeiro do Norte**, sob a docência do **Prof. Me. Jair Nunes Rocha**.
+A ferramenta desafia o participante em uma matriz modular escalável em **Base 2** (**8, 16, 32 ou 64 cards**), com banco abrangente de situações para todas as etapas do desenvolvimento humano (infância, adolescência, fase adulta e longevidade). A deliberação ocorre em duas fases cognitivas para cada caso:
 
-A ferramenta desafia o participante em um tabuleiro 2x3 contendo **6 dilemas práticos do cotidiano**. A deliberação ocorre em duas fases cognitivas para cada caso:
-
-1. **Primeira Rodada (Incerteza Inicial):** O voluntário lê o Cartão de Situação, escolhe entre as peças **A**, **B** ou **C**, encaixa no tabuleiro e expressa o motivo de sua decisão.
+1. **Primeira Rodada (Incerteza Inicial):** O participante lê o Cartão de Situação, escolhe entre as peças conceituais **A**, **B** ou **C**, encaixa no tabuleiro e expressa o motivo de sua decisão.
 2. **Segunda Rodada (A Carta de Virada):** Uma nova informação surpresa é revelada. O participante recruta o controle inibitório e a flexibilidade executiva para responder: **"Mantém ou muda a peça? Por quê?"**.
 
-Ao concluir a montagem dos 6 espaços, a aplicação processa o **Resultado / Relatório de Avaliação Cognitiva**, calculando latências médias, distribuição de preferências e o **Índice de Flexibilidade Cognitiva**.
+Ao concluir os cards da rodada, a aplicação processa o **Resultado / Relatório de Avaliação Cognitiva**, calculando latências médias, distribuição de preferências e o **Índice de Flexibilidade Cognitiva ($IFC$)**:
+
+$$IFC = \left( \frac{\text{Número de Peças Substituídas pós Virada}}{\text{Total de Cards da Rodada}} \right) \times 100$$
+
+---
+
+## 🎯 Escala em Base 2 e Modos de Uso
+
+* **8 Cards (Sessão Rápida):** Grade 2x4 ideal para triagem preliminar, dinâmicas breves e contextos escolares.
+* **16 Cards (Sessão Padrão):** Grade 4x4 equilibrada para sessões individuais e oficinas reflexivas.
+* **32 Cards (Sessão Estendida):** Navegação fluida em blocos com índice de progresso unificado.
+* **64 Cards (Sessão Completa):** Banco integral de dilemas cobrindo infância, juventude, maturidade e envelhecimento ativo.
 
 ---
 
@@ -28,29 +39,28 @@ Toda a fundamentação teórica, regras completas e protocolos de aplicação em
 
 * 📌 **Home:** Visão geral da ferramenta e parâmetros psicométricos.
 * 🎲 **Regras Oficiais do Jogo:** Mecânica detalhada da primeira e segunda rodada.
-* 🧠 **Fundamentação Teórica e Cognitiva:** Modelos de Simon, Kahneman, Piaget, Kohlberg e Kant.
-* 📊 **Protocolo de Aplicação e Psicometria:** Roteiro para voluntários do teste piloto e fórmulas do $IFC$.
+* 🧠 **Fundamentação Teórica e Cognitiva:** Modelos de Kahneman, Tversky, Herbert Simon e Vygotsky.
+* 📊 **Protocolo de Aplicação e Psicometria:** Roteiro prático, métricas e exportação de dados.
+
+🔗 **Acesse a Wiki do Repositório:** [https://github.com/pedro-almeida/CardsPsi/wiki](https://github.com/pedro-almeida/CardsPsi/wiki)
 
 ---
 
-## 👥 Equipe Acadêmica (5 Integrantes)
+## 🚀 Como Executar Localmente
 
-* **Pedro Luís Tenório Rocha de Almeida:** Arquiteto do Software CardsPsi, Redação da Fundamentação Teórica do Manual (2 páginas), Redação das Regras Oficiais e Condução da Apresentação Oral.
-* **Maria Vitória Santos Braz:** Design gráfico e confecção física do tabuleiro e cartões em alta gramatura.
-* **Rayanne dos Santos Santana:** Produção material das 18 peças de encaixe e organização dos cartões de dilemas.
-* **Maria Natalya Silva Leitão:** Aplicação prática do teste piloto com voluntários e cronometragem das reações.
-* **Veridiana Mota Veras:** Sistematização dos dados da amostra piloto e estruturação dos slides do seminário.
+Como se trata de uma aplicação web estática baseada em HTML5, Tailwind CSS e Vanilla JavaScript:
 
----
-
-## 🗓️ Calendário Acadêmico (2026.2)
-
-* **06/11 e 13/11/2026 (08h20):** Apresentação prática do instrumento em sala de aula e entrega do manual de 2 páginas (**3,0 Pontos na AV**).
-* **20/11/2026:** Simulado II da Disciplina ARA1060.
-* **27/11/2026:** Prova Presencial Oficial AV (7,0 pontos PNI + 3,0 pontos do trabalho = 10,0 pontos).
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/pedro-almeida/CardsPsi.git
+   cd CardsPsi
+   ```
+2. Abra o arquivo `index.html` em qualquer navegador moderno (Chrome, Firefox, Safari, Edge).
+3. Não há necessidade de build, NodeJS ou banco de dados externo — todos os registros de sessão funcionam com persistência local (`localStorage`).
 
 ---
 
-## ⚖️ Licença
+## 📄 Licença
 
-Uso Acadêmico Restrito Temporário (Todos os Direitos Reservados) durante o período avaliativo de 2026.2, com transição programada para a **Apache License 2.0** conforme detalhado em [`LICENSE`](./LICENSE).
+Distribuído sob a **Licença Apache 2.0**. Consulte o arquivo [`LICENSE`](LICENSE) para mais detalhes.
+Contribuições abertas via pull requests são bem-vindas em [pedro-almeida/CardsPsi](https://github.com/pedro-almeida/CardsPsi).

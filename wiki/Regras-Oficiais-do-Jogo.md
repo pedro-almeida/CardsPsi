@@ -1,17 +1,18 @@
-# Regras Oficiais do Jogo: Quebra Cabeça das Escolhas (CardsPsi)
+# Regras Oficiais do Jogo
 
-## 1. Componentes Oficiais
+O **CardsPsi** é estruturado para aplicação individual ou em grupo, utilizando matrizes em base 2 (**8, 16, 32 ou 64 cards**).
 
-1. **Tabuleiro Modular (Grade 2x3):** 6 espaços numerados de `1` a `6`.
-2. **18 Peças de Escolha (A, B e C):** Três opções de mesmo formato geométrico para cada caso. Apenas **uma peça** ocupa cada espaço no tabuleiro.
-3. **06 Cartões de Situação (1ª Rodada):** Apresentam o dilema inicial (`CASO 01` a `CASO 06`).
-4. **06 Cartas de Virada (2ª Rodada):** Apresentam o fato novo imprevisto (`VIRADA 01` a `VIRADA 06`).
+---
 
-## 2. Mecânica da Partida
+## Estrutura da Rodada
 
-### Fase 1: Julgamento sob Incerteza
-* O participante abre o caso e analisa as três alternativas (`A`, `B` e `C`).
-* Encaixa a peça escolhida no tabuleiro e justifica brevemente seu raciocínio.
+### Fase 1: Cartão de Situação
+* O participante analisa o cenário de escolha inicial.
+* Seleciona uma das 3 peças conceituais:
+  * **Peça A:** Resposta intuitiva, rápida ou de risco/ganho imediato.
+  * **Peça B:** Resposta normativa, prudente ou de aversão à incerteza.
+  * **Peça C:** Resposta dialógica, cooperativa ou integrativa.
+* Posiciona a peça no espaço correspondente do tabuleiro.
 
 ### Fase 2: A Virada e a Reavaliação Executiva
 * Com a peça inicial no tabuleiro, revela-se a **Carta de Virada**.
@@ -20,5 +21,5 @@
 * Se mudar: substitui-se a peça inicial pela nova escolha (`A`, `B` ou `C`), registrando a justificativa da mudança.
 
 ### Fase 3: Consolidação
-* Repete-se o ciclo nos 6 casos até o preenchimento total do tabuleiro.
+* Repete-se o ciclo em todos os cards da rodada até a conclusão da matriz.
 * Acesse a aba **2. Resultado / Relatório** para consultar as latências de tempo e o Índice de Flexibilidade Cognitiva.

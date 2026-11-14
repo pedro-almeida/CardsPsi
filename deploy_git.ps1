@@ -1,14 +1,14 @@
 # =============================================================================
-# SCRIPT DE ATUALIZAÇÃO DO REPOSITÓRIO PRINCIPAL (CARDSPSI)
-# Diretório Local: C:\CardsPsi
-# Repositório: https://github.com/pedro-almeida/CardsPsi.git
+# SCRIPT DE ATUALIZACAO DO REPOSITORIO PRINCIPAL (CARDSPSI)
+# Diretorio Local: C:\CardsPsi
+# Repositorio: https://github.com/pedro-almeida/CardsPsi.git
 # =============================================================================
 
 Set-Location -Path "C:\CardsPsi"
 Write-Host ">>> Atualizando repositorio principal CardsPsi..." -ForegroundColor Cyan
 
 git add .
-git commit -m "refactor: responsividade mobile, remocao IDOMED e atualizacao institucional Estacio"
+git commit -m "feat(cardspsi): escala em base 2 (8, 16, 32 e 64 cards), 64 casos para todas as idades e licenca Apache 2.0"
 git branch -M main
 
 $remotes = git remote
