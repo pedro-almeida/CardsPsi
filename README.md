@@ -18,7 +18,7 @@ A ferramenta desafia o participante em um tabuleiro 2x3 contendo **6 dilemas pr�
 1. **Primeira Rodada (Incerteza Inicial):** O voluntário lê o Cartão de Situação, escolhe entre as peças **A**, **B** ou **C**, encaixa no tabuleiro e expressa o motivo de sua decisão.
 2. **Segunda Rodada (A Carta de Virada):** Uma nova informação surpresa é revelada. O participante recruta o controle inibitório e a flexibilidade executiva para responder: **"Mantém ou muda a peça? Por quê?"**.
 
-Ao concluir a montagem dos 6 espaços, a aplicação processa o **Laudo Psicométrico**, calculando latências médias, distribuição de preferências e o **Índice de Flexibilidade Cognitiva**.
+Ao concluir a montagem dos 6 espaços, a aplicação processa o **Resultado / Relatório de Avaliação Cognitiva**, calculando latências médias, distribuição de preferências e o **Índice de Flexibilidade Cognitiva**.
 
 ---
 

@@ -4,7 +4,7 @@
 1. Digite o identificador do participante no topo da tela.
 2. Mantenha a **Lente Teórica em OFF** durante a testagem com voluntários reais para evitar enviesamento.
 3. Conduza os 6 casos, incentivando o preenchimento da justificativa na fase de Virada.
-4. Na aba **2. Laudo Psicométrico**, clique em **"+ Salvar no Banco do Piloto"**.
+4. Na aba **2. Resultado / Relatório**, clique em **"+ Salvar no Banco do Piloto"**.
 5. Ao concluir a amostra, exporte a planilha clicando em **"Baixar CSV"**.
 
 ## 2. Parâmetros Psicométricos

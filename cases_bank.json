@@ -1,0 +1,578 @@
+[
+  {
+    "id": 1,
+    "code": "CASO 01",
+    "theme": "Vida Universitária / Dilemas Éticos",
+    "themeTag": "ORIGINAIS",
+    "title": "Um nome no projeto",
+    "colorHex": "#0f766e",
+    "situation": "Um colega participou pouco do trabalho, mas pede para ter seu nome na entrega. O grupo está dividido e o prazo termina hoje.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Incluir sem conversar",
+        "fullText": "Incluir o nome para evitar conflito.",
+        "style": "Heurística de Evitação de Conflito (Sistema 1)"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Excluir sem conversar",
+        "fullText": "Não incluir o nome, seguindo a contribuição observada.",
+        "style": "Algoritmo de Regra Rígida (Deontológico)"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Negociar uma saída",
+        "fullText": "Conversar e negociar uma tarefa final possível.",
+        "style": "Resolução Dialógica Cooperativa (Sistema 2)"
+      }
+    },
+    "twistCode": "VIRADA 01",
+    "twistText": "O colega passou vários dias sem acesso à internet porque precisou cuidar de um familiar. Ninguém sabia disso, e ainda restam 40 minutos até a entrega.",
+    "theoryNote": "Avalia o erro fundamental de atribuição e a capacidade do córtex pré-frontal de inibir um juízo punitivo inicial perante contingência humanitária."
+  },
+  {
+    "id": 2,
+    "code": "CASO 02",
+    "theme": "Comunicação Digital e Boatos",
+    "themeTag": "ORIGINAIS",
+    "title": "O print que circulou",
+    "colorHex": "#1e40af",
+    "situation": "Uma mensagem no grupo afirma que um funcionário da escola agiu de forma injusta. Há um print, mas ninguém sabe a origem completa.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Repassar com ressalva",
+        "fullText": "Repassar o print com um aviso de cautela.",
+        "style": "Heurística de Disponibilidade / Difusão Rápida"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Checar as fontes",
+        "fullText": "Procurar fontes e contexto antes de compartilhar.",
+        "style": "Verificação Analítica Prudente (Controle Inibitório)"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Não postar; conversar",
+        "fullText": "Não compartilhar e conversar diretamente com alguém envolvido.",
+        "style": "Preservação Ética e Comunicação Dialógica"
+      }
+    },
+    "twistCode": "VIRADA 02",
+    "twistText": "Surge um vídeo que parece contradizer parte do print. Porém, ele também está cortado e não mostra o início do episódio.",
+    "theoryNote": "Testa a resistência ao viés de confirmação e a tolerância à ambiguidade perante fragmentos digitais truncados."
+  },
+  {
+    "id": 3,
+    "code": "CASO 03",
+    "theme": "Racionalidade sob Pressão de Tempo",
+    "themeTag": "ORIGINAIS",
+    "title": "Qual caminho escolher?",
+    "colorHex": "#b45309",
+    "situation": "Você precisa chegar a um encontro em 20 minutos. O trajeto habitual leva 18 min; um atalho costuma levar 12 min, mas há relatos de obras.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Usar o atalho",
+        "fullText": "Usar o atalho por ser geralmente mais rápido.",
+        "style": "Heurística de Risco / Ganho Imediato"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Seguir rota habitual",
+        "fullText": "Seguir o trajeto habitual, com menor incerteza.",
+        "style": "Aversão à Perda / Previsibilidade"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Buscar mais dados",
+        "fullText": "Buscar uma informação atual e então decidir.",
+        "style": "Deliberação Racional Otimizadora"
+      }
+    },
+    "twistCode": "VIRADA 03",
+    "twistText": "O aviso de obras é de ontem. O aplicativo está desatualizado e você só tem dois minutos para decidir antes de sair.",
+    "theoryNote": "Demonstra o princípio da Racionalidade Limitada (Simon): quando o tempo se esgota e os dados são imperfeitos, a mente adota critérios satisfatórios."
+  },
+  {
+    "id": 4,
+    "code": "CASO 04",
+    "theme": "Justiça Distributiva e Escassez",
+    "themeTag": "ORIGINAIS",
+    "title": "A última vaga",
+    "colorHex": "#15803d",
+    "situation": "Uma oficina gratuita tem apenas uma vaga. Três pessoas precisam dela: uma chegou primeiro, outra tem maior necessidade e outra tem mais experiência.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Priorizar quem chegou",
+        "fullText": "Dar a vaga a quem chegou primeiro.",
+        "style": "Igualitarismo Cronológico Simples"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Priorizar necessidade",
+        "fullText": "Priorizar quem demonstra maior necessidade.",
+        "style": "Equidade Substantiva Compensatória"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Definir critérios juntos",
+        "fullText": "Discutir critérios públicos e decidir em conjunto.",
+        "style": "Pacto Social Pós-Convencional (Kohlberg)"
+      }
+    },
+    "twistCode": "VIRADA 04",
+    "twistText": "A pessoa que chegou primeiro já perdeu outras chances; a que tem maior necessidade não consegue pagar outra oficina.",
+    "theoryNote": "Tensiona concepções concorrentes de justiça distributiva diante da escassez material de vagas e recursos sociais."
+  },
+  {
+    "id": 5,
+    "code": "CASO 05",
+    "theme": "Deontologia e Mediação Institucional",
+    "themeTag": "ORIGINAIS",
+    "title": "Uma regra e uma exceção",
+    "colorHex": "#6d28d9",
+    "situation": "A biblioteca proíbe retirar um material raro. Uma estudante pede levá-lo para casa porque não pode permanecer no local no horário disponível.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Cumprir a regra",
+        "fullText": "Aplicar a regra sem exceção.",
+        "style": "Preservação Normativa Deontológica Rígida"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Fazer exceção",
+        "fullText": "Permitir discretamente a retirada.",
+        "style": "Atalho Particularista / Risco Sistêmico"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Buscar um acordo",
+        "fullText": "Buscar uma solução autorizada que respeite a necessidade.",
+        "style": "Inteligência Criativa Institucional"
+      }
+    },
+    "twistCode": "VIRADA 05",
+    "twistText": "A equipe informa que outras pessoas também dependem desse material. Existe uma opção de consulta digital que ainda não foi oferecida.",
+    "theoryNote": "Ilustra o teste kantiano da universalização: exceções sigilosas fragmentam a regra coletiva, enquanto a mediação dialógica constrói equidade pública."
+  },
+  {
+    "id": 6,
+    "code": "CASO 06",
+    "theme": "Mérito e Cooperação em Grupo",
+    "themeTag": "ORIGINAIS",
+    "title": "Prêmio do grupo",
+    "colorHex": "#be123c",
+    "situation": "Uma equipe ganhou um pequeno prêmio. A liderança trabalhou mais horas, mas outras pessoas deram ideias decisivas. Não há divisão combinada.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Receber pela liderança",
+        "fullText": "Entregar a maior parte a quem liderou.",
+        "style": "Meritocracia Quantitativa de Horas"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Dividir igualmente",
+        "fullText": "Dividir igualmente entre todos.",
+        "style": "Isonomia Paritária Simples"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Discutir a divisão",
+        "fullText": "Combinar uma divisão com critérios de contribuição e necessidade.",
+        "style": "Justiça Cooperativa e Deliberada"
+      }
+    },
+    "twistCode": "VIRADA 06",
+    "twistText": "Uma integrante que participou menos realizou justamente a ação que evitou a falha do projeto no último dia.",
+    "theoryNote": "Avalia a revisão do viés da visibilidade imediata diante da percepção do impacto qualitativo real em tarefas coletivas."
+  },
+  {
+    "id": 7,
+    "code": "CASO 07",
+    "theme": "Psicologia Escolar / Educacional",
+    "themeTag": "ESCOLAR",
+    "title": "O Aluno Desatento e a Queixa Escolar",
+    "colorHex": "#0284c7",
+    "situation": "Uma professora exige encaminhamento imediato de um aluno de 8 anos para diagnóstico de TDAH e medicação, ameaçando reprová-lo se a família não trouxer resposta até sexta-feira.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Observação Institucional",
+        "fullText": "Realizar observação participante em sala e escuta dos professores antes de qualquer encaminhamento externo.",
+        "style": "Planejada / Analítica: Investigação Ecológica do Contexto"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Encaminhar de Imediato",
+        "fullText": "Acolher a pressão da professora e emitir encaminhamento urgente para neuropediatria para cessar o conflito.",
+        "style": "Impulsiva / Reativa: Atendimento à Urgência sem Análise Crítica"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Adaptação e Acolhimento",
+        "fullText": "Propor adaptações curriculares lúdicas na rotina e agendar acolhimento conjunto com a família.",
+        "style": "Criativa / Adaptativa: Mediação Pedagógica Dialógica"
+      }
+    },
+    "twistCode": "VIRADA 07",
+    "twistText": "Descobre-se que os pais enfrentam separação conflituosa recente e a criança dorme apenas 4 horas por noite; nas aulas práticas de artes e ciências, o aluno é focado e colaborativo.",
+    "theoryNote": "Problematiza a medicalização da infância e o viés de rotulação diagnóstica versus a avaliação ecológica das contingências ambientais no desenvolvimento cognitivo."
+  },
+  {
+    "id": 8,
+    "code": "CASO 08",
+    "theme": "Psicologia Escolar / Educacional",
+    "themeTag": "ESCOLAR",
+    "title": "Segredo e Risco no Pátio Escolar",
+    "colorHex": "#4338ca",
+    "situation": "No atendimento escolar de orientação, um aluno de 16 anos confidencia que consome bebidas alcoólicas aos finais de semana e pede sigilo absoluto. A coordenação exige relatório completo da conversa.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Sustentar o Sigilo",
+        "fullText": "Explicar à gestão as balizas éticas do sigilo profissional (Art. 9º do CFP), resguardando o vínculo com o adolescente.",
+        "style": "Planejada / Analítica: Rigor Ético Deontológico"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Repassar à Direção",
+        "fullText": "Informar os fatos de imediato à coordenação para resguardar a instituição de responsabilidade civil.",
+        "style": "Impulsiva / Reativa: Quebra Precipitada de Confidencialidade"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Pacto de Autonomia",
+        "fullText": "Apoiar o estudante para que ele próprio dialogue com os responsáveis sobre limites e autocuidado com suporte profissional.",
+        "style": "Criativa / Adaptativa: Desenvolvimento de Protagonismo Moral"
+      }
+    },
+    "twistCode": "VIRADA 08",
+    "twistText": "O jovem revela que o grupo combinou de dirigir o carro de um dos pais após a festa de formatura da próxima noite sem habilitação.",
+    "theoryNote": "Tensiona a inviolabilidade do sigilo com o dever ético de proteção da vida sob perigo iminente (Art. 10º do Código de Ética), mobilizando o raciocínio moral pós-convencional."
+  },
+  {
+    "id": 9,
+    "code": "CASO 09",
+    "theme": "Psicologia Hospitalar",
+    "themeTag": "HOSPITALAR",
+    "title": "Autonomia vs. Diretivas Familiares",
+    "colorHex": "#047857",
+    "situation": "Um paciente lúcido de 72 anos internado em enfermaria oncológica recusa uma cirurgia mutiladora invasiva, optando por cuidados paliativos. Os filhos exigem a operação à força.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Garantir Autonomia",
+        "fullText": "Registrar a plena capacidade cognitiva do paciente em prontuário e defender seu direito de autodeterminação em reunião clínica.",
+        "style": "Planejada / Analítica: Princípio Bioético da Autonomia"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Ceder à Família",
+        "fullText": "Persuadir o idoso a aceitar a intervenção para reduzir a angústia familiar e evitar ameaças de processo contra o hospital.",
+        "style": "Impulsiva / Reativa: Paternalismo Médico e Evitação de Litígio"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Conferência Familiar",
+        "fullText": "Organizar conferência clínica com paciente, equipe multidisciplinar e filhos para acolher o luto antecipatório e construir diretivas conjuntas.",
+        "style": "Criativa / Adaptativa: Mediação Bioética de Cuidados Paliativos"
+      }
+    },
+    "twistCode": "VIRADA 09",
+    "twistText": "O filho mais velho admite que a família depende financeiramente de um benefício vitalício do pai que será cancelado se ele falecer neste mês.",
+    "theoryNote": "Traz à tona o conflito entre autonomia da vontade e pressões econômico-familiares implícitas, avaliando a flexibilidade cognitiva perante interesses velados."
+  },
+  {
+    "id": 10,
+    "code": "CASO 10",
+    "theme": "Psicologia Hospitalar",
+    "themeTag": "HOSPITALAR",
+    "title": "Comunicação de Notícias Críticas na UTI",
+    "colorHex": "#b91c1c",
+    "situation": "O médico plantonista pede que a psicóloga dê a notícia de óbito à mãe na recepção da UTI desacompanhada de médico, alegando que está atendendo outra parada cardíaca urgente.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Exigir Presença Médica",
+        "fullText": "Recusar a comunicação solitária do óbito clínico, aguardando que o médico declare o falecimento em conjunto com a escuta psicológica.",
+        "style": "Planejada / Analítica: Delimitação Ético-Técnica Interdisciplinar"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Comunicar Sozinha",
+        "fullText": "Transmitir a notícia imediatamente à mãe para não deixá-la em agonia na sala de espera.",
+        "style": "Impulsiva / Reativa: Assunção Inadequada de Atribuição Médica"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Acolhimento Preliminar",
+        "fullText": "Acolher a mãe em sala privativa, informar sobre a gravidade extrema e preparar a escuta emocional até que o médico se desvencilhe.",
+        "style": "Criativa / Adaptativa: Protocolo de Cuidado Gradual SPIKES"
+      }
+    },
+    "twistCode": "VIRADA 10",
+    "twistText": "A mãe relata ter insuficiência cardíaca crônica e desfalece ao escutar a palavra 'crítico' antes de qualquer informação detalhada.",
+    "theoryNote": "Analisa o controle inibitório e a regulação emocional do profissional sob choque situacional agudo e protocolos de comunicação de notícias difíceis (SPIKES)."
+  },
+  {
+    "id": 11,
+    "code": "CASO 11",
+    "theme": "Psicologia Organizacional e do Trabalho",
+    "themeTag": "ORGANIZACIONAL",
+    "title": "Assédio Moral Velado e Metas Opressivas",
+    "colorHex": "#475569",
+    "situation": "Um colaborador relata que a gerência passou a impor cobranças humilhantes e piadas depreciativas após seu retorno de licença médica, temendo ser demitido se fizer denúncia formal.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Documentar Padrão",
+        "fullText": "Realizar escuta clínica do trabalho, mapear o nexo de causalidade laboral e instruir canais formais com sigilo.",
+        "style": "Planejada / Analítica: Protocolo de Diagnóstico Institucional"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Confrontar Gestão",
+        "fullText": "Ir diretamente à mesa da gerência exigir retratação pública imediata para defender o trabalhador.",
+        "style": "Impulsiva / Reativa: Atuação Reativa Sem Retaguarda de Evidências"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Pesquisa de Clima",
+        "fullText": "Inserir indicadores anônimos de saúde mental e assédio no diagnóstico setorial, articulando ações com a CIPA e RH.",
+        "style": "Criativa / Adaptativa: Intervenção Sistêmica Organizacional"
+      }
+    },
+    "twistCode": "VIRADA 11",
+    "twistText": "O trabalhador apresenta e-mails comprovando que a chefia possui ordens expressas da diretoria para forçar demissões sem justa causa para cortar despesas.",
+    "theoryNote": "Explora a psicodinâmica do trabalho de Dejours: a dialética entre defesas individuais, sofrimento ético e precarização das relações produtivas."
+  },
+  {
+    "id": 12,
+    "code": "CASO 12",
+    "theme": "Psicologia Organizacional e do Trabalho",
+    "themeTag": "ORGANIZACIONAL",
+    "title": "Demanda de Declaração sob Burnout",
+    "colorHex": "#c2410c",
+    "situation": "A diretoria exige que o setor de psicologia emita declaração atestando que uma colaboradora com sintomas claros de esgotamento e choro frequente está 'plenamente apta e motivada' para uma auditoria externa.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Negar Declaração",
+        "fullText": "Fundamentar a impossibilidade ética de atestar aptidão sob sofrimento visível e encaminhar para avaliação de saúde ocupacional.",
+        "style": "Planejada / Analítica: Resolução CFP 06/2019 e Integridade Ética"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Assinar com Ressalvas",
+        "fullText": "Emitir um documento brando para preservar o emprego da funcionária e evitar retaliações da diretoria.",
+        "style": "Impulsiva / Reativa: Conivência Institucional sob Medo"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Reestruturar Escopo",
+        "fullText": "Apresentar plano de remanejamento temporário de tarefas da auditoria, assegurando afastamento sem perda de remuneração.",
+        "style": "Criativa / Adaptativa: Mediação de Ergonomia Psicossocial"
+      }
+    },
+    "twistCode": "VIRADA 12",
+    "twistText": "A colaboradora confidencia que depende dos bônus dessa auditoria para custear a medicação de alto custo de seu filho com síndrome rara.",
+    "theoryNote": "Submete o julgamento a uma escolha trágica entre o cumprimento irrestrito das normas éticas e o impacto socioeconômico direto sobre a subsistência do sujeito."
+  },
+  {
+    "id": 13,
+    "code": "CASO 13",
+    "theme": "Saúde Mental Comunitária (CAPS)",
+    "themeTag": "CAPS",
+    "title": "Crise Aguda no Território Comunitário",
+    "colorHex": "#0891b2",
+    "situation": "Um usuário do CAPS com histórico de sofrimento mental severo está em crise de agitação na praça do bairro. Vizinhos acionam a polícia militar exigindo internação forçada imediata.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Intervenção Territorial",
+        "fullText": "Enviar equipe do CAPS ao local para desescalada verbal, assegurando acolhimento no território e evitando contenção policial violenta.",
+        "style": "Planejada / Analítica: Diretrizes da Luta Antimanicomial (Lei 10.216)"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Deixar Condução Policial",
+        "fullText": "Permitir que a polícia conduza o usuário diretamente ao hospital geral para garantir a segurança física imediata dos transeuntes.",
+        "style": "Impulsiva / Reativa: Terceirização Punitiva da Crise Psíquica"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Rede com Lideranças",
+        "fullText": "Articular uma liderança comunitária respeitada e familiares próximos para estabelecer vínculo afetivo de acolhimento na UBS vizinha.",
+        "style": "Criativa / Adaptativa: Apoio Matricial e Cuidado Territorial"
+      }
+    },
+    "twistCode": "VIRADA 13",
+    "twistText": "A guarnição policial já chegou ao local empunhando armas de choque e o usuário segura uma ferramenta usada na horta comunitária.",
+    "theoryNote": "Testa a capacidade executiva de manejo de risco iminente sob descompensação, articulando intervenções despatologizantes em ambiente comunitário aberto."
+  },
+  {
+    "id": 14,
+    "code": "CASO 14",
+    "theme": "Saúde Mental Comunitária (CAPS)",
+    "themeTag": "CAPS",
+    "title": "Redução de Danos vs. Abstinência Exigida",
+    "colorHex": "#7c2d12",
+    "situation": "No CAPS AD, um usuário dependente de álcool quer apoio para manter o convívio com a filha, mas declara que não conseguirá parar totalmente de beber de imediato.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Redução de Danos",
+        "fullText": "Pactuar metas graduais de diminuição do uso e acompanhamento psicossocial, priorizando a segurança e afeto com a criança.",
+        "style": "Planejada / Analítica: Paradigma de Redução de Danos"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Exigir Abstinência",
+        "fullText": "Condicionar qualquer relatório favorável à comprovação de abstinência total imediata para não colocar a criança em risco.",
+        "style": "Impulsiva / Reativa: Modelo Moral / Proibicionista Rígido"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Cuidado Compartilhado",
+        "fullText": "Construir rede de suporte familiar para supervisionar a rotina da criança enquanto o pai consolida o plano terapêutico singular.",
+        "style": "Criativa / Adaptativa: Fortalecimento da Parentalidade Positiva"
+      }
+    },
+    "twistCode": "VIRADA 14",
+    "twistText": "O Conselho Tutelar envia intimação concedendo 48 horas para envio de relatório técnico decisivo sobre a manutenção provisória da guarda.",
+    "theoryNote": "Contrapõe a temporalidade subjetiva e gradual da clínica da dependência à urgência burocrática dos prazos do sistema de garantia de direitos."
+  },
+  {
+    "id": 15,
+    "code": "CASO 15",
+    "theme": "Ética em Pesquisa e Estágio",
+    "themeTag": "ETICA",
+    "title": "Manipulação de Amostra Científica",
+    "colorHex": "#854d0e",
+    "situation": "O bolsista líder de uma pesquisa acadêmica propõe replicar respostas em questionários vazios para atingir o N amostral exigido pelo edital cujo prazo final expira à meia-noite.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Recusa Deontológica",
+        "fullText": "Recusar terminantemente a manipulação de dados e relatar a real amostra coletada na seção de limitações metodológicas do artigo.",
+        "style": "Planejada / Analítica: Rigor e Integridade Científica (CNS 510)"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Consentir pelo Fomento",
+        "fullText": "Aceitar a alteração dos dados para não perder a bolsa de fomento e o financiamento do laboratório.",
+        "style": "Impulsiva / Reativa: Fraude sob Pressão de Resultados"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Coleta Emergencial Válida",
+        "fullText": "Mobilizar mutirão presencial e virtual de coleta ética em regime de plantão de 12 horas e pedir dilação de prazo justificada ao comitê.",
+        "style": "Criativa / Adaptativa: Resolução Proativa Respeitando a Ética"
+      }
+    },
+    "twistCode": "VIRADA 15",
+    "twistText": "O orientador da pesquisa envia áudio afirmando que a perda do fomento acarretará o cancelamento de todas as bolsas de iniciação científica do grupo.",
+    "theoryNote": "Submete o sujeito ao clássico dilema de obediência à autoridade (Milgram) e aos custos individuais da integridade ética na produção do conhecimento."
+  },
+  {
+    "id": 16,
+    "code": "CASO 16",
+    "theme": "Ética em Pesquisa e Estágio",
+    "themeTag": "ETICA",
+    "title": "Duplo Vínculo no Estágio de Clínica",
+    "colorHex": "#581c87",
+    "situation": "Uma estagiária do Serviço-Escola de Psicologia percebe na triagem que a nova paciente agendada é irmã da sua futura cunhada com quem convive em encontros familiares.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Encaminhar Paciente",
+        "fullText": "Apresentar a situação na supervisão e realizar o encaminhamento ético e acolhedor para outro colega estagiário da clínica.",
+        "style": "Planejada / Analítica: Prevenção de Conflito de Papéis (Art. 2º CFP)"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Atender em Segredo",
+        "fullText": "Iniciar os atendimentos sem comunicar a supervisão, confiando na própria capacidade de separar o pessoal do profissional.",
+        "style": "Impulsiva / Reativa: Minimização Incorreta de Contratransferência"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Pacto Transparente",
+        "fullText": "Explicar tecnicamente à paciente os motivos do impedimento ético antes do início do vínculo e auxiliá-la na transição de terapeuta.",
+        "style": "Criativa / Adaptativa: Esclarecimento Pedagógico e Manejo da Queixa"
+      }
+    },
+    "twistCode": "VIRADA 16",
+    "twistText": "A paciente chora intensamente e afirma que só buscou a faculdade porque sabia que a estagiária era de sua confiança e ameaça desistir de qualquer tratamento se for trocada.",
+    "theoryNote": "Explora os limites da aliança terapêutica e a necessidade de controle inibitório para não converter a queixa clínica em promiscuidade relacional contratransferencial."
+  },
+  {
+    "id": 17,
+    "code": "CASO 17",
+    "theme": "Regulação Emocional sob Pressão Acadêmica",
+    "themeTag": "REGULACAO",
+    "title": "Procrastinação Ansiosa e Estimulantes",
+    "colorHex": "#9f1239",
+    "situation": "Na véspera da avaliação teórica oficial (peso 7,0), um estudante sem conseguir concentrar-se recebe oferta de um colega para ingerir psicoestimulante sem prescrição para virar a noite estudando.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Higiene do Sono e Foco",
+        "fullText": "Rejeitar a substância ilegal, priorizar 6 horas de repouso restaurador e estudar os resumos nucleares pela manhã.",
+        "style": "Planejada / Analítica: Regulação Fisiológica e Coping Adaptativo"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Tomar o Estimulante",
+        "fullText": "Ingerir a medicação para vencer a sonolência e ler toda a bibliografia durante a madrugada sem pausas.",
+        "style": "Impulsiva / Reativa: Doping Cognitivo com Risco Iatrogênico"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Estudo Compartilhado",
+        "fullText": "Fazer uma sessão curta de 2 horas com colegas para tirar dúvidas e praticar exercícios de regulação autonômica antes de dormir.",
+        "style": "Criativa / Adaptativa: Suporte Social e Manejo da Ansiedade"
+      }
+    },
+    "twistCode": "VIRADA 17",
+    "twistText": "Devido a um apagão elétrico no campus, a faculdade comunica que a avaliação foi transferida para as 16h, mas o colega já está sob crise de taquicardia por cafeína e cansaço.",
+    "theoryNote": "Aplica a Lei de Yerkes-Dodson: níveis excessivos de ativação simpática degradam a recuperação de memória e o raciocínio dedutivo complexo em provas."
+  },
+  {
+    "id": 18,
+    "code": "CASO 18",
+    "theme": "Regulação Emocional sob Pressão Acadêmica",
+    "themeTag": "REGULACAO",
+    "title": "Disputa de Autoria em Trabalho Integrado",
+    "colorHex": "#065f46",
+    "situation": "Dois grupos de discentes se uniram para elaborar um projeto de intervenção comunitária. Ao submeter para um congresso regional renomado, surge conflito agressivo sobre quem será o primeiro autor.",
+    "options": {
+      "A": {
+        "letter": "A",
+        "shortLabel": "Taxonomia CRediT",
+        "fullText": "Adotar a taxonomia científica internacional de autoria (CRediT) para mapear objetivamente quem liderou a redação e concepção.",
+        "style": "Planejada / Analítica: Avaliação Metodológica Meritória Transparente"
+      },
+      "B": {
+        "letter": "B",
+        "shortLabel": "Ordem Alfabética Rápida",
+        "fullText": "Listar por ordem alfabética para estancar o atrito imediatamente, desconsiderando a carga horária investida.",
+        "style": "Impulsiva / Reativa: Pacificação Superficial por Esquiva"
+      },
+      "C": {
+        "letter": "C",
+        "shortLabel": "Coautoria Compartilhada",
+        "fullText": "Estabelecer coautoria compartilhada de liderança e alternar a ordem de destaque entre o artigo e a apresentação oral.",
+        "style": "Criativa / Adaptativa: Negociação Cooperativa Ganha-Ganha"
+      }
+    },
+    "twistCode": "VIRADA 18",
+    "twistText": "O sistema de submissão do congresso não aceita coautoria compartilhada nem empates, exigindo a ordem hierárquica definitiva até as 23h59 de hoje.",
+    "theoryNote": "Ilustra os desafios da regulação emocional em dinâmicas de competição intra-grupo versus cooperação científica, demandando flexibilidade e inteligência relacional."
+  }
+]

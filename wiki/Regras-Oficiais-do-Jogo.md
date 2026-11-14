@@ -21,4 +21,4 @@
 
 ### Fase 3: Consolidação
 * Repete-se o ciclo nos 6 casos até o preenchimento total do tabuleiro.
-* Acesse a aba **2. Laudo Psicométrico** para consultar as latências de tempo e o Índice de Flexibilidade Cognitiva.
+* Acesse a aba **2. Resultado / Relatório** para consultar as latências de tempo e o Índice de Flexibilidade Cognitiva.
